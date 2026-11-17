@@ -113,6 +113,10 @@ footer b{color:#fff;font-family:"Bodoni Moda",serif;font-size:1.3rem}
 
 dialog#cart{margin:0 0 0 auto;padding:0;border:0;width:min(27rem,100%);max-width:100%;height:100dvh;max-height:100dvh;background:var(--paper);color:var(--ink);box-shadow:-12px 0 40px rgba(31,27,24,.18)}
 dialog#cart::backdrop{background:rgba(31,27,24,.5)}
+dialog#cart[open]{animation:cin .45s cubic-bezier(.16,1,.3,1)}
+dialog#cart.out{animation:cout .3s ease-in forwards}
+@keyframes cin{from{transform:translateX(100%)}}
+@keyframes cout{to{transform:translateX(100%)}}
 .cart-in{display:grid;grid-template-rows:auto 1fr auto;height:100%}
 .cart-h{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 1.25rem;border-bottom:1px solid var(--line)}
 .cart-h h2{font-size:1.7rem}
@@ -356,8 +360,12 @@ addEventListener('load',off);setTimeout(off,3500)})();
     if(window.moCart)moCart.bump(cnt);
     b.textContent='Ditambahkan';setTimeout(function(){b.textContent='Tambah ke keranjang'},1200);
   })});
-  function open(){dlg.showModal();if(window.moCart)moCart.open(dlg)}
-  function close(){if(window.moCart)moCart.close(dlg,function(){dlg.close()});else dlg.close()}
+  function open(){dlg.showModal()}
+  function close(){
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches){dlg.close();return}
+    dlg.classList.add('out');
+    setTimeout(function(){dlg.classList.remove('out');dlg.close()},300);
+  }
   $('#bag').addEventListener('click',open);
   $('#closeCart').addEventListener('click',close);
   dlg.addEventListener('click',function(e){if(e.target===dlg)close()});
@@ -383,7 +391,7 @@ MO.extra=function(g,$){
   g.fromTo('.hang',{rotation:-2.2},{rotation:2.2,duration:2.6,yoyo:true,repeat:-1,ease:'sine.inOut',stagger:{each:.4,from:'random'},delay:1.3});
   g.to('.rail',{yPercent:6,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
   window.moList=function(items){var v=[].slice.call(items).filter(function(c){return!c.hidden});g.fromTo(v,{y:16,opacity:0},{y:0,opacity:1,duration:.45,stagger:.05,ease:'power2.out',overwrite:true,clearProps:'transform'})};
-  window.moCart={open:function(d){g.fromTo(d,{xPercent:100},{xPercent:0,duration:.45,ease:'power3.out'})},close:function(d,done){g.to(d,{xPercent:100,duration:.3,ease:'power2.in',onComplete:done})},bump:function(e){g.fromTo(e,{scale:1.4},{scale:1,duration:.45,ease:'back.out(2.2)'})}};
+  window.moCart={bump:function(e){g.fromTo(e,{scale:1.4},{scale:1,duration:.45,ease:'back.out(2.2)'})}};
 };
 document.addEventListener('DOMContentLoaded',function(){
 var d=document.documentElement;if(!d.classList.contains('mo')||!window.gsap||!window.ScrollTrigger)return;
