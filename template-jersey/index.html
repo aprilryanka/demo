@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gawang Apparel | Jersey custom sublimasi</title>
+<meta name="description" content="Gawang Apparel, jersey custom sublimasi untuk tim. Rancang warna, corak, nama, dan nomor, lihat perkiraan harga, lalu pesan lewat WhatsApp.">
+<meta name="theme-color" content="#0C1B33">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F4F7;--card:#FFFFFF;--ink:#0C1B33;--soft:#51607A;--red:#E8412B;--red-d:#C73219;--line:#CBD3DF}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;font-family:Barlow,system-ui,sans-serif;font-size:1.0625rem;line-height:1.6;color:var(--ink);background:var(--bg)}
+h1,h2,h3{font-family:"Barlow Condensed",Impact,sans-serif;font-weight:800;text-transform:uppercase;line-height:.95;margin:0;text-wrap:balance;letter-spacing:.005em}
+h1{font-size:clamp(3.2rem,10vw,6.6rem)}
+h2{font-size:clamp(2.2rem,5.6vw,3.8rem)}
+h3{font-size:1.45rem;font-weight:700}
+p{margin:0}
+a{color:inherit}
+svg{max-width:100%;display:block}
+button,input,select{font:inherit;color:inherit}
+.wrap{width:min(100% - 2.5rem,72rem);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:.5rem;background:var(--red);color:#fff;padding:.75rem 1rem;z-index:30;font-weight:700}
+.skip:focus{left:.5rem}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:.75rem 1.6rem;font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:1.15rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;transition:background-color .15s,color .15s,border-color .15s}
+.btn-main{background:var(--red);border-color:var(--red);color:#fff}
+.btn-main:hover{background:var(--red-d);border-color:var(--red-d)}
+.btn-line:hover{background:var(--ink);color:#fff}
+.lab{display:inline-block;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.num{font-variant-numeric:tabular-nums}
+
+.top{position:sticky;top:0;z-index:10;background:var(--ink);color:#fff}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:64px}
+.brand{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:1.65rem;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.brand span{color:var(--red)}
+.nav{display:none;gap:1.75rem}
+.nav a{text-decoration:none;font-weight:600;display:inline-flex;align-items:center;min-height:44px}
+.nav a:hover{color:#FF8A75}
+.top .btn{min-height:44px;padding:.35rem 1.1rem;font-size:1.05rem}
+@media(min-width:52rem){.nav{display:flex}}
+
+.hero{padding:clamp(2rem,6vw,4.5rem) 0 clamp(3rem,8vw,6rem);overflow:hidden}
+.hero .wrap{display:grid;gap:2.5rem;align-items:center}
+.hero h1{margin:.9rem 0 1.25rem}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero p{max-width:32rem;color:var(--soft);font-size:1.15rem}
+.acts{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.fan{width:min(100%,38rem);margin-inline:auto}
+@media(min-width:56rem){.hero .wrap{grid-template-columns:1fr 1.1fr}}
+
+.info{background:var(--ink);color:#fff}
+.info ul{list-style:none;margin:0;padding:0;display:grid}
+.info li{padding:1.15rem 0;border-top:1px solid #243756}
+.info li:first-child{border-top:0}
+.info b{display:block;font-family:"Barlow Condensed",sans-serif;font-size:1.35rem;letter-spacing:.03em;text-transform:uppercase}
+.info span{color:#B8C4D8;font-size:.9375rem}
+@media(min-width:48rem){.info ul{grid-template-columns:repeat(3,1fr);gap:2rem}.info li{border-top:0;padding:1.5rem 0}}
+
+.pad{padding:clamp(3.5rem,9vw,6rem) 0}
+.head{display:grid;gap:.8rem;margin-bottom:2.25rem;max-width:40rem}
+.head p{color:var(--soft)}
+
+.cfg{display:grid;gap:1.5rem}
+.stage{background:var(--card);border:1.5px solid var(--line);padding:1rem;display:grid;gap:.75rem;align-content:start}
+.stage svg{width:min(100%,25rem);margin-inline:auto}
+.views{display:flex;gap:.5rem}
+.views button{min-height:44px;padding:.3rem 1.1rem;border:2px solid var(--ink);background:transparent;font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.views button[aria-pressed=true]{background:var(--ink);color:#fff}
+.ctl{display:grid;gap:1.3rem;background:var(--card);border:1.5px solid var(--line);padding:1.25rem}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend,label.f{font-weight:700;font-size:.9688rem;padding:0}
+legend{margin-bottom:.4rem}
+.sws{display:flex;flex-wrap:wrap;gap:.15rem}
+.sw{position:relative;width:44px;height:44px;cursor:pointer}
+.sw input{position:absolute;inset:0;opacity:0;cursor:pointer;margin:0}
+.sw span{position:absolute;inset:5px;border-radius:50%;background:var(--s);border:2px solid rgba(12,27,51,.3);transition:box-shadow .15s}
+.sw input:checked+span{box-shadow:0 0 0 3px var(--card),0 0 0 5px var(--ink)}
+.sw input:focus-visible+span{outline:3px solid var(--red);outline-offset:6px}
+.opts{display:flex;flex-wrap:wrap;gap:.5rem}
+.opts label{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:.3rem 1rem;border:2px solid var(--ink);font-weight:600;cursor:pointer}
+.opts input{position:absolute;opacity:0;width:1px;height:1px}
+.opts label:has(input:checked){background:var(--ink);color:#fff}
+.opts label:has(input:focus-visible){outline:3px solid var(--red);outline-offset:3px}
+.row{display:grid;gap:1rem}
+label.f{display:grid;gap:.4rem}
+input[type=text],input[type=number]{min-height:48px;padding:.5rem .8rem;border:2px solid var(--ink);background:#fff;width:100%;border-radius:0}
+.total{display:grid;gap:.75rem;border-top:2px dashed var(--line);padding-top:1rem}
+.total div{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
+.total span{color:var(--soft)}
+.total b,.total output{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:1.7rem}
+.total output{font-size:2.2rem;color:var(--red)}
+.hint{font-size:.9063rem;color:var(--soft)}
+.tx{font-family:"Barlow Condensed",Impact,sans-serif;font-weight:800;fill:var(--tx);stroke:var(--c1);stroke-width:5px;paint-order:stroke;stroke-linejoin:round}
+.nm{font-size:30px;letter-spacing:3px}
+.no{font-size:120px}
+.fno{font-size:34px}
+.hide{display:none}
+@media(min-width:36rem){.row{grid-template-columns:2fr 1fr}.ctl{padding:1.6rem}}
+@media(min-width:56rem){.cfg{grid-template-columns:.95fr 1.05fr;align-items:start;gap:2rem}.stage{position:sticky;top:84px}}
+
+.plist{list-style:none;margin:0;padding:0;max-width:44rem}
+.plist li{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1.15rem 0;border-bottom:2px solid var(--ink)}
+.plist li:first-child{border-top:2px solid var(--ink)}
+.plist span{font-weight:600}
+.plist b{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:1.9rem}
+.note{margin-top:1rem;color:var(--soft);font-size:.9375rem;max-width:44rem}
+.alt{background:var(--card);border-block:1.5px solid var(--line)}
+
+.flow{position:relative;padding-left:2.6rem;max-width:44rem}
+.flow .track,.flow .fill{position:absolute;left:11px;top:8px;bottom:8px;width:3px}
+.flow .track{background:var(--line)}
+.flow .fill{background:var(--red);transform-origin:50% 0}
+.mo .flow .fill{transform:scaleY(0)}
+.flow ol{list-style:none;margin:0;padding:0}
+.flow li{position:relative;padding:.2rem 0 1.6rem}
+.flow li::before{content:"";position:absolute;left:-2.6rem;top:.4rem;width:25px;height:25px;border-radius:50%;background:var(--bg);border:3px solid var(--ink)}
+.flow li:last-child{padding-bottom:0}
+.flow p{color:var(--soft)}
+
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:24rem;max-width:44rem}
+caption{text-align:left;color:var(--soft);font-size:.9375rem;padding-bottom:.75rem}
+th,td{text-align:left;padding:.9rem .75rem .9rem 0;border-bottom:1.5px solid var(--line)}
+thead th{font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+tbody th{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:1.4rem}
+
+details{border-top:2px solid var(--ink);max-width:44rem}
+details:last-of-type{border-bottom:2px solid var(--ink)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;min-height:60px;padding:.6rem 0;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1.35rem;text-transform:uppercase}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.8rem;line-height:1;flex:none;color:var(--red)}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 0 1.2rem;color:var(--soft);max-width:38rem}
+
+footer{background:var(--ink);color:#B8C4D8;padding:2.5rem 0;font-size:.9375rem}
+footer .wrap{display:grid;gap:.75rem}
+footer b{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:1.6rem;letter-spacing:.05em;text-transform:uppercase;color:#fff}
+@media(min-width:48rem){footer .wrap{grid-template-columns:1fr auto;align-items:center}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style>
+<script>
+/* Motion aktif hanya jika JS jalan. Mati otomatis saat prefers-reduced-motion atau URL memakai ?static */
+(function(){var d=document.documentElement,M=window.MO={rv:'.info li,.head,.stage,.ctl,.plist li,.flow li,.scroll,details',intro:'.hero .lab,.hero p,.acts',hide:'.jr'};
+if(matchMedia('(prefers-reduced-motion: reduce)').matches||/[?&]static\b/.test(location.search))return;
+d.classList.add('mo');
+var s=document.createElement('style');
+s.textContent='.mo '+[M.rv,M.intro,M.hide].filter(Boolean).join(',').split(',').join(',.mo ')+'{opacity:0}.mo h1{visibility:hidden}.w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .06em .14em 0;margin:0 -.06em -.14em 0}';
+document.head.appendChild(s);
+function off(){if(!window.__mo)d.classList.remove('mo')}
+addEventListener('load',off);setTimeout(off,3500)})();
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <clipPath id="jc"><path d="M110 22Q150 62 190 22L232 38L286 98L252 134L229 114L232 316L68 316L71 114L48 134L14 98L68 38Z"/></clipPath>
+    <g id="j-base"><path d="M110 22Q150 62 190 22L232 38L286 98L252 134L229 114L232 316L68 316L71 114L48 134L14 98L68 38Z" fill="var(--c1)" stroke="rgba(12,27,51,.55)" stroke-width="2" stroke-linejoin="round"/></g>
+    <g id="p-polos"></g>
+    <g id="p-strip" clip-path="url(#jc)" fill="var(--c2)"><rect x="98" y="0" width="22" height="340"/><rect x="139" y="0" width="22" height="340"/><rect x="180" y="0" width="22" height="340"/></g>
+    <g id="p-sash" clip-path="url(#jc)" fill="var(--c2)"><path d="M62 36L124 22L252 316L188 316Z"/></g>
+    <g id="p-split" clip-path="url(#jc)" fill="var(--c2)"><rect x="0" y="0" width="150" height="340"/></g>
+    <g id="j-trim" fill="none" stroke="var(--c2)"><path d="M110 22Q150 62 190 22" stroke-width="8"/><path d="M286 98L252 134M14 98L48 134" stroke-width="10"/></g>
+  </defs>
+</svg>
+<a class="skip" href="#isi">Langsung ke isi</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#" translate="no">Gawang <span>Apparel</span></a>
+    <nav class="nav" aria-label="Utama">
+      <a href="#rancang">Rancang</a>
+      <a href="#harga">Harga</a>
+      <a href="#alur">Alur</a>
+      <a href="#ukuran">Ukuran</a>
+    </nav>
+    <a class="btn btn-main" href="#rancang">Rancang jersey</a>
+  </div>
+</header>
+
+<main id="isi">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="lab">Jersey custom sublimasi</span>
+      <h1>Jersey tim kamu, <em>desain sendiri.</em></h1>
+      <p>Atur warna, corak, nama, dan nomor langsung di halaman ini. Mockup resmi kami kirim sebelum produksi dimulai.</p>
+      <div class="acts">
+        <a class="btn btn-main" href="#rancang">Rancang jersey</a>
+        <a class="btn btn-line" href="#harga">Lihat harga</a>
+      </div>
+    </div>
+    <svg class="fan" viewBox="0 0 640 350" role="img" aria-label="Tiga contoh jersey dengan warna dan corak berbeda">
+      <g class="jr" style="--c1:#D62828;--c2:#FFFFFF"><svg x="0" y="50" width="230" height="260" viewBox="0 0 300 340"><use href="#j-base"/><use href="#p-split"/><use href="#j-trim"/></svg></g>
+      <g class="jr" style="--c1:#0C1B33;--c2:#FFFFFF"><svg x="190" y="14" width="260" height="294" viewBox="0 0 300 340"><use href="#j-base"/><use href="#p-strip"/><use href="#j-trim"/></svg></g>
+      <g class="jr" style="--c1:#1D4ED8;--c2:#F2C200"><svg x="410" y="50" width="230" height="260" viewBox="0 0 300 340"><use href="#j-base"/><use href="#p-sash"/><use href="#j-trim"/></svg></g>
+    </svg>
+  </div>
+</section>
+
+<section class="info" aria-label="Info singkat">
+  <div class="wrap">
+    <ul>
+      <li><b>Minimal 10 jersey</b><span>Satu desain untuk satu tim</span></li>
+      <li><b>Produksi 10 sampai 14 hari</b><span>Dihitung setelah mockup disetujui</span></li>
+      <li><b>Mockup gratis</b><span>Revisi sampai Anda puas</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="pad" id="rancang">
+  <div class="wrap">
+    <div class="head">
+      <span class="lab">Rancang jersey</span>
+      <h2>Atur warna, corak, nama, dan nomor.</h2>
+      <p>Pratinjau berubah langsung. Tombol di bawah membuka WhatsApp dengan rancangan yang sudah terisi. Tidak ada data yang disimpan di situs.</p>
+    </div>
+    <div class="cfg">
+      <div class="stage">
+        <div class="views" role="group" aria-label="Sisi jersey">
+          <button type="button" data-v="front" aria-pressed="false">Depan</button>
+          <button type="button" data-v="back" aria-pressed="true">Belakang</button>
+        </div>
+        <svg id="prev" viewBox="0 0 300 340" role="img" aria-label="Pratinjau jersey sesuai pengaturan">
+          <g id="pg" style="--c1:#0C1B33;--c2:#FFFFFF;--tx:#FFFFFF">
+            <use href="#j-base"/><use id="pat" href="#p-strip"/><use href="#j-trim"/>
+            <g id="back">
+              <path d="M110 22Q150 62 190 22Q150 36 110 22Z" fill="var(--c1)"/>
+              <text id="nm" class="tx nm" x="150" y="104" text-anchor="middle">GAWANG</text>
+              <text id="no" class="tx no" x="150" y="214" text-anchor="middle">10</text>
+            </g>
+            <g id="front" class="hide">
+              <circle cx="196" cy="84" r="13" fill="var(--c2)" stroke="var(--c1)" stroke-width="3"/>
+              <text id="fno" class="tx fno" x="108" y="94" text-anchor="middle">10</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <form class="ctl" id="form">
+        <fieldset><legend>Warna utama</legend><div class="sws" id="sw1"></div></fieldset>
+        <fieldset><legend>Warna aksen</legend><div class="sws" id="sw2"></div></fieldset>
+        <fieldset><legend>Corak</legend>
+          <div class="opts">
+            <label><input type="radio" name="pat" value="polos">Polos</label>
+            <label><input type="radio" name="pat" value="strip" checked>Strip</label>
+            <label><input type="radio" name="pat" value="sash">Pita</label>
+            <label><input type="radio" name="pat" value="split">Dua warna</label>
+          </div>
+        </fieldset>
+        <div class="row">
+          <label class="f">Nama di punggung<input type="text" id="nmIn" name="nama" value="GAWANG" maxlength="12" autocomplete="off"></label>
+          <label class="f">Nomor<input type="number" id="noIn" name="no" value="10" min="0" max="99" inputmode="numeric"></label>
+        </div>
+        <label class="f">Jumlah jersey<input type="number" id="qty" name="qty" value="12" min="10" max="500" inputmode="numeric" required></label>
+        <div class="total">
+          <div><span>Harga per jersey</span><b id="per" class="num">Rp 135.000</b></div>
+          <div><span>Perkiraan total</span><output id="tot" class="num" for="qty" aria-live="polite">Rp 1.620.000</output></div>
+        </div>
+        <button class="btn btn-main" type="submit">Kirim rancangan lewat WhatsApp</button>
+        <p class="hint">Harga hanya contoh. Mockup resmi dikirim sebelum produksi.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="pad alt" id="harga">
+  <div class="wrap">
+    <div class="head">
+      <span class="lab">Daftar harga</span>
+      <h2>Makin banyak, makin murah per jersey.</h2>
+    </div>
+    <ul class="plist">
+      <li><span>10 sampai 24 jersey</span><b class="num">Rp 135.000</b></li>
+      <li><span>25 sampai 49 jersey</span><b class="num">Rp 125.000</b></li>
+      <li><span>50 jersey ke atas</span><b class="num">Rp 115.000</b></li>
+    </ul>
+    <p class="note">Sudah termasuk bahan dry-fit, cetak penuh sublimasi, serta nama dan nomor. Harga hanya ilustrasi untuk contoh tampilan.</p>
+  </div>
+</section>
+
+<section class="pad" id="alur">
+  <div class="wrap">
+    <div class="head">
+      <span class="lab">Alur pesan</span>
+      <h2>Dari ide sampai jersey sampai.</h2>
+    </div>
+    <div class="flow">
+      <span class="track" aria-hidden="true"></span><span class="fill" aria-hidden="true"></span>
+      <ol>
+        <li><h3>Konsultasi desain</h3><p>Kirim rancangan dari halaman ini, atau logo dan referensi tim Anda.</p></li>
+        <li><h3>Mockup dikirim</h3><p>Kami buat mockup depan dan belakang untuk disetujui.</p></li>
+        <li><h3>Bayar uang muka</h3><p>Setengah dari total untuk mengunci jadwal produksi.</p></li>
+        <li><h3>Produksi 10 sampai 14 hari</h3><p>Cetak sublimasi, jahit, dan pengecekan satu per satu.</p></li>
+        <li><h3>Kirim ke tim</h3><p>Pelunasan, lalu jersey dikirim ke alamat Anda.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="pad alt" id="ukuran">
+  <div class="wrap">
+    <div class="head">
+      <span class="lab">Tabel ukuran</span>
+      <h2>Ukuran dewasa.</h2>
+    </div>
+    <div class="scroll" tabindex="0" role="region" aria-label="Tabel ukuran jersey">
+      <table>
+        <caption>Ukuran dalam sentimeter dan hanya contoh tampilan.</caption>
+        <thead><tr><th scope="col">Ukuran</th><th scope="col">Lebar dada</th><th scope="col">Panjang</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">S</th><td class="num">50</td><td class="num">68</td></tr>
+          <tr><th scope="row">M</th><td class="num">52</td><td class="num">70</td></tr>
+          <tr><th scope="row">L</th><td class="num">54</td><td class="num">72</td></tr>
+          <tr><th scope="row">XL</th><td class="num">56</td><td class="num">74</td></tr>
+          <tr><th scope="row">2XL</th><td class="num">58</td><td class="num">76</td></tr>
+          <tr><th scope="row">3XL</th><td class="num">60</td><td class="num">78</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="pad">
+  <div class="wrap">
+    <div class="head"><span class="lab">Sering ditanya</span><h2>Sebelum Anda bertanya.</h2></div>
+    <details><summary>Bisa pakai logo tim sendiri?</summary><p>Bisa. Kirim file logo (PNG atau vektor) lewat WhatsApp, kami pasang di mockup.</p></details>
+    <details><summary>Ukuran dipilih satu per satu?</summary><p>Ya. Setelah mockup disetujui, daftar nama, nomor, dan ukuran tiap pemain dikirim lewat chat.</p></details>
+    <details><summary>Bisa jersey anak atau kiper?</summary><p>Bisa. Tabel ukuran anak dan model kiper diberikan saat konsultasi.</p></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b translate="no">Gawang Apparel</b><br>Jersey custom sublimasi. Alamat, WhatsApp, dan Instagram usaha Anda tampil di sini.</p>
+    <p>Contoh tampilan demo. Nama, harga, dan ukuran hanya ilustrasi.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var WA='6280000000000'; /* ganti dengan nomor WhatsApp usaha */
+  var COL=[['Navy','#0C1B33'],['Merah','#D62828'],['Biru','#1D4ED8'],['Hitam','#141414'],['Putih','#FFFFFF'],['Hijau','#1B7F4B'],['Oranye','#F57C00'],['Kuning','#F2C200']];
+  var PAT={polos:'Polos',strip:'Strip',sash:'Pita',split:'Dua warna'};
+  var st={c1:'#0C1B33',c2:'#FFFFFF',pat:'strip'};
+  function $(s){return document.querySelector(s)}
+  function rp(n){return 'Rp '+n.toLocaleString('id-ID')}
+  function lum(h){var n=parseInt(h.slice(1),16);return(.299*(n>>16&255)+.587*(n>>8&255)+.114*(n&255))/255}
+  var pg=$('#pg'),pat=$('#pat'),nm=$('#nm'),no=$('#no'),fno=$('#fno'),f=$('#form'),per=$('#per'),tot=$('#tot'),back=$('#back'),front=$('#front');
+  function paint(k){
+    var p='--'+k;
+    if(window.moTint)moTint(pg,p,st[k]);else pg.style.setProperty(p,st[k]);
+    pg.style.setProperty('--tx',lum(st.c1)>.55?'#0C1B33':'#FFFFFF');
+  }
+  function build(box,key){COL.forEach(function(c){
+    var l=document.createElement('label'),i=document.createElement('input'),s=document.createElement('span');
+    l.className='sw';l.style.setProperty('--s',c[1]);i.type='radio';i.name=key;i.value=c[1];i.checked=c[1]===st[key];i.setAttribute('aria-label',c[0]);
+    l.appendChild(i);l.appendChild(s);box.appendChild(l);
+    i.addEventListener('change',function(){st[key]=c[1];paint(key)});
+  })}
+  build($('#sw1'),'c1');build($('#sw2'),'c2');
+  [].slice.call(document.querySelectorAll('input[name=pat]')).forEach(function(i){i.addEventListener('change',function(){
+    st.pat=i.value;pat.setAttribute('href','#p-'+i.value);if(window.moPop)moPop(pg);
+  })});
+  function setName(){
+    var v=$('#nmIn').value.toUpperCase().replace(/[^A-Z0-9 .'-]/g,'').slice(0,12).trim();
+    nm.textContent=v||'NAMA';
+    nm.style.fontSize=Math.min(30,Math.floor(270/Math.max(v.length,6)))+'px';
+  }
+  function setNo(){
+    var n=Math.max(0,Math.min(99,parseInt($('#noIn').value,10)||0));
+    no.textContent=fno.textContent=String(n);
+    if(window.moPop)moPop(no);
+  }
+  $('#nmIn').addEventListener('input',setName);$('#noIn').addEventListener('input',setNo);
+  var vb=[].slice.call(document.querySelectorAll('.views button'));
+  vb.forEach(function(b){b.addEventListener('click',function(){
+    vb.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    back.classList.toggle('hide',b.dataset.v!=='back');front.classList.toggle('hide',b.dataset.v!=='front');
+    if(window.moFlip)moFlip(pg);
+  })});
+  function price(q){return q>=50?115000:q>=25?125000:135000}
+  function calc(){
+    var q=Math.max(0,parseInt(f.qty.value,10)||0),p=price(q),t=q*p;
+    per.textContent=rp(p);
+    if(window.moNum)moNum(tot,t,rp);else tot.textContent=rp(t);
+    return t;
+  }
+  f.qty.addEventListener('input',calc);calc();
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var q=parseInt(f.qty.value,10)||0;
+    function cn(h){var r=COL.filter(function(c){return c[1]===h})[0];return r?r[0]:h}
+    var m='Halo, saya mau pesan jersey custom.\nWarna utama: '+cn(st.c1)+'\nWarna aksen: '+cn(st.c2)+'\nCorak: '+PAT[st.pat]+'\nNama punggung: '+nm.textContent+'\nNomor: '+no.textContent+'\nJumlah: '+q+' jersey\nPerkiraan total: '+rp(q*price(q));
+    window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(m),'_blank','noopener');
+  });
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script>
+MO.extra=function(g,$){
+  g.set('.jr',{transformOrigin:'50% 100%'});
+  g.fromTo('.jr',{y:80,opacity:0,rotation:0},{y:0,opacity:1,rotation:function(i){return[-8,0,8][i]},duration:1,stagger:.14,ease:'back.out(1.5)',delay:.3});
+  g.to('.fan',{yPercent:5,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  g.fromTo('.flow .fill',{scaleY:0},{scaleY:1,ease:'none',scrollTrigger:{trigger:'.flow',start:'top 70%',end:'bottom 70%',scrub:true}});
+  window.moNum=function(el,v,fmt){var s=el._s||(el._s={v:parseInt(el.textContent.replace(/\D/g,''),10)||v});g.to(s,{v:v,duration:.55,ease:'power2.out',overwrite:true,onUpdate:function(){el.textContent=fmt(Math.round(s.v))}})};
+  window.moTint=function(el,prop,to){var from=getComputedStyle(el).getPropertyValue(prop).trim()||to;el._tw=el._tw||{};if(el._tw[prop])el._tw[prop].kill();var o={t:0};el._tw[prop]=g.to(o,{t:1,duration:.5,ease:'power2.out',onUpdate:function(){el.style.setProperty(prop,g.utils.interpolate(from,to,o.t))}})};
+  window.moFlip=function(el){g.fromTo(el,{scaleX:.05,transformOrigin:'50% 50%'},{scaleX:1,duration:.45,ease:'power3.out'})};
+  window.moPop=function(el){g.fromTo(el,{scale:1.08,transformOrigin:'50% 50%'},{scale:1,duration:.35,ease:'back.out(2)'})};
+};
+document.addEventListener('DOMContentLoaded',function(){
+var d=document.documentElement;if(!d.classList.contains('mo')||!window.gsap||!window.ScrollTrigger)return;
+var g=gsap,M=window.MO,$=function(s){return[].slice.call(document.querySelectorAll(s))};
+g.registerPlugin(ScrollTrigger);
+function split(el){var o=[];(function walk(n){[].slice.call(n.childNodes).forEach(function(c){if(c.nodeType===3){var f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(function(p){if(!p)return;if(/^\s+$/.test(p)){f.appendChild(document.createTextNode(' '));return}var a=document.createElement('span'),b=document.createElement('span');a.className='w';b.className='wi';b.textContent=p;a.appendChild(b);f.appendChild(a);o.push(b)});n.replaceChild(f,c)}else if(c.nodeType===1&&c.tagName!=='BR'){walk(c)}})})(el);return o}
+var h=document.querySelector('h1'),w=h?split(h):[];
+var tl=g.timeline({defaults:{ease:'power2.out'}});
+if(h){h.style.visibility='visible';tl.from(w,{yPercent:115,duration:.9,ease:'expo.out',stagger:.06},0)}
+tl.fromTo($(M.intro),{y:18,opacity:0},{y:0,opacity:1,duration:.7,stagger:.1,clearProps:'transform'},.25);
+ScrollTrigger.batch(M.rv,{start:'top 90%',once:true,onEnter:function(e){g.fromTo(e,{y:22,opacity:0},{y:0,opacity:1,duration:.6,stagger:.07,ease:'power2.out',overwrite:true,clearProps:'transform'})}});
+if(M.extra)M.extra(g,$);
+window.__mo=1});
+</script>
+</body>
+</html>
