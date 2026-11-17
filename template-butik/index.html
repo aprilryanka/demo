@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laras Busana | Busana harian wanita</title>
+<meta name="description" content="Laras Busana, butik busana harian wanita. Pilih ukuran, masukkan ke keranjang, dan pesan lewat WhatsApp.">
+<meta name="theme-color" content="#F4EFE8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bone:#F4EFE8;--paper:#FBF8F3;--ink:#1F1B18;--soft:#6A5F57;--olive:#4E5A3A;--olive-d:#3B452C;--rose:#C98F8A;--blush:#EBD3CE;--line:#DDD3C6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;font-family:"Hanken Grotesk",system-ui,sans-serif;font-size:1.0625rem;line-height:1.6;color:var(--ink);background:var(--bone)}
+h1,h2,h3{font-family:"Bodoni Moda",Georgia,serif;font-weight:500;line-height:1.08;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.7rem,8vw,5.2rem);letter-spacing:-.02em}
+h2{font-size:clamp(2rem,4.8vw,3.2rem);letter-spacing:-.01em}
+h3{font-size:1.15rem;font-weight:600}
+p{margin:0}
+a{color:inherit}
+svg{max-width:100%;display:block}
+button,select,input{font:inherit;color:inherit}
+.wrap{width:min(100% - 2.5rem,72rem);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-999px;top:.5rem;background:var(--ink);color:#fff;padding:.75rem 1rem;z-index:30;font-weight:600}
+.skip:focus{left:.5rem}
+:focus-visible{outline:3px solid var(--olive);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.75rem 1.5rem;font-weight:600;text-decoration:none;border:1.5px solid var(--ink);background:transparent;cursor:pointer;transition:background-color .15s,color .15s}
+.btn-main{background:var(--olive);border-color:var(--olive);color:#fff}
+.btn-main:hover:not(:disabled){background:var(--olive-d);border-color:var(--olive-d)}
+.btn-main:disabled{opacity:.45;cursor:not-allowed}
+.btn-line:hover{background:var(--ink);color:var(--bone)}
+.kick{font-size:.8125rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--olive)}
+.num{font-variant-numeric:tabular-nums}
+.hk{fill:none;stroke:#1F1B18;stroke-width:2.5;stroke-linecap:round}
+.dt{fill:none;stroke:rgba(31,27,24,.3);stroke-width:1.6;stroke-linecap:round}
+.ol{stroke:rgba(31,27,24,.5);stroke-width:1.6;stroke-linejoin:round}
+
+.top{position:sticky;top:0;z-index:10;background:var(--bone);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:68px}
+.brand{font-family:"Bodoni Moda",Georgia,serif;font-size:1.5rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.nav{display:none;gap:2rem}
+.nav a{text-decoration:none;font-weight:500;display:inline-flex;align-items:center;min-height:44px}
+.nav a:hover{text-decoration:underline;text-underline-offset:6px}
+.bag{display:inline-flex;align-items:center;gap:.55rem;min-height:44px;padding:0 .9rem;border:1.5px solid var(--ink);background:transparent;cursor:pointer;font-weight:600}
+.bag b{display:inline-grid;place-items:center;min-width:1.5rem;height:1.5rem;padding:0 .3rem;border-radius:999px;background:var(--ink);color:var(--bone);font-size:.8125rem}
+@media(min-width:52rem){.nav{display:flex}}
+
+.hero{padding:clamp(2rem,6vw,4.5rem) 0 clamp(3rem,8vw,6rem);overflow:hidden}
+.hero .wrap{display:grid;gap:2.5rem;align-items:center}
+.hero h1{margin:1rem 0 1.25rem}
+.hero h1 em{font-style:italic;color:var(--olive)}
+.hero p{max-width:32rem;color:var(--soft);font-size:1.125rem}
+.acts{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.rail{width:min(100%,34rem);margin-inline:auto}
+@media(min-width:56rem){.hero .wrap{grid-template-columns:1.05fr .95fr}}
+
+.info{border-block:1px solid var(--line);background:var(--paper)}
+.info ul{list-style:none;margin:0;padding:0;display:grid}
+.info li{padding:1.25rem 0;border-top:1px solid var(--line)}
+.info li:first-child{border-top:0}
+.info b{display:block}
+.info span{color:var(--soft);font-size:.9375rem}
+@media(min-width:48rem){.info ul{grid-template-columns:repeat(3,1fr)}.info li{border-top:0;border-left:1px solid var(--line);padding:1.6rem 1.5rem}.info li:first-child{border-left:0;padding-left:0}}
+
+.pad{padding:clamp(3.5rem,9vw,6.5rem) 0}
+.head{display:grid;gap:.75rem;margin-bottom:2.25rem;max-width:38rem}
+.head p{color:var(--soft)}
+
+.chips{display:flex;gap:.5rem;overflow-x:auto;padding-bottom:.5rem;margin-bottom:1.75rem}
+.chips button{flex:none;min-height:44px;padding:.4rem 1.1rem;border:1.5px solid var(--ink);background:transparent;cursor:pointer;font-weight:600}
+.chips button[aria-pressed=true]{background:var(--ink);color:var(--bone)}
+.grid{display:grid;gap:1.5rem}
+.card{display:grid;gap:.75rem;align-content:start}
+.card[hidden]{display:none}
+.card .art{aspect-ratio:4/5;display:grid;place-items:center;background:var(--bg)}
+.card .art svg{width:62%;height:auto}
+.card .line{display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
+.price{font-weight:600}
+.card .row{display:grid;grid-template-columns:5.5rem 1fr;gap:.5rem}
+select{min-height:48px;padding:.4rem .6rem;border:1.5px solid var(--ink);background:var(--paper);width:100%}
+@media(min-width:36rem){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:60rem){.grid{grid-template-columns:repeat(3,1fr);gap:2rem 1.5rem}}
+
+.sizes{background:var(--paper);border-block:1px solid var(--line)}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:26rem}
+caption{text-align:left;color:var(--soft);font-size:.9375rem;padding-bottom:.75rem}
+th,td{text-align:left;padding:.95rem .75rem .95rem 0;border-bottom:1px solid var(--line)}
+thead th{font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+tbody th{font-family:"Bodoni Moda",serif;font-size:1.2rem}
+
+.two{display:grid;gap:2.5rem}
+.steps{list-style:none;counter-reset:s;margin:0;padding:0}
+.steps li{counter-increment:s;display:grid;grid-template-columns:3.5rem 1fr;gap:1rem;padding:1.4rem 0;border-top:1px solid var(--line)}
+.steps li::before{content:counter(s,decimal-leading-zero);font-family:"Bodoni Moda",serif;font-size:2rem;line-height:1;color:var(--rose)}
+.steps p{color:var(--soft)}
+details{border-top:1px solid var(--line)}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;min-height:56px;padding:.6rem 0;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;line-height:1;flex:none}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 0 1.2rem;color:var(--soft);max-width:36rem}
+@media(min-width:56rem){.two{grid-template-columns:.8fr 1.2fr;gap:4rem}.two .head{margin:0}}
+
+footer{background:var(--ink);color:#D4CCC2;padding:2.5rem 0;font-size:.9375rem}
+footer .wrap{display:grid;gap:.75rem}
+footer b{color:#fff;font-family:"Bodoni Moda",serif;font-size:1.3rem}
+@media(min-width:48rem){footer .wrap{grid-template-columns:1fr auto;align-items:center}}
+
+dialog#cart{margin:0 0 0 auto;padding:0;border:0;width:min(27rem,100%);max-width:100%;height:100dvh;max-height:100dvh;background:var(--paper);color:var(--ink);box-shadow:-12px 0 40px rgba(31,27,24,.18)}
+dialog#cart::backdrop{background:rgba(31,27,24,.5)}
+.cart-in{display:grid;grid-template-rows:auto 1fr auto;height:100%}
+.cart-h{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 1.25rem;border-bottom:1px solid var(--line)}
+.cart-h h2{font-size:1.7rem}
+.x{width:44px;height:44px;border:1.5px solid var(--ink);background:transparent;font-size:1.5rem;line-height:1;cursor:pointer}
+.cart-b{overflow-y:auto;padding:0 1.25rem}
+.empty{padding:1.5rem 0;color:var(--soft)}
+.lines{list-style:none;margin:0;padding:0}
+.ln{display:grid;grid-template-columns:1fr auto;gap:.4rem 1rem;padding:1rem 0;border-bottom:1px solid var(--line);align-items:center}
+.who b{display:block}
+.who span{color:var(--soft);font-size:.9375rem}
+.ctl{display:inline-flex;align-items:center;gap:.25rem}
+.ctl .q{min-width:44px;min-height:44px;border:1.5px solid var(--ink);background:transparent;cursor:pointer;font-size:1.2rem}
+.ctl .num{min-width:2rem;text-align:center;font-weight:600}
+.lp{font-weight:600;justify-self:end}
+.rm{justify-self:end;min-height:44px;border:0;background:transparent;text-decoration:underline;color:var(--soft);cursor:pointer}
+.cart-f{padding:1.1rem 1.25rem 1.4rem;border-top:1px solid var(--line);display:grid;gap:.75rem}
+.sum{display:flex;justify-content:space-between;font-size:1.15rem}
+.hint{font-size:.875rem;color:var(--soft)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style>
+<script>
+/* Motion aktif hanya jika JS jalan. Mati otomatis saat prefers-reduced-motion atau URL memakai ?static */
+(function(){var d=document.documentElement,M=window.MO={rv:'.info li,.head,.card,.scroll,.steps li,details',intro:'.hero .kick,.hero p,.acts',hide:'.hang'};
+if(matchMedia('(prefers-reduced-motion: reduce)').matches||/[?&]static\b/.test(location.search))return;
+d.classList.add('mo');
+var s=document.createElement('style');
+s.textContent='.mo '+[M.rv,M.intro,M.hide].filter(Boolean).join(',').split(',').join(',.mo ')+'{opacity:0}.mo h1{visibility:hidden}.w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .06em .14em 0;margin:0 -.06em -.14em 0}';
+document.head.appendChild(s);
+function off(){if(!window.__mo)d.classList.remove('mo')}
+addEventListener('load',off);setTimeout(off,3500)})();
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="g-dress"><path class="hk" d="M60 2c0-6 8-6 8 0 0 4-4 5-8 8M60 10L14 34M60 10l46 24"/><path class="ol" d="M44 36l16 10 16-10 12 6-4 36 24 66H12l24-66-4-36z" fill="var(--c)"/><path class="dt" d="M36 78h48M60 46v32"/></g>
+    <g id="g-top"><path class="hk" d="M60 2c0-6 8-6 8 0 0 4-4 5-8 8M60 10L14 34M60 10l46 24"/><path class="ol" d="M40 36l20 8 20-8 28 20-12 16-10-8v50H34V64l-10 8L12 56z" fill="var(--c)"/><path class="dt" d="M48 38q12 12 24 0"/></g>
+    <g id="g-skirt"><path class="hk" d="M60 2c0-6 8-6 8 0 0 4-4 5-8 8M60 10L30 38M60 10l30 28"/><path class="ol" d="M34 40h52l26 100H8z" fill="var(--c)"/><path class="dt" d="M34 48h52M52 48L40 140M68 48l12 92M60 48v92"/></g>
+    <g id="g-pants"><path class="hk" d="M60 2c0-6 8-6 8 0 0 4-4 5-8 8M60 10L36 38M60 10l24 28"/><path class="ol" d="M36 40h48l14 100H66L60 76l-6 64H22z" fill="var(--c)"/><path class="dt" d="M60 40v36M36 48h48"/></g>
+    <g id="g-outer"><path class="hk" d="M60 2c0-6 8-6 8 0 0 4-4 5-8 8M60 10L14 34M60 10l46 24"/><path class="ol" d="M36 36l24 8 24-8 26 22-10 18-10-8 2 70H28l2-70-10 8L10 58z" fill="var(--c)"/><path class="dt" d="M60 44v94"/></g>
+    <g id="g-scarf"><path class="hk" d="M60 2c0-6 8-6 8 0 0 4-4 5-8 8M60 10L36 36M60 10l24 26"/><path class="ol" d="M30 36h60l6 98H24z" fill="var(--c)"/><path class="dt" d="M30 134v8M40 134v8M50 134v8M60 134v8M70 134v8M80 134v8M90 134v8M40 50q20 12 40 0"/></g>
+  </defs>
+</svg>
+<a class="skip" href="#isi">Langsung ke isi</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#" translate="no">Laras Busana</a>
+    <nav class="nav" aria-label="Utama">
+      <a href="#koleksi">Koleksi</a>
+      <a href="#ukuran">Panduan ukuran</a>
+      <a href="#cara">Cara pesan</a>
+    </nav>
+    <button class="bag" id="bag" type="button" aria-haspopup="dialog">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12H6zM9 8V6a3 3 0 016 0v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      Keranjang <b id="count" class="num">0</b>
+    </button>
+  </div>
+</header>
+
+<main id="isi">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kick">Busana harian wanita</span>
+      <h1>Potongan sederhana, <em>jatuhnya</em> rapi.</h1>
+      <p>Bahan adem, jahitan rapi, warna yang mudah dipadukan. Pilih ukuran, masukkan ke keranjang, lalu selesaikan pesanan lewat WhatsApp.</p>
+      <div class="acts">
+        <a class="btn btn-main" href="#koleksi">Lihat koleksi</a>
+        <a class="btn btn-line" href="#ukuran">Panduan ukuran</a>
+      </div>
+    </div>
+    <svg class="rail" viewBox="0 0 580 270" role="img" aria-label="Ilustrasi gantungan baju berisi outer, dress, blus, dan celana kulot">
+      <circle cx="290" cy="138" r="128" fill="#EBD3CE"/>
+      <path d="M8 26H572" stroke="#1F1B18" stroke-width="4" stroke-linecap="round"/>
+      <g transform="translate(6,24)"><g class="hang"><use href="#g-outer" width="150" height="187" style="--c:#1F1B18"/></g></g>
+      <g transform="translate(146,24)"><g class="hang"><use href="#g-dress" width="150" height="187" style="--c:#C98F8A"/></g></g>
+      <g transform="translate(286,24)"><g class="hang"><use href="#g-top" width="150" height="187" style="--c:#FBF8F3"/></g></g>
+      <g transform="translate(426,24)"><g class="hang"><use href="#g-pants" width="150" height="187" style="--c:#4E5A3A"/></g></g>
+    </svg>
+  </div>
+</section>
+
+<section class="info" aria-label="Info singkat">
+  <div class="wrap">
+    <ul>
+      <li><b>Kirim ke seluruh Indonesia</b><span>Resi dikirim lewat WhatsApp</span></li>
+      <li><b>Tukar ukuran 7 hari</b><span>Selama label masih terpasang</span></li>
+      <li><b>Pesan lewat WhatsApp</b><span>Admin balas pada jam kerja</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="pad" id="koleksi">
+  <div class="wrap">
+    <div class="head">
+      <span class="kick">Koleksi</span>
+      <h2>Enam potong untuk dipakai berulang.</h2>
+      <p>Harga dan nama produk hanya ilustrasi untuk contoh tampilan.</p>
+    </div>
+    <div class="chips" role="group" aria-label="Saring koleksi">
+      <button type="button" data-f="semua" aria-pressed="true">Semua</button>
+      <button type="button" data-f="atasan" aria-pressed="false">Atasan</button>
+      <button type="button" data-f="bawahan" aria-pressed="false">Bawahan</button>
+      <button type="button" data-f="dress" aria-pressed="false">Dress</button>
+      <button type="button" data-f="outer" aria-pressed="false">Outer</button>
+      <button type="button" data-f="aksesori" aria-pressed="false">Aksesori</button>
+    </div>
+    <div class="grid">
+      <article class="card" data-c="dress" data-id="p1" data-name="Dress Kinara" data-price="289000" style="--bg:#EBD3CE">
+        <div class="art"><svg viewBox="0 0 120 150" role="img" aria-label="Ilustrasi dress"><use href="#g-dress" style="--c:#C98F8A"/></svg></div>
+        <div class="line"><h3>Dress Kinara</h3><span class="price num">Rp 289.000</span></div>
+        <div class="row"><select aria-label="Ukuran Dress Kinara"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select><button class="btn btn-main add" type="button">Tambah ke keranjang</button></div>
+      </article>
+      <article class="card" data-c="atasan" data-id="p2" data-name="Tunik Ayu" data-price="179000" style="--bg:#E4E6D8">
+        <div class="art"><svg viewBox="0 0 120 150" role="img" aria-label="Ilustrasi tunik"><use href="#g-top" style="--c:#FBF8F3"/></svg></div>
+        <div class="line"><h3>Tunik Ayu</h3><span class="price num">Rp 179.000</span></div>
+        <div class="row"><select aria-label="Ukuran Tunik Ayu"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select><button class="btn btn-main add" type="button">Tambah ke keranjang</button></div>
+      </article>
+      <article class="card" data-c="bawahan" data-id="p3" data-name="Rok Plisket Sari" data-price="199000" style="--bg:#F0E3CF">
+        <div class="art"><svg viewBox="0 0 120 150" role="img" aria-label="Ilustrasi rok plisket"><use href="#g-skirt" style="--c:#4E5A3A"/></svg></div>
+        <div class="line"><h3>Rok Plisket Sari</h3><span class="price num">Rp 199.000</span></div>
+        <div class="row"><select aria-label="Ukuran Rok Plisket Sari"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select><button class="btn btn-main add" type="button">Tambah ke keranjang</button></div>
+      </article>
+      <article class="card" data-c="bawahan" data-id="p4" data-name="Celana Kulot Bumi" data-price="219000" style="--bg:#E8DDD0">
+        <div class="art"><svg viewBox="0 0 120 150" role="img" aria-label="Ilustrasi celana kulot"><use href="#g-pants" style="--c:#8A7565"/></svg></div>
+        <div class="line"><h3>Celana Kulot Bumi</h3><span class="price num">Rp 219.000</span></div>
+        <div class="row"><select aria-label="Ukuran Celana Kulot Bumi"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select><button class="btn btn-main add" type="button">Tambah ke keranjang</button></div>
+      </article>
+      <article class="card" data-c="outer" data-id="p5" data-name="Outer Lurik Senja" data-price="329000" style="--bg:#DDE1E6">
+        <div class="art"><svg viewBox="0 0 120 150" role="img" aria-label="Ilustrasi outer"><use href="#g-outer" style="--c:#2B2724"/></svg></div>
+        <div class="line"><h3>Outer Lurik Senja</h3><span class="price num">Rp 329.000</span></div>
+        <div class="row"><select aria-label="Ukuran Outer Lurik Senja"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select><button class="btn btn-main add" type="button">Tambah ke keranjang</button></div>
+      </article>
+      <article class="card" data-c="aksesori" data-id="p6" data-name="Pashmina Kain Rasa" data-price="119000" style="--bg:#EBD3CE">
+        <div class="art"><svg viewBox="0 0 120 150" role="img" aria-label="Ilustrasi pashmina"><use href="#g-scarf" style="--c:#E2C9A6"/></svg></div>
+        <div class="line"><h3>Pashmina Kain Rasa</h3><span class="price num">Rp 119.000</span></div>
+        <div class="row"><select aria-label="Ukuran Pashmina Kain Rasa"><option>All size</option></select><button class="btn btn-main add" type="button">Tambah ke keranjang</button></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="pad sizes" id="ukuran">
+  <div class="wrap">
+    <div class="head">
+      <span class="kick">Panduan ukuran</span>
+      <h2>Ukur sekali, pilih dengan yakin.</h2>
+    </div>
+    <div class="scroll" tabindex="0" role="region" aria-label="Tabel ukuran">
+      <table>
+        <caption>Ukuran dalam sentimeter dan hanya contoh tampilan.</caption>
+        <thead><tr><th scope="col">Ukuran</th><th scope="col">Lingkar dada</th><th scope="col">Panjang baju</th><th scope="col">Lingkar pinggang</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">S</th><td class="num">86</td><td class="num">62</td><td class="num">68</td></tr>
+          <tr><th scope="row">M</th><td class="num">90</td><td class="num">64</td><td class="num">72</td></tr>
+          <tr><th scope="row">L</th><td class="num">96</td><td class="num">66</td><td class="num">78</td></tr>
+          <tr><th scope="row">XL</th><td class="num">102</td><td class="num">68</td><td class="num">84</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="cara">
+  <div class="wrap two">
+    <div class="head">
+      <span class="kick">Cara pesan</span>
+      <h2>Tiga langkah, tanpa daftar akun.</h2>
+      <p>Semua pesanan dikonfirmasi lewat WhatsApp.</p>
+    </div>
+    <div>
+      <ol class="steps">
+        <li><div><h3>Pilih busana dan ukuran</h3><p>Masukkan ke keranjang, atur jumlahnya kapan saja.</p></div></li>
+        <li><div><h3>Kirim pesanan</h3><p>Tombol di keranjang membuka WhatsApp dengan daftar yang sudah terisi.</p></div></li>
+        <li><div><h3>Bayar, kami kemas dan kirim</h3><p>Transfer atau QRIS, lalu resi dikirim lewat chat.</p></div></li>
+      </ol>
+      <div style="margin-top:2rem">
+        <details><summary>Bagaimana kalau ukurannya tidak pas?</summary><p>Tukar ukuran dalam 7 hari selama label masih terpasang dan busana belum dicuci.</p></details>
+        <details><summary>Berapa lama pengiriman?</summary><p>Pesanan dikirim 1 sampai 2 hari kerja setelah pembayaran. Lama sampai tergantung kota tujuan.</p></details>
+        <details><summary>Bahannya apa saja?</summary><p>Tiap produk mencantumkan bahan dan cara perawatan di deskripsinya.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b translate="no">Laras Busana</b><br>Busana harian wanita. Alamat, WhatsApp, dan Instagram usaha Anda tampil di sini.</p>
+    <p>Contoh tampilan demo. Nama, harga, dan ukuran hanya ilustrasi.</p>
+  </div>
+</footer>
+
+<dialog id="cart" aria-labelledby="cartTitle">
+  <div class="cart-in">
+    <div class="cart-h"><h2 id="cartTitle">Keranjang</h2><button type="button" id="closeCart" class="x" aria-label="Tutup keranjang">&times;</button></div>
+    <div class="cart-b">
+      <p id="empty" class="empty">Keranjang masih kosong. Pilih busana lalu tekan Tambah ke keranjang.</p>
+      <ul id="lines" class="lines"></ul>
+    </div>
+    <div class="cart-f">
+      <div class="sum"><span>Subtotal</span><b id="subtotal" class="num">Rp 0</b></div>
+      <button type="button" class="btn btn-main" id="send" disabled>Pesan lewat WhatsApp</button>
+      <p class="hint">Ongkir dan ketersediaan dikonfirmasi lewat chat. Tidak ada data yang disimpan di situs.</p>
+    </div>
+  </div>
+</dialog>
+<p id="live" class="sr" aria-live="polite"></p>
+
+<script>
+(function(){
+  var WA='6280000000000'; /* ganti dengan nomor WhatsApp usaha */
+  var cart=[];
+  function $(s){return document.querySelector(s)}
+  function rp(n){return 'Rp '+n.toLocaleString('id-ID')}
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+  var dlg=$('#cart'),list=$('#lines'),sub=$('#subtotal'),cnt=$('#count'),empty=$('#empty'),send=$('#send'),live=$('#live');
+  function render(){
+    list.textContent='';var q=0,t=0;
+    cart.forEach(function(it,i){
+      q+=it.qty;t+=it.qty*it.price;
+      var li=el('li','ln'),who=el('div','who'),ctl=el('div','ctl'),minus=el('button','q','−'),plus=el('button','q','+'),del=el('button','rm','Hapus');
+      who.appendChild(el('b',null,it.name));who.appendChild(el('span',null,'Ukuran '+it.size));
+      minus.type=plus.type=del.type='button';
+      minus.setAttribute('aria-label','Kurangi '+it.name);plus.setAttribute('aria-label','Tambah '+it.name);del.setAttribute('aria-label','Hapus '+it.name+' dari keranjang');
+      minus.onclick=function(){it.qty--;if(it.qty<1)cart.splice(i,1);render()};
+      plus.onclick=function(){it.qty++;render()};
+      del.onclick=function(){cart.splice(i,1);render()};
+      ctl.appendChild(minus);ctl.appendChild(el('span','num',it.qty));ctl.appendChild(plus);
+      li.appendChild(who);li.appendChild(el('span','num lp',rp(it.qty*it.price)));li.appendChild(ctl);li.appendChild(del);
+      list.appendChild(li);
+    });
+    cnt.textContent=q;sub.textContent=rp(t);empty.hidden=cart.length>0;send.disabled=!cart.length;
+  }
+  [].slice.call(document.querySelectorAll('.add')).forEach(function(b){b.addEventListener('click',function(){
+    var c=b.closest('.card'),size=c.querySelector('select').value,id=c.dataset.id;
+    var f=cart.filter(function(x){return x.id===id&&x.size===size})[0];
+    if(f)f.qty++;else cart.push({id:id,name:c.dataset.name,price:+c.dataset.price,size:size,qty:1});
+    render();live.textContent=c.dataset.name+' ditambahkan ke keranjang';
+    if(window.moCart)moCart.bump(cnt);
+    b.textContent='Ditambahkan';setTimeout(function(){b.textContent='Tambah ke keranjang'},1200);
+  })});
+  function open(){dlg.showModal();if(window.moCart)moCart.open(dlg)}
+  function close(){if(window.moCart)moCart.close(dlg,function(){dlg.close()});else dlg.close()}
+  $('#bag').addEventListener('click',open);
+  $('#closeCart').addEventListener('click',close);
+  dlg.addEventListener('click',function(e){if(e.target===dlg)close()});
+  send.addEventListener('click',function(){
+    var t=0,lines=cart.map(function(it){t+=it.qty*it.price;return '• '+it.name+' ukuran '+it.size+' x'+it.qty+' = '+rp(it.qty*it.price)});
+    var msg='Halo, saya mau pesan:\n'+lines.join('\n')+'\nTotal: '+rp(t);
+    window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank','noopener');
+  });
+  var chips=[].slice.call(document.querySelectorAll('.chips button')),cards=[].slice.call(document.querySelectorAll('.card'));
+  chips.forEach(function(b){b.addEventListener('click',function(){
+    chips.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    cards.forEach(function(c){c.hidden=b.dataset.f!=='semua'&&c.dataset.c!==b.dataset.f});
+    if(window.moList)moList(cards);
+  })});
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script>
+MO.extra=function(g,$){
+  g.set('.hang',{transformOrigin:'50% 0%'});
+  g.fromTo('.hang',{y:-60,opacity:0},{y:0,opacity:1,duration:.9,stagger:.12,ease:'back.out(1.4)',delay:.3});
+  g.fromTo('.hang',{rotation:-2.2},{rotation:2.2,duration:2.6,yoyo:true,repeat:-1,ease:'sine.inOut',stagger:{each:.4,from:'random'},delay:1.3});
+  g.to('.rail',{yPercent:6,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  window.moList=function(items){var v=[].slice.call(items).filter(function(c){return!c.hidden});g.fromTo(v,{y:16,opacity:0},{y:0,opacity:1,duration:.45,stagger:.05,ease:'power2.out',overwrite:true,clearProps:'transform'})};
+  window.moCart={open:function(d){g.fromTo(d,{xPercent:100},{xPercent:0,duration:.45,ease:'power3.out'})},close:function(d,done){g.to(d,{xPercent:100,duration:.3,ease:'power2.in',onComplete:done})},bump:function(e){g.fromTo(e,{scale:1.4},{scale:1,duration:.45,ease:'back.out(2.2)'})}};
+};
+document.addEventListener('DOMContentLoaded',function(){
+var d=document.documentElement;if(!d.classList.contains('mo')||!window.gsap||!window.ScrollTrigger)return;
+var g=gsap,M=window.MO,$=function(s){return[].slice.call(document.querySelectorAll(s))};
+g.registerPlugin(ScrollTrigger);
+function split(el){var o=[];(function walk(n){[].slice.call(n.childNodes).forEach(function(c){if(c.nodeType===3){var f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(function(p){if(!p)return;if(/^\s+$/.test(p)){f.appendChild(document.createTextNode(' '));return}var a=document.createElement('span'),b=document.createElement('span');a.className='w';b.className='wi';b.textContent=p;a.appendChild(b);f.appendChild(a);o.push(b)});n.replaceChild(f,c)}else if(c.nodeType===1&&c.tagName!=='BR'){walk(c)}})})(el);return o}
+var h=document.querySelector('h1'),w=h?split(h):[];
+var tl=g.timeline({defaults:{ease:'power2.out'}});
+if(h){h.style.visibility='visible';tl.from(w,{yPercent:115,duration:.9,ease:'expo.out',stagger:.06},0)}
+tl.fromTo($(M.intro),{y:18,opacity:0},{y:0,opacity:1,duration:.7,stagger:.1,clearProps:'transform'},.25);
+ScrollTrigger.batch(M.rv,{start:'top 90%',once:true,onEnter:function(e){g.fromTo(e,{y:22,opacity:0},{y:0,opacity:1,duration:.6,stagger:.07,ease:'power2.out',overwrite:true,clearProps:'transform'})}});
+if(M.extra)M.extra(g,$);
+window.__mo=1});
+</script>
+</body>
+</html>
