@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Dapur Lawang | Rumah makan masakan rumahan</title>
+<meta name="description" content="Demo tampilan website rumah makan: menu, ukur tingkat pedas, promo mingguan, dan pesan meja lewat WhatsApp.">
+<meta name="theme-color" content="#0F3D2E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_v2/base.css">
+<script src="../_v2/base.js"></script>
+<style>
+:root{--cream:#F7EBD2;--green:#0F3D2E;--chili:#D8261C;--gold:#F3B52B;--ink:#1B1410;--acc:#D8261C;--pad:clamp(18px,4vw,56px);--f:"Bricolage Grotesque",system-ui,sans-serif;--m:"DM Mono",monospace;--grain:.12}
+body{background:var(--cream);color:var(--ink);font:400 1rem/1.55 var(--f)}
+.mono{font-family:var(--m);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;background:var(--chili);color:#fff;font-weight:700;text-decoration:none;border:0;cursor:pointer;transition:transform .25s,background .25s}
+.btn:hover{background:var(--ink);transform:translateY(-2px) rotate(-1deg)}
+.btn.gold{background:var(--gold);color:var(--ink)}.btn.gold:hover{background:var(--cream)}
+header{position:fixed;inset:0 0 auto 0;z-index:80;display:flex;justify-content:space-between;align-items:center;padding:6px var(--pad);background:rgba(15,61,46,.92);backdrop-filter:blur(10px);color:var(--cream)}
+header a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.brand{font-weight:800;font-size:1.25rem;letter-spacing:-.03em}
+header nav{display:flex;gap:clamp(14px,3vw,30px)}
+/* hero */
+.hero{background:var(--green);color:var(--cream);padding:120px var(--pad) 0;position:relative;overflow:hidden}
+.hero-grid{display:grid;gap:30px;align-items:center}
+.hero h1{margin:0;font-weight:800;font-variation-settings:"opsz" 96;letter-spacing:-.055em;line-height:.88;font-size:clamp(3.4rem,10.6vw,10.5rem)}
+.hero h1 span{display:block}
+.hero h1 .g{color:var(--gold)}
+.hero h1 .ch{display:inline-block;transform:translateY(105%);animation:up 1s cubic-bezier(.16,1,.3,1) forwards;animation-delay:calc(var(--i)*30ms + 100ms)}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.1em}
+.hero h1 .ln span{display:block}
+html:not(.mo) .hero h1 .ch{transform:none;animation:none}
+@keyframes up{to{transform:none}}
+.hero p{max-width:30rem;font-size:1.125rem;margin:26px 0}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.plate{position:relative;justify-self:center;width:min(86vw,520px)}
+.plate svg{width:100%;height:auto;display:block;filter:drop-shadow(0 30px 40px rgba(0,0,0,.4))}
+.steam path{animation:steam 3s ease-in-out infinite;transform-origin:center bottom}
+.steam path:nth-child(2){animation-delay:.8s}.steam path:nth-child(3){animation-delay:1.6s}
+@keyframes steam{0%,100%{opacity:.15;transform:translateY(0)}50%{opacity:.6;transform:translateY(-14px)}}
+.star{position:absolute;right:-2%;top:-6%;width:clamp(110px,24vw,190px);aspect-ratio:1;display:grid;place-items:center;text-align:center;background:var(--gold);color:var(--ink);font-weight:800;line-height:1;clip-path:polygon(50% 0,59% 12%,73% 7%,77% 22%,92% 25%,88% 40%,100% 50%,88% 60%,92% 75%,77% 78%,73% 93%,59% 88%,50% 100%,41% 88%,27% 93%,23% 78%,8% 75%,12% 60%,0 50%,12% 40%,8% 25%,23% 22%,27% 7%,41% 12%);animation:spin 28s linear infinite}
+.star b{display:block;font-size:clamp(2.2rem,6vw,3.8rem);letter-spacing:-.05em}
+.star small{display:block;font-size:.8rem;font-weight:700;padding:0 18px}
+.star i{position:absolute;inset:0;display:grid;place-items:center;font-style:normal;animation:spin 28s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.mq{background:var(--chili);color:var(--cream);border-block:3px solid var(--ink);margin-top:60px;transform:rotate(-1.6deg);margin-inline:-3vw}
+.mq span{font-weight:800;font-size:clamp(1.5rem,4vw,3rem);letter-spacing:-.03em;padding:12px 0;white-space:nowrap;text-transform:uppercase}
+.mq span::after{content:"";display:inline-block;width:.5em;height:.5em;background:var(--gold);border-radius:50%;margin:0 .8em}
+.info{background:var(--cream);display:grid;gap:0;border-bottom:3px solid var(--ink)}
+.info div{padding:22px var(--pad);border-top:1px solid rgba(27,20,16,.25)}
+.info dt{color:var(--chili)}.info dd{margin:4px 0 0;font-weight:600;font-size:1.1rem}
+/* heat */
+.heat{padding:clamp(70px,10vw,130px) var(--pad);background:color-mix(in srgb,var(--chili) calc(var(--h,.4)*100%),var(--cream));transition:background .5s,color .4s;--tx:var(--ink)}
+.heat.hot{color:var(--cream)}
+.heat h2{margin:0 0 8px;font-weight:800;letter-spacing:-.05em;line-height:.9;font-size:clamp(2.6rem,8vw,7rem)}
+.meter{display:grid;gap:18px;margin:34px 0 10px;max-width:760px}
+.chilis{display:flex;gap:6px}
+.chilis svg{width:clamp(30px,6vw,52px);height:auto;fill:rgba(27,20,16,.25);transition:fill .3s,transform .3s}
+.hot .chilis svg{fill:rgba(247,235,210,.3)}
+.chilis svg.on{fill:var(--chili);transform:rotate(-8deg) scale(1.08)}
+.hot .chilis svg.on{fill:var(--gold)}
+input[type=range]{width:100%;height:44px;accent-color:var(--ink);cursor:pointer}
+.hot input[type=range]{accent-color:var(--gold)}
+.lvl{font-weight:800;font-size:clamp(1.4rem,3vw,2.2rem);letter-spacing:-.03em}
+/* menu */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:34px 0 26px}
+.chip{min-height:44px;padding:0 20px;border-radius:999px;border:2px solid currentColor;background:transparent;font-weight:600;cursor:pointer;transition:background .2s,color .2s}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.hot .chip[aria-pressed=true]{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr))}
+.card{background:var(--cream);color:var(--ink);border:3px solid var(--ink);border-radius:18px;overflow:hidden;transition:transform .35s,opacity .35s,filter .35s,box-shadow .35s}
+.card:hover{transform:translateY(-6px) rotate(-1.2deg);box-shadow:8px 8px 0 var(--ink)}
+.card.off{opacity:.3;filter:grayscale(.9)}
+.card[hidden]{display:none}
+.card .art{aspect-ratio:5/3;display:block}
+.card .art svg{width:100%;height:100%;display:block}
+.card .bd{padding:14px 16px 18px}
+.card h3{margin:0;font-weight:800;font-size:1.3rem;letter-spacing:-.03em;line-height:1.1}
+.card p{margin:6px 0 12px;font-size:.92rem;opacity:.8}
+.card .row{display:flex;justify-content:space-between;align-items:center}
+.card .pr{font-family:var(--m);font-weight:500}
+.card .cl{display:flex;gap:2px}.card .cl svg{width:14px;fill:rgba(27,20,16,.18)}.card .cl svg.on{fill:var(--chili)}
+.tag{position:absolute;top:10px;left:10px;background:var(--gold);color:var(--ink);padding:3px 10px;border-radius:99px;font-size:.72rem;font-weight:700}
+.card{position:relative}
+/* promo */
+.promo{padding:clamp(70px,10vw,130px) var(--pad);background:var(--gold);display:grid;gap:20px;color:var(--ink)}
+.promo h2{margin:0;font-weight:800;letter-spacing:-.05em;line-height:.9;font-size:clamp(2.6rem,8vw,7rem)}
+.pc{background:var(--green);color:var(--cream);border-radius:24px;padding:28px;position:relative;overflow:hidden}
+.pc b{display:block;font-weight:800;font-size:clamp(4rem,12vw,9rem);letter-spacing:-.07em;line-height:.8;color:var(--gold)}
+.pc.r{background:var(--chili)}.pc.r b{color:var(--cream)}
+.pc h3{margin:12px 0 6px;font-size:1.4rem;letter-spacing:-.02em}.pc p{margin:0;opacity:.85}
+/* meja */
+.meja{background:var(--green);color:var(--cream);padding:clamp(70px,10vw,130px) var(--pad);display:grid;gap:36px}
+.meja h2{margin:0;font-weight:800;letter-spacing:-.05em;line-height:.9;font-size:clamp(2.6rem,8vw,7rem)}
+.meja h2 em{font-style:normal;color:var(--gold)}
+form{display:grid;gap:16px;max-width:560px}
+label{display:grid;gap:6px}
+input[type=text],input[type=date],select{min-height:52px;padding:0 16px;border-radius:12px;border:2px solid var(--cream);background:transparent;color:var(--cream)}
+select option{color:#000}
+.step{display:flex;align-items:center;gap:14px}
+.step button{width:52px;height:52px;border-radius:50%;border:2px solid var(--cream);background:transparent;font-size:1.5rem;cursor:pointer;color:var(--cream);transition:background .2s,color .2s}
+.step button:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.step output{font-weight:800;font-size:2rem;min-width:2ch;text-align:center}
+footer{background:var(--ink);color:rgba(247,235,210,.7);padding:18px var(--pad);font-size:.85rem}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.25fr .75fr}.info{grid-template-columns:repeat(3,1fr)}.info div{border-top:0;border-left:1px solid rgba(27,20,16,.25)}.info div:first-child{border-left:0}.promo{grid-template-columns:1.2fr 1fr 1fr;align-items:end}.meja{grid-template-columns:1fr 1fr;align-items:center}}
+</style>
+</head>
+<body class="grain">
+<a class="skip" href="#menu">Lewati ke menu</a>
+<header><a class="brand" href="#" translate="no">Dapur Lawang</a><nav class="mono"><a href="#pedas">Pedas</a><a href="#menu">Menu</a><a href="#meja">Pesan meja</a></nav></header>
+<main>
+<section class="hero">
+ <div class="hero-grid">
+  <div>
+   <h1 id="h1" aria-label="Masakan ibu, tanpa harus pulang kampung."><span class="ln" aria-hidden="true"><span data-split>Masakan ibu,</span></span><span class="ln g" aria-hidden="true"><span data-split>tanpa harus</span></span><span class="ln g" aria-hidden="true"><span data-split>pulang kampung.</span></span></h1>
+   <p class="rv" style="--d:.5s">Lauk dimasak tiap pagi, sambal diulek sendiri, nasi selalu hangat. Datang berdua atau rombongan, mejanya bisa dipesan dulu.</p>
+   <div class="cta rv" style="--d:.65s"><a class="btn gold" href="#meja">Pesan meja</a><a class="btn" href="#pedas">Coba ukur pedasmu</a></div>
+  </div>
+  <div class="plate">
+   <svg viewBox="0 0 520 520" role="img" aria-label="Sepiring nasi dengan ayam bakar, sambal, dan lalapan">
+    <circle cx="260" cy="270" r="240" fill="#F7EBD2"/><circle cx="260" cy="270" r="206" fill="none" stroke="#D9C49B" stroke-width="4"/><circle cx="260" cy="270" r="170" fill="#FFF8E6"/>
+    <path d="M150 300c0-70 50-110 110-110s110 40 110 110c0 20-20 34-110 34s-110-14-110-34z" fill="#fff"/>
+    <g fill="#E9E1CE"><circle cx="210" cy="250" r="4"/><circle cx="240" cy="232" r="4"/><circle cx="276" cy="240" r="4"/><circle cx="304" cy="262" r="4"/><circle cx="224" cy="282" r="4"/><circle cx="262" cy="270" r="4"/><circle cx="290" cy="296" r="4"/></g>
+    <path d="M290 330c30-40 90-48 128-14 20 18 16 50-8 62-34 18-96 6-120-48z" fill="#8A4A1C"/><path d="M300 336c30-34 78-40 110-10" fill="none" stroke="#F3B52B" stroke-width="6" stroke-linecap="round" opacity=".7"/><path d="M322 360c20 10 52 12 76-4" fill="none" stroke="#5A2C0E" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+    <circle cx="170" cy="370" r="40" fill="#D8261C"/><circle cx="170" cy="370" r="30" fill="#E9453A"/><g fill="#8A140E"><circle cx="160" cy="362" r="3"/><circle cx="178" cy="376" r="3"/><circle cx="166" cy="382" r="3"/></g>
+    <g fill="#5E9A3B"><ellipse cx="150" cy="190" rx="34" ry="16" transform="rotate(-28 150 190)"/><ellipse cx="190" cy="168" rx="30" ry="14" transform="rotate(14 190 168)"/></g>
+    <g><circle cx="230" cy="402" r="20" fill="#C6E0A2"/><circle cx="230" cy="402" r="12" fill="#E9F3D2"/><circle cx="262" cy="410" r="20" fill="#C6E0A2"/><circle cx="262" cy="410" r="12" fill="#E9F3D2"/></g>
+    <g class="steam" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"><path d="M220 150c-16-20 16-34 0-56"/><path d="M262 140c-16-20 16-34 0-56"/><path d="M304 150c-16-20 16-34 0-56"/></g>
+   </svg>
+   <div class="star" aria-label="Promo 4 plus 1, paket keluarga"><i aria-hidden="true"></i><div><b>4+1</b><small>Paket keluarga</small></div></div>
+  </div>
+ </div>
+ <div class="mq" aria-hidden="true"><div class="mq-in" id="mq"></div></div>
+</section>
+<dl class="info" style="margin:0">
+ <div><dt class="mono">Jam buka</dt><dd>Setiap hari, 10.00–21.00 <small>(contoh)</small></dd></div>
+ <div><dt class="mono">Lokasi</dt><dd>Kawasan pusat kota, parkir mobil dan motor</dd></div>
+ <div><dt class="mono">Cara pesan</dt><dd>Makan di tempat, bungkus, atau antar</dd></div>
+</dl>
+
+<section class="heat" id="pedas" aria-labelledby="ph">
+ <p class="mono rv">Pedas-o-meter</p>
+ <h2 id="ph" class="rv">Seberapa kuat lidahmu hari ini?</h2>
+ <div class="meter">
+  <div class="chilis" id="chilis" aria-hidden="true"></div>
+  <input type="range" id="lvl" min="0" max="5" step="1" value="2" aria-label="Tingkat pedas yang kuat kamu makan">
+  <div class="lvl" id="lvlTxt" aria-live="polite"></div>
+ </div>
+ <div class="chips" role="group" aria-label="Kategori menu" id="chips"></div>
+ <div class="cards" id="menu"></div>
+ <p style="margin-top:22px;opacity:.8;max-width:34rem">Harga per porsi dan hanya ilustrasi untuk contoh tampilan. Menu yang terlalu pedas buatmu akan memudar.</p>
+</section>
+
+<section class="promo" aria-labelledby="prh">
+ <h2 id="prh" class="rv">Promo minggu ini</h2>
+ <div class="pc rv" style="--d:.1s"><b>4+1</b><h3>Paket keluarga</h3><p>Pesan empat porsi nasi lauk, porsi kelima kami yang traktir. Berlaku makan di tempat.</p></div>
+ <div class="pc r rv" style="--d:.2s"><b>15%</b><h3>Jam makan siang</h3><p>Senin sampai Jumat, pukul 11.00 sampai 14.00.</p></div>
+</section>
+
+<section class="meja" id="meja" aria-labelledby="mh">
+ <h2 id="mh" class="rv">Pesan meja,<br><em>duduk tenang.</em></h2>
+ <form id="f" class="rv" style="--d:.15s">
+  <label>Nama<input type="text" id="n" placeholder="Nama pemesan" autocomplete="name"></label>
+  <label>Tanggal<input type="date" id="d"></label>
+  <label>Jam<select id="t"><option>11.00</option><option>12.00</option><option selected>13.00</option><option>18.00</option><option>19.00</option><option>20.00</option></select></label>
+  <div><div class="mono" style="margin-bottom:6px">Jumlah orang</div><div class="step"><button type="button" id="mn" aria-label="Kurangi">−</button><output id="pp">4</output><button type="button" id="pl" aria-label="Tambah">+</button></div></div>
+  <button class="btn gold" type="submit">Kirim lewat WhatsApp</button>
+ </form>
+</section>
+</main>
+<footer>Contoh tampilan demo. Nama, menu, harga, jam buka, dan nomor WhatsApp adalah ilustrasi.</footer>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},V=V2;
+var chili='<svg viewBox="0 0 24 40" aria-hidden="true"><path d="M12 2c3 0 4 3 4 5 5 3 8 11 6 20-1 6-5 10-9 11-3-1-5-6-4-14 1-7-1-10-3-12 1-3 3-10 6-10z"/></svg>';
+var M=[
+ ['Ayam bakar madu','utama',32000,1,'Paha ayam kampung, kecap madu, arang.','#8A4A1C','Favorit'],
+ ['Rendang sapi','utama',38000,3,'Dimasak pelan sampai bumbunya kering.','#4A2412'],
+ ['Ikan nila goreng','utama',34000,2,'Garing luar, lembut dalam, sambal dabu.','#D69A3A'],
+ ['Empal gepuk','utama',36000,1,'Manis gurih, digepuk lalu digoreng.','#7A4420'],
+ ['Sayur asem','sayur',14000,0,'Segar, asam manis, jagung dan labu.','#8FB35A'],
+ ['Tumis kangkung','sayur',16000,2,'Api besar, terasi, cabai iris.','#4E8A35'],
+ ['Terong balado','sayur',15000,3,'Terong lembut, balado merah.','#7A2A58'],
+ ['Sambal matah','sayur',8000,3,'Serai, bawang, cabai mentah.','#E9453A'],
+ ['Sambal setan','sayur',9000,5,'Hanya untuk yang berani.','#B8140C'],
+ ['Es teh manis','minum',6000,0,'Teh tubruk, gula batu.','#C98A3C'],
+ ['Es jeruk','minum',10000,0,'Jeruk peras, es batu.','#F3B52B'],
+ ['Es cendol','minum',14000,0,'Santan, gula aren, cendol hijau.','#7DB36A']
+];
+var CAT=[['semua','Semua'],['utama','Lauk utama'],['sayur','Sayur dan sambal'],['minum','Minuman']];
+function art(m){var c=m[5],k=m[1],s='<svg viewBox="0 0 250 150" preserveAspectRatio="xMidYMid slice"><rect width="250" height="150" fill="'+(k==='utama'?'#F3B52B':k==='sayur'?'#CFE3B0':'#BFE0E0')+'"/>';
+ if(k==='minum')s+='<path d="M90 30h70l-10 100c-1 8-8 12-25 12s-24-4-25-12z" fill="#fff" opacity=".7"/><path d="M96 70h58l-6 60c-1 6-6 9-23 9s-22-3-23-9z" fill="'+c+'"/><rect x="106" y="16" width="8" height="64" rx="4" fill="#D8261C" transform="rotate(14 110 48)"/><circle cx="116" cy="92" r="6" fill="#fff" opacity=".5"/><circle cx="138" cy="106" r="5" fill="#fff" opacity=".4"/>';
+ else{s+='<circle cx="125" cy="78" r="62" fill="#FFF8E6" stroke="#fff" stroke-width="6"/>';
+  if(k==='utama')s+='<path d="M80 92c4-30 36-44 66-34 24 8 28 36 8 50-24 14-70 10-74-16z" fill="'+c+'"/><path d="M92 86c14-14 40-16 58-4" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".35"/>';
+  else s+='<ellipse cx="125" cy="84" rx="42" ry="30" fill="'+c+'"/><circle cx="108" cy="76" r="6" fill="#fff" opacity=".25"/><circle cx="140" cy="90" r="5" fill="#fff" opacity=".2"/><path d="M70 60c10-16 28-18 40-8M180 56c-10-14-24-16-34-8" fill="none" stroke="#5E9A3B" stroke-width="7" stroke-linecap="round"/>'}
+ return s+'</svg>'}
+function cl(h){var o='';for(var i=0;i<5;i++)o+=chili.replace('<svg','<svg class="'+(i<h?'on':'')+'"');return o}
+var cards=$('#menu'),h='';
+M.forEach(function(m,i){h+='<article class="card rv" data-c="'+m[1]+'" data-h="'+m[3]+'" style="--d:'+(i%4)*.07+'s">'+(m[6]?'<span class="tag">'+m[6]+'</span>':'')+'<span class="art">'+art(m)+'</span><div class="bd"><h3>'+m[0]+'</h3><p>'+m[4]+'</p><div class="row"><span class="pr">'+V.rp(m[2])+'</span><span class="cl" title="Tingkat pedas '+m[3]+' dari 5" role="img" aria-label="Pedas '+m[3]+' dari 5">'+cl(m[3])+'</span></div></div></article>'});
+cards.innerHTML=h;
+var ch='';CAT.forEach(function(c,i){ch+='<button class="chip" type="button" data-c="'+c[0]+'" aria-pressed="'+(i===0)+'">'+c[1]+'</button>'});$('#chips').innerHTML=ch;
+$('#chips').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;[].forEach.call($('#chips').children,function(x){x.setAttribute('aria-pressed',x===b)});var c=b.dataset.c;[].forEach.call(cards.children,function(k){k.hidden=c!=='semua'&&k.dataset.c!==c})});
+var L=['Tidak pedas sama sekali','Pedas malu-malu','Pedas sedang','Pedas mantap','Pedas banget','Pedas gila'],box=$('#chilis'),ci='';for(var i=0;i<5;i++)ci+=chili;box.innerHTML=ci;
+function heat(v){v=+v;[].forEach.call(box.children,function(s,i){s.classList.toggle('on',i<v)});var n=0;[].forEach.call(cards.children,function(k){var off=+k.dataset.h>v;k.classList.toggle('off',off);if(!off)n++});
+ $('#lvlTxt').textContent='Level '+v+': '+L[v]+'. '+n+' dari '+M.length+' menu cocok.';var s=$('#pedas');s.style.setProperty('--h',(.12+v*.17).toFixed(2));s.classList.toggle('hot',v>=4)}
+$('#lvl').addEventListener('input',function(e){heat(e.target.value)});heat(2);
+$('#mq').parentNode.setAttribute('aria-hidden','true');V.mq($('#mq'),['Ayam bakar madu','Rendang sapi','Sambal diulek sendiri','Nasi selalu hangat','Es cendol','Pesan meja dulu']);
+var pp=4;$('#mn').onclick=function(){pp=Math.max(1,pp-1);$('#pp').textContent=pp};$('#pl').onclick=function(){pp=Math.min(40,pp+1);$('#pp').textContent=pp};
+var dt=new Date();dt.setDate(dt.getDate()+1);$('#d').value=dt.toISOString().slice(0,10);
+$('#f').addEventListener('submit',function(e){e.preventDefault();V.wa(['Halo Dapur Lawang, saya mau pesan meja:','Nama: '+($('#n').value||'-'),'Tanggal: '+$('#d').value,'Jam: '+$('#t').value,'Jumlah orang: '+pp])});
+document.querySelectorAll('[data-split]').forEach(function(el,k){if(!V.mo)return;var t=el.textContent;el.textContent='';t.split('').forEach(function(c,i){var s=document.createElement('span');s.className='ch';s.style.setProperty('--i',i+k*8);s.textContent=c===' '?' ':c;el.appendChild(s)})});
+V.rv();V.ok();
+})();
+</script>
+</body>
+</html>
