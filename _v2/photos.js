@@ -1,6 +1,6 @@
-/* Strip foto contoh (Pixabay, gambar ditautkan langsung). Dipakai: V2photos({...}) sebelum <footer>. Gagal muat => bagian disembunyikan. */
+/* Strip foto contoh (Pixabay, disimpan lokal). Dipakai: V2photos({...}) sebelum <footer>. Gagal muat => bagian disembunyikan. */
 (function(){
-var C='https://cdn.pixabay.com/photo/';
+var C=(document.currentScript&&document.currentScript.src||'').replace(/photos\.js.*$/,'img/');
 window.V2photos=function(o){
  var host=document.querySelector(o.before||'footer');if(!host)return;
  if(!document.getElementById('phcss')){var st=document.createElement('style');st.id='phcss';st.textContent=
@@ -19,7 +19,7 @@ window.V2photos=function(o){
  var s=document.createElement('section');s.className='ph';s.setAttribute('aria-labelledby','phh');
  s.style.setProperty('--phbg',o.bg);s.style.setProperty('--phfg',o.fg);s.style.setProperty('--phfont',"'"+o.font+"'");
  s.innerHTML='<h2 id="phh">'+o.title+'</h2><p>'+o.sub+'</p><div class="phg">'+o.items.map(function(it,i){
-  return '<figure style="--d:'+(i*.12)+'s"><img src="'+C+it[0].replace('_1280','_640')+'" alt="'+it[1]+'" loading="lazy" decoding="async" referrerpolicy="no-referrer"></figure>'}).join('')+'</div><small>Foto contoh dari Pixabay, hanya untuk tampilan demo.</small>';
+  return '<figure style="--d:'+(i*.12)+'s"><img src="'+C+it[0]+'" alt="'+it[1]+'" loading="lazy" decoding="async"></figure>'}).join('')+'</div><small>Foto contoh dari Pixabay, hanya untuk tampilan demo.</small>';
  host.parentNode.insertBefore(s,host);
  var g=s.querySelector('.phg');
  [].forEach.call(g.querySelectorAll('img'),function(im){im.addEventListener('error',function(){im.parentNode.remove();if(!g.children.length)s.remove()})});
