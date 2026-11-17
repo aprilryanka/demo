@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Garis Merah | Jersey dan seragam tim</title>
+<meta name="description" content="Demo tampilan website jersey dan seragam tim: koleksi, alur pesan custom, tabel ukuran, dan pesan lewat WhatsApp.">
+<meta name="theme-color" content="#FAFAF7">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300..900&family=JetBrains+Mono:wght@400;500&family=Barlow+Condensed:wght@800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_v2/base.css">
+<script src="../_v2/base.js"></script>
+<script src="../_v2/jersey.js"></script>
+<style>
+:root{--paper:#FAFAF7;--ink:#0A0A0A;--red:#E3170A;--grey:#E8E8E2;--acc:#E3170A;--pad:clamp(18px,3.4vw,48px);--f:"Inter Tight",system-ui,sans-serif;--m:"JetBrains Mono",monospace;--grain:.05}
+body{background:var(--paper);color:var(--ink);font:400 1.0625rem/1.5 var(--f)}
+.mono{font-family:var(--m);font-size:.72rem;letter-spacing:.04em;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:30px;min-height:56px;padding:0 24px;background:var(--red);color:#fff;font-weight:600;text-decoration:none;border:0;cursor:pointer;transition:background .2s,gap .3s}
+.btn::after{content:"→";transition:transform .3s}.btn:hover{background:var(--ink);gap:44px}.btn:hover::after{transform:translateX(4px)}
+.btn.o{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}.btn.o:hover{background:var(--ink);color:#fff}
+header{position:fixed;inset:0 0 auto 0;z-index:80;display:flex;justify-content:space-between;align-items:center;padding:6px var(--pad);background:var(--paper);border-bottom:1px solid var(--ink)}
+header a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.brand{font-weight:800;letter-spacing:-.03em;font-size:1.15rem}.brand i{display:inline-block;width:.7em;height:.7em;background:var(--red);margin-right:8px}
+header nav{display:flex;gap:clamp(14px,3vw,30px)}
+.hero{min-height:100svh;padding:90px var(--pad) 0;display:grid;border-bottom:1px solid var(--ink)}
+.hg{display:grid;gap:0;align-content:stretch}
+.hl{padding:36px 0;display:flex;flex-direction:column;justify-content:space-between;gap:30px}
+.hl h1{margin:0;font-weight:800;letter-spacing:-.06em;line-height:.86;font-size:clamp(3.3rem,9.4vw,9.4rem)}
+.hl h1 em{font-style:normal;color:var(--red)}
+.hl h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}.hl h1 .ln>span{display:block}
+.mo .hl h1 .ln>span{transform:translateY(105%);animation:up 1.1s cubic-bezier(.16,1,.3,1) forwards;animation-delay:calc(var(--i)*.12s + .15s)}
+@keyframes up{to{transform:none}}
+.hl p{margin:0;max-width:28rem}
+.hl .cta{display:flex;gap:10px;flex-wrap:wrap}
+.hr{position:relative;border-top:1px solid var(--ink);display:grid;place-items:center;padding:30px 0;overflow:hidden;min-height:420px}
+.ghost{position:absolute;font-weight:800;letter-spacing:-.08em;line-height:.75;font-size:clamp(14rem,40vw,36rem);color:transparent;-webkit-text-stroke:1.5px rgba(10,10,10,.22);user-select:none;pointer-events:none;font-family:"Barlow Condensed",var(--f)}
+.hero-j{position:relative;width:min(70vw,420px);transition:transform .5s cubic-bezier(.2,.9,.3,1.2);filter:drop-shadow(0 30px 24px rgba(0,0,0,.2))}
+.hero-j:hover{transform:rotate(-4deg) scale(1.04)}
+.hero-j svg{width:100%;display:block}
+.sw{position:absolute;left:0;bottom:16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.sw button{width:44px;height:44px;border:1.5px solid var(--ink);background:var(--c);cursor:pointer;transition:transform .2s}
+.sw button:hover{transform:translateY(-4px)}
+.sw button[aria-pressed=true]{box-shadow:0 0 0 3px var(--paper),0 0 0 5px var(--ink)}
+.mq{background:var(--ink);color:var(--paper);border-bottom:1px solid var(--ink)}
+.mq span{font-weight:800;font-size:clamp(1.8rem,5vw,4rem);letter-spacing:-.04em;text-transform:uppercase;padding:10px 0;white-space:nowrap;color:transparent;-webkit-text-stroke:1.5px var(--paper)}
+.mq span:nth-child(3n+1){color:var(--paper)}
+.mq span::after{content:"/";margin:0 .6em;color:var(--red);-webkit-text-stroke:0}
+section.p{padding:clamp(70px,10vw,130px) var(--pad);border-bottom:1px solid var(--ink)}
+.sh{display:grid;gap:14px;margin-bottom:44px}
+h2{margin:0;font-weight:800;letter-spacing:-.055em;line-height:.88;font-size:clamp(2.6rem,7.4vw,7rem)}
+h2 em{font-style:normal;color:var(--red)}
+.gr{display:grid;gap:0;border:1px solid var(--ink)}
+.cd{padding:22px;border-top:1px solid var(--ink);display:grid;gap:14px;transition:background .3s;background:var(--paper)}
+.cd:first-child{border-top:0}
+.cd:hover{background:var(--grey)}
+.cd .j{aspect-ratio:1;display:grid;place-items:center;transition:transform .5s cubic-bezier(.2,.9,.3,1.2)}
+.cd:hover .j{transform:translateY(-8px) rotate(-3deg) scale(1.05)}
+.cd .j svg{width:72%}
+.cd h3{margin:0;font-size:1.6rem;letter-spacing:-.04em;font-weight:800}
+.cd .rw{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.cd .rw b{font-family:var(--m);font-weight:500;color:var(--red)}
+/* alur */
+.fl{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.fl li{display:grid;grid-template-columns:clamp(70px,14vw,200px) 1fr;gap:20px;padding:26px 0;border-bottom:1px solid var(--ink);align-items:baseline;position:relative}
+.fl li::before{content:"";position:absolute;left:0;bottom:-1px;height:4px;width:0;background:var(--red);transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+.fl li.in::before{width:100%}
+.fl b{font-weight:800;letter-spacing:-.07em;line-height:.8;font-size:clamp(3.6rem,10vw,9rem);color:var(--red)}
+.fl h3{margin:0 0 6px;font-size:clamp(1.4rem,2.8vw,2.4rem);letter-spacing:-.04em}
+.fl p{margin:0;max-width:34rem}
+/* ukuran */
+.uk{display:grid;gap:34px}
+table{border-collapse:collapse;width:100%;font-family:var(--m);font-size:.95rem}
+th,td{padding:14px 12px;border:1px solid var(--ink);text-align:left}
+th{background:var(--ink);color:#fff;font-weight:500}
+tbody tr{transition:background .2s}tbody tr:hover{background:var(--grey)}
+tbody tr.rec{background:var(--red);color:#fff}
+.fm{display:grid;gap:10px;align-content:start}
+.fm input{min-height:60px;font-size:2rem;font-weight:800;letter-spacing:-.04em;padding:0 16px;border:1.5px solid var(--ink);background:#fff;width:100%}
+.res{font-weight:700;min-height:1.6em}
+.wa{background:var(--red);color:#fff;padding:clamp(70px,10vw,130px) var(--pad);display:grid;gap:30px}
+.wa h2{color:#fff}.wa .btn{background:var(--ink)}.wa .btn:hover{background:#fff;color:var(--ink)}
+footer{padding:18px var(--pad);font-size:.85rem;background:var(--ink);color:rgba(255,255,255,.7)}
+@media(min-width:900px){.hero{padding-top:70px}.hg{grid-template-columns:1.15fr .85fr;min-height:calc(100svh - 70px)}.hl{padding:50px 40px 40px 0}.hr{border-top:0;border-left:1px solid var(--ink)}.gr{grid-template-columns:repeat(3,1fr)}.cd{border-top:0;border-left:1px solid var(--ink)}.cd:first-child{border-left:0}.uk{grid-template-columns:1.3fr .7fr}.sh{grid-template-columns:1fr 1fr;align-items:end}}
+</style>
+</head>
+<body class="grain">
+<a class="skip" href="#koleksi">Lewati ke koleksi</a>
+<header><a class="brand" href="#" translate="no"><i></i>Garis Merah</a><nav class="mono"><a href="#koleksi">Koleksi</a><a href="#alur">Pesan custom</a><a href="#ukuran">Ukuran</a></nav></header>
+<main>
+<section class="hero"><div class="hg">
+ <div class="hl">
+  <h1 aria-label="Jersey dan seragam tim yang pas dari awal."><span class="ln" aria-hidden="true"><span style="--i:0">Jersey dan</span></span><span class="ln" aria-hidden="true"><span style="--i:1">seragam tim</span></span><span class="ln" aria-hidden="true"><span style="--i:2">yang <em>pas</em></span></span><span class="ln" aria-hidden="true"><span style="--i:3">dari awal.</span></span></h1>
+  <div><p class="rv" style="--d:.6s">Desain warna dan nomor punggung dibahas sejak awal, bahan dipilih sesuai olahraga, dan ukuran dicek sebelum produksi.</p><div class="cta rv" style="--d:.75s;margin-top:20px"><a class="btn" href="#alur">Pesan lewat WhatsApp</a><a class="btn o" href="#koleksi">Lihat koleksi</a></div></div>
+ </div>
+ <div class="hr">
+  <div class="ghost" id="gh" aria-hidden="true">10</div>
+  <div class="hero-j" id="hj"></div>
+  <div class="sw" id="sw" role="group" aria-label="Warna tim"></div>
+ </div>
+</div></section>
+<div class="mq" aria-hidden="true"><div class="mq-in" id="mq" style="--mqs:28s"></div></div>
+
+<section class="p" id="koleksi" aria-labelledby="kh">
+ <div class="sh"><h2 id="kh" class="rv">Tiga model dasar, <em>warna tim kamu.</em></h2><p class="rv" style="--d:.1s;max-width:28rem">Klik warna di atas untuk mengganti seluruh koleksi. Harga hanya contoh tampilan demo.</p></div>
+ <div class="gr" id="gr"></div>
+</section>
+
+<section class="p" id="alur" aria-labelledby="ah">
+ <div class="sh"><h2 id="ah" class="rv">Dari ide sampai jersey <em>di tanganmu.</em></h2></div>
+ <ol class="fl">
+  <li class="rv"><b>01</b><div><h3>Kirim ide</h3><p>Warna, logo, dan jumlah anggota tim.</p></div></li>
+  <li class="rv"><b>02</b><div><h3>Terima desain</h3><p>Kami kirim gambar jersey untuk kamu periksa dan revisi.</p></div></li>
+  <li class="rv"><b>03</b><div><h3>Kirim daftar nama dan ukuran</h3><p>Satu tabel, supaya tidak ada yang salah cetak.</p></div></li>
+  <li class="rv"><b>04</b><div><h3>Produksi dan kirim</h3><p>Kami kabari progresnya sampai barang tiba.</p></div></li>
+ </ol>
+</section>
+
+<section class="p" id="ukuran" aria-labelledby="uh">
+ <div class="sh"><h2 id="uh" class="rv">Ukur sekali, <em>pilih yakin.</em></h2></div>
+ <div class="uk">
+  <table class="rv"><caption class="vh">Tabel ukuran jersey dalam sentimeter</caption><thead><tr><th scope="col">Ukuran</th><th scope="col">Lebar dada</th><th scope="col">Panjang</th></tr></thead><tbody id="tb"></tbody></table>
+  <div class="fm rv" style="--d:.1s"><label class="mono" for="ch">Lebar dadamu (cm)</label><input id="ch" type="number" inputmode="numeric" min="30" max="70" placeholder="50"><div class="res" id="res" aria-live="polite"></div></div>
+ </div>
+</section>
+
+<section class="wa"><h2 class="rv">Siap bikin jersey tim?</h2><div><a class="btn" id="wa" href="#">Kirim ide lewat WhatsApp</a></div></section>
+</main>
+<footer>Contoh tampilan demo. Nama, harga, dan nomor WhatsApp adalah ilustrasi.</footer>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},V=V2;
+var CL=[['Merah','#E3170A','#FFFFFF'],['Navy','#14234B','#F4C20D'],['Hijau','#0E6B3A','#FFFFFF'],['Hitam','#161616','#E3170A'],['Putih','#F3F3EE','#14234B']],cur=0;
+var M=[['Jersey sepak bola','strip',165000,'Kerah bulat, bahan ringan dan cepat kering.','7'],['Jersey futsal dan basket','dua',150000,'Potongan longgar yang nyaman untuk gerak cepat.','23'],['Seragam komunitas','pita',135000,'Untuk lari, sepeda, dan kegiatan kantor. Logo bebas.','00']];
+var sw='';CL.forEach(function(c,i){sw+='<button type="button" style="--c:'+c[1]+'" aria-label="Warna '+c[0]+'" aria-pressed="'+(i===cur)+'" data-i="'+i+'"></button>'});$('#sw').innerHTML=sw;
+var g='';M.forEach(function(m,i){g+='<article class="cd rv" style="--d:'+i*.1+'s"><div class="j" data-m="'+i+'"></div><div class="rw"><h3>'+m[0]+'</h3><b>'+V.rp(m[2])+'</b></div><p style="margin:0">'+m[3]+' <span class="mono">Mulai dari, contoh</span></p></article>'});$('#gr').innerHTML=g;
+function paint(){var c=CL[cur];$('#hj').innerHTML=jerseySVG({main:c[1],accent:c[2],pattern:'pita',num:10,label:'Jersey '+c[0]});[].forEach.call(document.querySelectorAll('.j'),function(el){var m=M[+el.dataset.m];el.innerHTML=jerseySVG({main:c[1],accent:c[2],pattern:m[1],num:m[4],label:m[0]+' warna '+c[0]})});[].forEach.call($('#sw').children,function(b,i){b.setAttribute('aria-pressed',i===cur)})}
+$('#sw').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;cur=+b.dataset.i;paint()});paint();
+V.mq($('#mq'),['Sepak bola','Futsal','Basket','Lari','Sepeda','Komunitas','Kantor']);
+var S=[['S',48,68],['M',50,70],['L',52,72],['XL',54,74],['XXL',56,76]],tb='';S.forEach(function(s){tb+='<tr data-w="'+s[1]+'"><th scope="row" style="background:none;color:inherit;font-weight:700">'+s[0]+'</th><td>'+s[1]+'</td><td>'+s[2]+'</td></tr>'});$('#tb').innerHTML=tb;
+$('#ch').addEventListener('input',function(e){var v=+e.target.value,rows=[].slice.call($('#tb').children);rows.forEach(function(r){r.classList.remove('rec')});if(!v){$('#res').textContent='';return}var best=rows[0],bd=1e9;rows.forEach(function(r){var d=Math.abs(+r.dataset.w-v);if(d<bd){bd=d;best=r}});best.classList.add('rec');$('#res').textContent='Ukuran yang cocok: '+best.querySelector('th').textContent+(bd>3?' (di luar rentang biasa, tanyakan kami)':'')});
+$('#wa').addEventListener('click',function(e){e.preventDefault();V.wa(['Halo Garis Merah, saya mau pesan jersey tim:','Warna dasar: '+CL[cur][0],'Jumlah anggota: ','Olahraga: ','Logo dan nomor: '])});
+$('.fl').querySelectorAll('li').forEach(function(l){});
+V.rv();V.ok();
+})();
+</script>
+</body>
+</html>

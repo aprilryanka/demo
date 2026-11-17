@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Laras Busana | Busana harian wanita</title>
+<meta name="description" content="Demo tampilan website butik busana wanita: koleksi, filter, keranjang, panduan ukuran, dan pesan lewat WhatsApp.">
+<meta name="theme-color" content="#F1EBE1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_v2/base.css">
+<script src="../_v2/base.js"></script>
+<style>
+:root{--bone:#F1EBE1;--olive:#4C5233;--clay:#C8947F;--ink:#22201B;--sage:#D9DCC5;--acc:#4C5233;--pad:clamp(20px,4.4vw,64px);--d:"Gilda Display",Georgia,serif;--f:"Hanken Grotesk",system-ui,sans-serif;--grain:.07}
+body{background:var(--bone);color:var(--ink);font:400 1.0625rem/1.6 var(--f)}
+.mono{font-weight:500;letter-spacing:.18em;text-transform:uppercase;font-size:.7rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 30px;background:var(--olive);color:var(--bone);font-weight:500;letter-spacing:.04em;text-decoration:none;border:0;cursor:pointer;transition:background .3s,letter-spacing .3s}
+.btn:hover{background:var(--ink);letter-spacing:.09em}
+.btn.o{background:transparent;color:var(--olive);box-shadow:inset 0 0 0 1px var(--olive)}.btn.o:hover{background:var(--olive);color:var(--bone)}
+header{position:fixed;inset:0 0 auto 0;z-index:80;display:flex;justify-content:space-between;align-items:center;padding:6px var(--pad);background:rgba(241,235,225,.88);backdrop-filter:blur(12px)}
+header a,header button{text-decoration:none;min-height:44px;display:inline-flex;align-items:center;background:none;border:0;cursor:pointer}
+.brand{font-family:var(--d);font-size:1.5rem;letter-spacing:.02em}
+header nav{display:flex;gap:clamp(14px,3vw,34px);align-items:center}
+.hero{min-height:100svh;padding:110px var(--pad) 40px;display:grid;gap:30px;align-content:space-between;position:relative;overflow:hidden}
+.hero h1{margin:0;font-family:var(--d);font-weight:400;letter-spacing:-.035em;line-height:.92;font-size:clamp(3.2rem,10vw,10.4rem)}
+.hero h1 em{color:var(--olive);font-style:italic}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.1em}.hero h1 .ln>span{display:block}
+.mo .hero h1 .ln>span{transform:translateY(105%);animation:up 1.3s cubic-bezier(.16,1,.3,1) forwards;animation-delay:calc(var(--i)*.14s + .15s)}
+@keyframes up{to{transform:none}}
+.rail{position:relative;height:clamp(200px,34vw,340px);margin:0 calc(var(--pad)*-1)}
+.rail::before{content:"";position:absolute;left:0;right:0;top:18px;height:2px;background:var(--ink)}
+.rail svg{position:absolute;top:0;width:clamp(100px,17vw,200px);transform-origin:50% 0;animation:sw 5s ease-in-out infinite;cursor:pointer;transition:filter .3s}
+.rail svg:hover{animation-play-state:paused;filter:drop-shadow(0 16px 14px rgba(0,0,0,.2))}
+@keyframes sw{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
+.hb{display:grid;gap:20px;align-items:end}
+.hb p{margin:0;max-width:28rem;color:#5a554b}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.fact{display:flex;gap:10px 36px;flex-wrap:wrap;border-top:1px solid var(--ink);padding-top:16px}
+section.p{padding:clamp(80px,12vw,150px) var(--pad)}
+h2{margin:0;font-family:var(--d);font-weight:400;letter-spacing:-.035em;line-height:.95;font-size:clamp(2.6rem,6.6vw,6.2rem)}
+h2 em{color:var(--olive)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:34px 0 30px}
+.chip{min-height:44px;padding:0 20px;border:1px solid var(--ink);background:transparent;cursor:pointer;transition:background .25s,color .25s}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bone)}
+.grid{display:grid;gap:clamp(14px,2vw,28px);grid-auto-flow:dense}
+.pd{position:relative;display:flex;flex-direction:column;gap:12px}
+.pd[hidden]{display:none}
+.pd .im{position:relative;aspect-ratio:4/5;background:var(--t);display:grid;place-items:center;overflow:hidden}
+.pd.w .im{aspect-ratio:1}.pd.t .im{aspect-ratio:3/4.6}
+.pd .im svg{width:56%;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.pd:hover .im svg{transform:scale(1.1) translateY(-6px)}
+.pd .no{position:absolute;left:14px;top:12px}
+.sz{position:absolute;left:0;right:0;bottom:0;display:flex;gap:6px;padding:12px;background:rgba(241,235,225,.92);translate:0 101%;transition:translate .5s cubic-bezier(.2,.7,.2,1)}
+.pd:hover .sz,.pd:focus-within .sz{translate:0 0}
+@media(hover:none){.sz{translate:0 0}}
+.sz label{position:relative;flex:1}
+.sz input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.sz span{display:grid;place-items:center;min-height:42px;border:1px solid var(--ink);font-size:.85rem;transition:background .2s,color .2s}
+.sz input:checked+span{background:var(--ink);color:var(--bone)}
+.sz input:focus-visible+span{outline:3px solid var(--olive);outline-offset:2px}
+.pd .rw{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.pd h3{margin:0;font-family:var(--d);font-weight:400;font-size:1.5rem;letter-spacing:-.02em}
+.pd .pr{font-weight:500;white-space:nowrap}
+.add{align-self:flex-start;min-height:44px;padding:0 0;border:0;background:none;font-weight:500;cursor:pointer;border-bottom:1px solid var(--ink);transition:letter-spacing .3s,color .3s}
+.add:hover{letter-spacing:.06em;color:var(--olive);border-color:var(--olive)}
+/* ukuran */
+.uk{background:var(--sage)}
+table{border-collapse:collapse;width:100%;max-width:760px;margin-top:36px}
+th,td{padding:16px 14px;text-align:left;border-bottom:1px solid rgba(34,32,27,.35)}
+th{font-weight:500;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+tbody tr{transition:background .25s}tbody tr:hover{background:rgba(76,82,51,.16)}
+tbody th{font-family:var(--d);font-size:1.6rem;text-transform:none;letter-spacing:0}
+.how{display:grid;gap:30px}
+.how div{border-top:1px solid var(--ink);padding-top:16px}
+.how b{font-family:var(--d);font-weight:400;font-size:3rem;color:var(--clay);line-height:1;display:block}
+footer{background:var(--ink);color:rgba(241,235,225,.7);padding:18px var(--pad);font-size:.85rem}
+/* keranjang */
+dialog{border:0;padding:0;margin:0 0 0 auto;height:100dvh;max-height:none;width:min(440px,100vw);background:var(--bone);color:var(--ink);translate:100% 0;transition:translate .5s cubic-bezier(.2,.7,.2,1),overlay .5s allow-discrete,display .5s allow-discrete}
+dialog[open]{translate:0 0}
+@starting-style{dialog[open]{translate:100% 0}}
+dialog::backdrop{background:rgba(34,32,27,.45);backdrop-filter:blur(3px)}
+.dw{display:flex;flex-direction:column;height:100%;padding:22px}
+.dw h2{font-size:2.2rem}
+.dw ul{list-style:none;margin:20px 0;padding:0;overflow:auto;flex:1;display:grid;gap:14px;align-content:start}
+.dw li{display:grid;grid-template-columns:1fr auto;gap:4px 12px;border-bottom:1px solid rgba(34,32,27,.25);padding-bottom:12px}
+.dw li small{color:#6a655a}
+.qt{display:inline-flex;align-items:center;gap:4px}
+.qt button{width:36px;height:36px;border:1px solid var(--ink);background:none;cursor:pointer}
+.qt button:hover{background:var(--ink);color:var(--bone)}
+.dw .tt{display:flex;justify-content:space-between;font-family:var(--d);font-size:1.7rem;border-top:1px solid var(--ink);padding-top:14px;margin-bottom:14px}
+.cl{align-self:flex-end;min-height:44px;background:none;border:0;cursor:pointer;text-decoration:underline}
+@media(min-width:900px){
+ .hb{grid-template-columns:1fr auto}
+ .grid{grid-template-columns:repeat(12,1fr);align-items:start}
+ .pd:nth-child(6n+1){grid-column:span 5}.pd:nth-child(6n+2){grid-column:span 3;margin-top:80px}.pd:nth-child(6n+3){grid-column:span 4}
+ .pd:nth-child(6n+4){grid-column:span 4}.pd:nth-child(6n+5){grid-column:span 3;margin-top:60px}.pd:nth-child(6n+6){grid-column:span 5}
+ .how{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:899px){.grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body class="grain">
+<a class="skip" href="#koleksi">Lewati ke koleksi</a>
+<header><a class="brand" href="#" translate="no">Laras Busana</a><nav class="mono"><a href="#koleksi">Koleksi</a><a href="#ukuran">Ukuran</a><button type="button" id="open" class="mono" aria-haspopup="dialog">Keranjang (<span id="cn">0</span>)</button></nav></header>
+<main>
+<section class="hero">
+ <div><p class="mono rv" style="color:var(--olive)">Busana harian wanita</p>
+ <h1 aria-label="Potongan sederhana, jatuhnya rapi."><span class="ln" aria-hidden="true"><span style="--i:0">Potongan sederhana,</span></span><span class="ln" aria-hidden="true"><span style="--i:1"><em>jatuhnya</em> rapi.</span></span></h1></div>
+ <div class="rail" id="rail" aria-hidden="true"></div>
+ <div class="hb"><p class="rv" style="--d:.6s">Bahan adem, jahitan rapi, warna yang mudah dipadukan. Pilih ukuran, masukkan ke keranjang, lalu selesaikan pesanan lewat WhatsApp.</p><div class="cta rv" style="--d:.75s"><a class="btn" href="#koleksi">Lihat koleksi</a><a class="btn o" href="#ukuran">Panduan ukuran</a></div></div>
+ <div class="fact mono"><span>Kirim ke seluruh Indonesia</span><span>Tukar ukuran 7 hari</span><span>Admin balas pada jam kerja</span></div>
+</section>
+
+<section class="p" id="koleksi" aria-labelledby="kh">
+ <h2 id="kh" class="rv">Enam potong <em>untuk dipakai berulang.</em></h2>
+ <div class="chips" role="group" aria-label="Kategori" id="chips"></div>
+ <div class="grid" id="grid"></div>
+ <p style="margin-top:34px;color:#6a655a">Harga dan nama produk hanya ilustrasi untuk contoh tampilan.</p>
+</section>
+
+<section class="p uk" id="ukuran" aria-labelledby="uh">
+ <h2 id="uh" class="rv">Ukur sekali, <em>pilih dengan yakin.</em></h2>
+ <table class="rv"><caption class="vh">Tabel ukuran dalam sentimeter</caption><thead><tr><th scope="col">Ukuran</th><th scope="col">Lingkar dada</th><th scope="col">Panjang baju</th><th scope="col">Lingkar pinggang</th></tr></thead><tbody><tr><th scope="row">S</th><td>86</td><td>62</td><td>68</td></tr><tr><th scope="row">M</th><td>90</td><td>64</td><td>72</td></tr><tr><th scope="row">L</th><td>96</td><td>66</td><td>78</td></tr><tr><th scope="row">XL</th><td>102</td><td>68</td><td>84</td></tr></tbody></table>
+ <p style="margin-top:14px">Ukuran dalam sentimeter dan hanya contoh tampilan.</p>
+</section>
+
+<section class="p" aria-labelledby="ch">
+ <h2 id="ch" class="rv">Cara <em>pesan.</em></h2>
+ <div class="how" style="margin-top:44px"><div class="rv"><b>1</b>Pilih ukuran dan tambahkan ke keranjang.</div><div class="rv" style="--d:.1s"><b>2</b>Buka keranjang, kirim pesanan lewat WhatsApp.</div><div class="rv" style="--d:.2s"><b>3</b>Admin konfirmasi stok, ongkir, dan nomor resi.</div></div>
+</section>
+</main>
+<footer>Contoh tampilan demo. Nama, produk, harga, dan nomor WhatsApp adalah ilustrasi.</footer>
+<dialog id="dlg" aria-label="Keranjang belanja"><div class="dw"><button class="cl mono" id="cls" type="button">Tutup</button><h2>Keranjang</h2><ul id="ci"></ul><div class="tt"><span>Total</span><b id="ct"></b></div><button class="btn" id="go" type="button">Pesan lewat WhatsApp</button></div></dialog>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},V=V2;
+var SH={atasan:'M60 30l30-10c6 12 14 12 20 0l30 10 22 50-26 12v140H64V92L38 80z',dress:'M72 20c6 14 50 14 56 0l22 44-16 18 34 164H32l34-164-16-18z',rok:'M70 30h60l8 14 42 190H20L62 44z',kulot:'M62 20h76l8 70 36 150h-60l-22-110-22 110H18l36-150z',outer:'M62 24l38 22 38-22 34 40-10 150h-44l-18-100-18 100H38L28 64z',pash:'M30 40q70 40 140 0l10 60q-80 40-160 0z'};
+function sil(k,c){var d=SH[k],x=k==='pash'?'<path d="M40 112v26M60 118v30M80 122v24M100 124v30M120 122v24M140 118v30M160 112v26" stroke="'+c+'" stroke-width="3" stroke-linecap="round"/>':'<path d="M100 28v'+(k==='outer'?'150':k==='dress'?'60':'30')+'" stroke="rgba(0,0,0,.22)" stroke-width="2" fill="none"/>';return '<svg viewBox="0 0 200 260" aria-hidden="true"><path d="'+d+'" fill="'+c+'"/>'+x+'</svg>'}
+var P=[['Dress Kinara','dress',289000,'Dress','#4C5233','#D9DCC5',1],['Tunik Ayu','atasan',179000,'Atasan','#C8947F','#EBD6CB',0],['Rok Plisket Sari','rok',199000,'Bawahan','#22201B','#D9D2C2',0],['Celana Kulot Bumi','kulot',219000,'Bawahan','#7A6A4C','#E4DAC3',0],['Outer Lurik Senja','outer',329000,'Outer','#5A3A2E','#E2CDC0',1],['Pashmina Kain Rasa','pash',119000,'Aksesori','#B07B66','#D9DCC5',0]];
+var rail='',pos=[6,22,38,54,70,84];P.forEach(function(p,i){rail+=sil(p[1],p[4]).replace('<svg','<svg style="left:'+pos[i]+'%;animation-delay:-'+i*.7+'s"')});$('#rail').innerHTML=rail;
+var CAT=['Semua','Atasan','Bawahan','Dress','Outer','Aksesori'],ch='';CAT.forEach(function(c,i){ch+='<button class="chip" type="button" data-c="'+c+'" aria-pressed="'+(i===0)+'">'+c+'</button>'});$('#chips').innerHTML=ch;
+var g='';P.forEach(function(p,i){var szs=p[1]==='pash'?['All size']:['S','M','L','XL'];g+='<article class="pd rv'+(i%3===0?' t':i%3===1?' w':'')+'" data-c="'+p[3]+'" data-i="'+i+'" style="--d:'+(i%3)*.1+'s"><div class="im" style="--t:'+p[5]+'"><span class="no mono">0'+(i+1)+'</span>'+sil(p[1],p[4])+'<div class="sz" role="radiogroup" aria-label="Ukuran '+p[0]+'">'+szs.map(function(s,k){return '<label><input type="radio" name="s'+i+'" value="'+s+'"'+((szs.length===1||k===1)?' checked':'')+'><span>'+s+'</span></label>'}).join('')+'</div></div><div class="rw"><h3>'+p[0]+'</h3><span class="pr">'+V.rp(p[2])+'</span></div><button class="add" type="button">Tambah ke keranjang</button></article>'});$('#grid').innerHTML=g;
+$('#chips').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;[].forEach.call($('#chips').children,function(x){x.setAttribute('aria-pressed',x===b)});var c=b.dataset.c;[].forEach.call($('#grid').children,function(a){a.hidden=c!=='Semua'&&a.dataset.c!==c})});
+var cart=[];
+function render(){var n=0,t=0,h='';cart.forEach(function(x,i){n+=x.q;t+=x.q*P[x.i][2];h+='<li><div><strong>'+P[x.i][0]+'</strong><br><small>Ukuran '+x.s+'</small></div><div class="qt"><button type="button" data-a="m" data-k="'+i+'" aria-label="Kurangi">−</button><output>'+x.q+'</output><button type="button" data-a="p" data-k="'+i+'" aria-label="Tambah">+</button></div></li>'});
+ $('#ci').innerHTML=h||'<li style="display:block;color:#6a655a">Keranjang masih kosong.</li>';$('#cn').textContent=n;$('#ct').textContent=V.rp(t);$('#go').disabled=!n;$('#go').style.opacity=n?1:.4}
+$('#grid').addEventListener('click',function(e){var b=e.target.closest('.add');if(!b)return;var a=b.closest('.pd'),i=+a.dataset.i,s=a.querySelector('input:checked').value,f=cart.filter(function(x){return x.i===i&&x.s===s})[0];if(f)f.q++;else cart.push({i:i,s:s,q:1});render();b.textContent='Ditambahkan';setTimeout(function(){b.textContent='Tambah ke keranjang'},1200)});
+$('#ci').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var k=+b.dataset.k;cart[k].q+=b.dataset.a==='p'?1:-1;if(cart[k].q<=0)cart.splice(k,1);render()});
+var dl=$('#dlg');$('#open').addEventListener('click',function(){dl.showModal()});$('#cls').addEventListener('click',function(){dl.close()});dl.addEventListener('click',function(e){if(e.target===dl)dl.close()});
+$('#go').addEventListener('click',function(){var L=['Halo Laras Busana, saya mau pesan:'],t=0;cart.forEach(function(x){L.push('- '+x.q+'x '+P[x.i][0]+' ('+x.s+')');t+=x.q*P[x.i][2]});L.push('Total: '+V.rp(t));L.push('Nama dan alamat kirim: ');V.wa(L)});
+render();V.rv();V.ok();
+})();
+</script>
+</body>
+</html>

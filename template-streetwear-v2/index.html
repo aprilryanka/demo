@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Jalan Belakang Supply | Streetwear lokal, drop terbatas</title>
+<meta name="description" content="Demo tampilan website streetwear: hitung mundur drop, bar stok, dan pre-order lewat WhatsApp.">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_v2/base.css">
+<script src="../_v2/base.js"></script>
+<style>
+:root{--blk:#0A0A0A;--bone:#EDE9DF;--cob:#2A3BFF;--hz:#E8FF3A;--acc:#2A3BFF;--pad:clamp(16px,3.4vw,48px);--d:"Archivo Black",Impact,sans-serif;--m:"Space Mono",monospace;--grain:.12}
+body{background:var(--bone);color:var(--blk);font:400 1rem/1.5 var(--m)}
+.t{font-family:var(--d);text-transform:uppercase;letter-spacing:-.02em}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 26px;background:var(--cob);color:#fff;font-family:var(--d);text-transform:uppercase;text-decoration:none;border:3px solid var(--blk);cursor:pointer;box-shadow:6px 6px 0 var(--blk);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--blk)}.btn:active{transform:translate(6px,6px);box-shadow:0 0 0}
+.btn.k{background:var(--blk);color:var(--hz)}
+header{position:fixed;inset:0 0 auto 0;z-index:80;background:var(--blk);color:var(--bone)}
+.tk{overflow:hidden;background:var(--cob);color:#fff;border-bottom:3px solid var(--blk)}
+.tk span{padding:5px 0;white-space:nowrap;font-size:.8rem;font-weight:700;text-transform:uppercase}.tk span::after{content:"/";margin:0 1.4em}
+.hb{display:flex;justify-content:space-between;align-items:center;padding:2px var(--pad)}
+.hb a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.hb nav{display:flex;gap:clamp(12px,3vw,28px);font-size:.8rem;text-transform:uppercase}
+.hero{padding:140px var(--pad) 40px;position:relative;overflow:hidden;border-bottom:3px solid var(--blk)}
+.hero h1{margin:0;font-family:var(--d);text-transform:uppercase;line-height:.78;letter-spacing:-.05em;font-size:clamp(5rem,27vw,30rem)}
+.hero h1 .o{color:transparent;-webkit-text-stroke:3px var(--blk)}
+.hero h1 span{display:inline-block}
+.mo .hero h1 span{animation:slam .7s cubic-bezier(.2,1.4,.4,1) both}
+.mo .hero h1 span:nth-child(2){animation-delay:.12s}
+@keyframes slam{from{transform:translateY(-90%) scale(1.3);opacity:0}}
+.tape{position:absolute;right:-6vw;top:150px;background:var(--hz);border-block:3px solid var(--blk);padding:6px 60px;transform:rotate(11deg);font-family:var(--d);text-transform:uppercase;font-size:clamp(.8rem,1.6vw,1.2rem);white-space:nowrap;z-index:2}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(6px,1.4vw,16px);margin:34px 0;max-width:900px}
+.cd div{background:var(--blk);color:var(--hz);border:3px solid var(--blk);padding:12px 6px 8px;text-align:center;box-shadow:6px 6px 0 var(--cob)}
+.cd b{display:block;font-family:var(--d);font-size:clamp(2.4rem,9vw,6.5rem);line-height:1;font-variant-numeric:tabular-nums}
+.cd b.f{animation:fl .35s}
+@keyframes fl{from{transform:translateY(-30%);opacity:.3}}
+.cd small{font-size:.7rem;text-transform:uppercase;color:var(--bone)}
+.hero p.l{max-width:34rem;font-size:1.05rem;margin:0 0 26px}
+.cta{display:flex;gap:16px;flex-wrap:wrap}
+section.p{padding:clamp(60px,9vw,120px) var(--pad);border-bottom:3px solid var(--blk)}
+h2{margin:0;font-family:var(--d);text-transform:uppercase;letter-spacing:-.04em;line-height:.85;font-size:clamp(3rem,11vw,10rem)}
+h2 em{font-style:normal;color:var(--cob)}
+.gr{display:grid;gap:0;margin-top:40px;border:3px solid var(--blk)}
+.it{position:relative;border-top:3px solid var(--blk);background:var(--bone);padding:18px;display:grid;gap:12px;transition:background .15s,color .15s}
+.it:first-child{border-top:0}
+.it:hover{background:var(--blk);color:var(--bone)}
+.it .no{font-size:.75rem;opacity:.7}
+.it .art{aspect-ratio:1.2;display:grid;place-items:center;background:var(--bg);border:3px solid var(--blk);overflow:hidden;position:relative}
+.it .art svg{width:70%;transition:transform .25s}
+.it:hover .art svg{transform:rotate(-6deg) scale(1.08)}
+.it h3{margin:0;font-family:var(--d);text-transform:uppercase;font-size:1.5rem;line-height:1;letter-spacing:-.02em}
+.it .sp{font-size:.8rem;opacity:.8}
+.it .pr{font-family:var(--d);font-size:1.4rem;color:var(--cob)}.it:hover .pr{color:var(--hz)}
+.bar{height:16px;border:3px solid currentColor;position:relative;background:transparent}
+.bar i{position:absolute;inset:0;width:0;background:var(--cob);transition:width 1.4s cubic-bezier(.2,.7,.2,1) .2s}
+.it:hover .bar i{background:var(--hz)}
+.it.in .bar i{width:var(--p)}
+html:not(.mo) .bar i{width:var(--p)}
+.sizes{display:flex;gap:6px;flex-wrap:wrap}
+.sizes label{position:relative}.sizes input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.sizes span{display:grid;place-items:center;min-width:44px;min-height:44px;border:3px solid currentColor;font-weight:700;font-size:.85rem}
+.sizes input:checked+span{background:var(--blk);color:var(--hz)}.it:hover .sizes input:checked+span{background:var(--hz);color:var(--blk)}
+.sizes input:focus-visible+span{outline:3px solid var(--cob);outline-offset:2px}
+.po{min-height:50px;font-family:var(--d);text-transform:uppercase;border:3px solid currentColor;background:none;cursor:pointer;transition:background .15s,color .15s}
+.po:hover{background:var(--cob);color:#fff;border-color:var(--cob)}
+.it.so .art::after{content:"HABIS";position:absolute;font-family:var(--d);font-size:clamp(2.4rem,7vw,4rem);color:#d9261c;border:6px solid #d9261c;padding:2px 16px;transform:rotate(-14deg);background:rgba(237,233,223,.85)}
+.it.so .po{opacity:.4;pointer-events:none}
+.it.so .bar i{width:0!important}
+/* bar order */
+.ob{position:fixed;left:0;right:0;bottom:0;z-index:90;background:var(--hz);border-top:3px solid var(--blk);padding:10px var(--pad);display:flex;justify-content:space-between;align-items:center;gap:14px;translate:0 101%;transition:translate .35s cubic-bezier(.2,1.2,.4,1)}
+.ob.on{translate:0 0}
+.ob b{font-family:var(--d);text-transform:uppercase}
+.how{display:grid;gap:0;margin-top:34px;border:3px solid var(--blk)}
+.how div{padding:20px;border-top:3px solid var(--blk)}.how div:first-child{border-top:0}
+.how b{font-family:var(--d);font-size:3.4rem;color:var(--cob);line-height:1;display:block}
+table{border-collapse:collapse;width:100%;max-width:640px;margin-top:30px}
+th,td{border:3px solid var(--blk);padding:12px;text-align:left}th{background:var(--blk);color:var(--hz);font-family:var(--d);text-transform:uppercase;font-weight:400}
+footer{background:var(--blk);color:rgba(237,233,223,.7);padding:18px var(--pad) 70px;font-size:.8rem}
+@media(min-width:900px){.gr{grid-template-columns:repeat(3,1fr)}.it{border-top:0;border-left:3px solid var(--blk);border-bottom:3px solid var(--blk)}.it:nth-child(3n+1){border-left:0}.it:nth-child(n+4){border-bottom:0}.how{grid-template-columns:repeat(3,1fr)}.how div{border-top:0;border-left:3px solid var(--blk)}.how div:first-child{border-left:0}}
+</style>
+</head>
+<body class="grain">
+<a class="skip" href="#drop">Lewati ke drop</a>
+<header><div class="tk" aria-hidden="true"><div class="mq-in" id="tk" style="--mqs:26s"></div></div><div class="hb"><a class="t" href="#" translate="no" style="font-size:1.05rem">Jalan Belakang</a><nav><a href="#drop">Drop 03</a><a href="#ukuran" style="text-decoration:none">Ukuran</a><a href="#cara" style="text-decoration:none">Cara order</a></nav></div></header>
+<main>
+<section class="hero">
+ <div class="tape" aria-hidden="true">Kalau habis ya habis • Kalau habis ya habis • Kalau habis ya habis</div>
+ <p class="rv" style="font-weight:700;text-transform:uppercase">Musim hujan / Sablon manual / Produksi terbatas</p>
+ <h1 aria-label="Drop 03"><span aria-hidden="true">Drop</span> <span class="o" aria-hidden="true">03</span></h1>
+ <div class="cd" role="timer" aria-label="Hitung mundur drop berikutnya"><div><b id="d">00</b><small>hari</small></div><div><b id="h">00</b><small>jam</small></div><div><b id="m">00</b><small>menit</small></div><div><b id="s">00</b><small>detik</small></div></div>
+ <p class="l rv">Kaos, hoodie, dan topi tebal buatan lokal. Pre-order dibuka sampai stok habis. Stok dihitung manual.</p>
+ <div class="cta rv" style="--d:.1s"><a class="btn" href="#drop">Lihat drop</a><a class="btn k" href="#cara">Cara order</a></div>
+</section>
+
+<section class="p" id="drop" aria-labelledby="dh">
+ <h2 id="dh" class="rv">Enam item. <em>Stok manual.</em></h2>
+ <div class="gr" id="gr"></div>
+ <p style="margin-top:20px">Harga dan stok hanya ilustrasi untuk contoh tampilan.</p>
+</section>
+
+<section class="p" id="ukuran" aria-labelledby="uh">
+ <h2 id="uh" class="rv">Tabel <em>ukuran.</em></h2>
+ <table class="rv"><caption class="vh">Tabel ukuran dalam sentimeter</caption><thead><tr><th scope="col">Ukuran</th><th scope="col">Lebar dada</th><th scope="col">Panjang</th></tr></thead><tbody><tr><th scope="row">S</th><td>52</td><td>68</td></tr><tr><th scope="row">M</th><td>55</td><td>70</td></tr><tr><th scope="row">L</th><td>58</td><td>72</td></tr><tr><th scope="row">XL</th><td>61</td><td>74</td></tr><tr><th scope="row">XXL</th><td>64</td><td>76</td></tr></tbody></table>
+</section>
+
+<section class="p" id="cara" aria-labelledby="ch">
+ <h2 id="ch" class="rv">Cara <em>order.</em></h2>
+ <div class="how"><div class="rv"><b>01</b>Pilih item dan ukuran, tekan pre-order.</div><div class="rv" style="--d:.1s"><b>02</b>Kirim daftar lewat WhatsApp, kami kunci stoknya.</div><div class="rv" style="--d:.2s"><b>03</b>Bayar, lalu tunggu kabar produksi dan resi.</div></div>
+</section>
+</main>
+<footer>Contoh tampilan demo. Nama, item, harga, stok, dan nomor WhatsApp adalah ilustrasi.</footer>
+<div class="ob" id="ob"><b id="oc"></b><button class="btn k" id="go" type="button">Kirim ke WhatsApp</button></div>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},V=V2;
+V.mq($('#tk'),['Drop 03','Pre-order dibuka','Stok terbatas','Kirim seluruh Indonesia'],3);
+var A={tee:'M60 26l36-10c4 16 36 16 40 0l36 10 34 52-34 18-10-16v124H70V80l-10 16-34-18z',hood:'M70 34c10 26 80 26 90 0l38 22 24 84-34 12-10-40v120H62V112l-10 40-34-12 24-84z',cap:'M40 130c0-56 34-86 80-86s80 30 80 86z M28 130h184c12 0 14 12 0 20H44c-16-8-18-20-16-20z',tote:'M56 78h128l12 140H44z M84 78c0-44 72-44 72 0',cargo:'M70 24h100l12 96 14 110h-54l-14-90-14 90H56l14-110z'};
+function art(k,c,t){return '<svg viewBox="0 0 240 250" aria-hidden="true"><path d="'+A[k]+'" fill="'+c+'" stroke="#0A0A0A" stroke-width="6" stroke-linejoin="round"/><text x="120" y="'+(k==='cap'?112:k==='cargo'?90:158)+'" text-anchor="middle" font-family="Archivo Black" font-size="'+(k==='cap'?32:42)+'" fill="'+(c==='#0A0A0A'?'#E8FF3A':'#0A0A0A')+'">'+t+'</text></svg>'}
+var I=[['Kaos Gang Gelap','tee','#0A0A0A','JB',169000,14,40,'Cotton 24s',1],['Kaos Hujan Deras','tee','#2A3BFF','HUJAN',169000,36,50,'Cotton 24s',1],['Hoodie Tebal','hood','#EDE9DF','03',389000,6,30,'Fleece 380 GSM',1],['Topi Gorong','cap','#E8FF3A','JB',119000,22,40,'Twill, strap besi',0],['Tote Kanvas Jalan','tote','#EDE9DF','JL',99000,54,60,'Kanvas 12 oz',0],['Cargo Ripstop','cargo','#0A0A0A','RIP',359000,0,25,'Ripstop',1]];
+var bg=['#EDE9DF','#E8FF3A','#2A3BFF','#EDE9DF','#2A3BFF','#E8FF3A'],g='';
+I.forEach(function(x,i){var so=x[5]===0,sz=x[8]?['S','M','L','XL','XXL']:['All size'];g+='<article class="it rv'+(so?' so':'')+'" data-i="'+i+'" style="--d:'+(i%3)*.08+'s"><div class="no">0'+(i+1)+' / '+x[7]+'</div><div class="art" style="--bg:'+bg[i]+'">'+art(x[1],x[2],x[3])+'</div><h3>'+x[0]+'</h3><div class="pr">'+V.rp(x[4])+'</div><div class="sp">'+(so?'Stok habis':'Sisa '+x[5]+' dari '+x[6])+'</div><div class="bar" aria-hidden="true"><i style="--p:'+Math.round(x[5]/x[6]*100)+'%"></i></div><div class="sizes" role="radiogroup" aria-label="Ukuran '+x[0]+'">'+sz.map(function(s,k){return '<label><input type="radio" name="z'+i+'" value="'+s+'"'+((sz.length===1||k===1)?' checked':'')+'><span>'+s+'</span></label>'}).join('')+'</div><button class="po" type="button">'+(so?'Habis':'Pre-order')+'</button></article>'});
+$('#gr').innerHTML=g;
+var L=[];function ob(){var n=L.length,t=0;L.forEach(function(x){t+=I[x.i][4]*x.q});var o=$('#ob');o.classList.toggle('on',n>0);$('#oc').textContent=L.reduce(function(a,x){return a+x.q},0)+' item / '+V.rp(t)}
+$('#gr').addEventListener('click',function(e){var b=e.target.closest('.po');if(!b)return;var a=b.closest('.it'),i=+a.dataset.i,s=a.querySelector('input:checked').value,f=L.filter(function(x){return x.i===i&&x.s===s})[0];if(f)f.q++;else L.push({i:i,s:s,q:1});ob();b.textContent='Masuk daftar +1';setTimeout(function(){b.textContent='Pre-order'},1100)});
+$('#go').addEventListener('click',function(){var m=['Halo Jalan Belakang, saya mau pre-order Drop 03:'],t=0;L.forEach(function(x){m.push('- '+x.q+'x '+I[x.i][0]+' ('+x.s+')');t+=I[x.i][4]*x.q});m.push('Total: '+V.rp(t));m.push('Nama dan alamat kirim: ');V.wa(m)});
+/* hitung mundur ke Jumat 19.00 berikutnya */
+function target(){var n=new Date(),t=new Date(n);t.setHours(19,0,0,0);var add=(5-n.getDay()+7)%7;t.setDate(n.getDate()+add);if(t<=n)t.setDate(t.getDate()+7);return t}
+var T=target(),last={};
+function tick(){var ms=T-new Date();if(ms<=0){T=target();ms=T-new Date()}var v={d:Math.floor(ms/864e5),h:Math.floor(ms/36e5)%24,m:Math.floor(ms/6e4)%60,s:Math.floor(ms/1e3)%60};for(var k in v){var el=$('#'+k),x=String(v[k]).padStart(2,'0');if(last[k]!==x){el.textContent=x;if(V.mo&&k==='s'){el.classList.remove('f');void el.offsetWidth;el.classList.add('f')}last[k]=x}}}
+tick();setInterval(tick,1000);
+V.rv();V.ok();
+})();
+</script>
+</body>
+</html>

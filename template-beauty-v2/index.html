@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Lumi Skin Studio | Perawatan wajah satu per satu</title>
+<meta name="description" content="Demo tampilan website studio perawatan wajah: layanan, alur kunjungan, tanya jawab, dan reservasi lewat WhatsApp.">
+<meta name="theme-color" content="#E3EEF0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_v2/base.css">
+<script src="../_v2/base.js"></script>
+<style>
+:root{--ice:#E3EEF0;--deep:#123A2F;--blush:#E8B9A5;--white:#FBFDFD;--ink:#0E2A22;--soft:#4B6660;--acc:#123A2F;--pad:clamp(20px,5vw,72px);--d:"Bodoni Moda",Georgia,serif;--f:"Manrope",system-ui,sans-serif;--grain:.07}
+body{background:var(--ice);color:var(--ink);font:300 1.0625rem/1.7 var(--f)}
+.mono{font-weight:500;letter-spacing:.2em;text-transform:uppercase;font-size:.7rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 34px;border-radius:999px;background:var(--deep);color:var(--white);font-weight:500;letter-spacing:.04em;text-decoration:none;border:0;cursor:pointer;transition:background .4s,letter-spacing .4s}
+.btn:hover{background:var(--ink);letter-spacing:.09em}
+.btn.o{background:transparent;color:var(--deep);box-shadow:inset 0 0 0 1px var(--deep)}.btn.o:hover{background:var(--deep);color:var(--white)}
+header{position:fixed;inset:0 0 auto 0;z-index:80;display:flex;justify-content:space-between;align-items:center;padding:8px var(--pad);background:rgba(227,238,240,.78);backdrop-filter:blur(14px)}
+header a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.brand{font-family:var(--d);font-style:italic;font-size:1.6rem;letter-spacing:-.02em}
+header nav{display:flex;gap:clamp(16px,3vw,36px)}
+.hero{position:relative;min-height:100svh;padding:130px var(--pad) 70px;display:grid;gap:40px;align-items:center;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.75;pointer-events:none;will-change:transform;translate:var(--mx,0px) var(--my,0px);transition:translate 1.2s cubic-bezier(.2,.7,.2,1)}
+.o1{width:46vw;height:46vw;background:#F2C9B8;left:-8vw;top:-6vw;animation:dr 18s ease-in-out infinite}
+.o2{width:40vw;height:40vw;background:#BFDDE0;right:-6vw;bottom:-8vw;animation:dr 22s ease-in-out -6s infinite reverse}
+.o3{width:28vw;height:28vw;background:#CFE5CC;left:36vw;top:30vh;animation:dr 26s ease-in-out -12s infinite}
+@keyframes dr{50%{transform:translate(6vw,4vw) scale(1.12)}}
+.hero>*{position:relative}
+.hero h1{margin:0;font-family:var(--d);font-weight:400;font-variation-settings:"opsz" 96;letter-spacing:-.045em;line-height:.95;font-size:clamp(3.2rem,8.6vw,8.4rem)}
+.hero h1 em{font-weight:400;color:var(--deep)}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.12em}.hero h1 .ln>span{display:block}
+.mo .hero h1 .ln>span{transform:translateY(105%);animation:up 1.4s cubic-bezier(.16,1,.3,1) forwards;animation-delay:calc(var(--i)*.14s + .2s)}
+@keyframes up{to{transform:none}}
+.hero p{max-width:30rem;margin:26px 0 30px;color:var(--soft)}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.arch{justify-self:center;width:min(78vw,430px);aspect-ratio:3/4.1;border-radius:999px 999px 24px 24px;position:relative;overflow:hidden;background:linear-gradient(170deg,#CFE5E4,#E8C8B8 60%,#F5E3D8);box-shadow:0 40px 80px rgba(18,58,47,.18)}
+.arch svg{position:absolute;inset:0;width:100%;height:100%}
+.arch .sun{animation:breathe 7s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+@keyframes breathe{50%{transform:scale(1.07)}}
+.arch .lf{transform-origin:50% 100%;transform-box:fill-box;animation:sway 6s ease-in-out infinite}
+@keyframes sway{50%{transform:rotate(2.5deg)}}
+.pro{display:flex;flex-wrap:wrap;gap:12px 40px;padding:26px var(--pad);border-block:1px solid rgba(18,58,47,.25);justify-content:center}
+.pro span::before{content:"◇";margin-right:12px;color:var(--soft)}
+section.p{padding:clamp(80px,12vw,160px) var(--pad)}
+h2{margin:0;font-family:var(--d);font-weight:400;font-variation-settings:"opsz" 96;letter-spacing:-.04em;line-height:.98;font-size:clamp(2.6rem,6.6vw,6rem)}
+h2 em{color:var(--deep)}
+.sub{max-width:34rem;color:var(--soft);margin:18px 0 0}
+/* layanan */
+.svc{list-style:none;margin:48px 0 0;padding:0;border-top:1px solid rgba(18,58,47,.3)}
+.sv{border-bottom:1px solid rgba(18,58,47,.3)}
+.sv button{width:100%;display:grid;grid-template-columns:48px 1fr auto auto;gap:clamp(10px,2vw,30px);align-items:center;background:none;border:0;padding:clamp(20px,3vw,34px) 0;text-align:left;cursor:pointer;position:relative}
+.sv .n{font-family:var(--d);font-style:italic;color:var(--soft)}
+.sv .nm{font-family:var(--d);font-weight:400;font-size:clamp(1.7rem,4.6vw,3.8rem);letter-spacing:-.035em;line-height:1;transition:transform .6s cubic-bezier(.2,.7,.2,1),font-style .3s}
+.sv button:hover .nm,.sv button[aria-expanded=true] .nm{transform:translateX(18px);font-style:italic}
+.sv .du{color:var(--soft);font-size:.9rem}.sv .pr{font-weight:500;white-space:nowrap}
+.sv .pl{width:36px;height:36px;border-radius:50%;border:1px solid var(--deep);display:grid;place-items:center;transition:transform .5s,background .3s,color .3s}
+.sv button[aria-expanded=true] .pl{transform:rotate(45deg);background:var(--deep);color:#fff}
+.sv .bd{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s cubic-bezier(.2,.7,.2,1)}
+.sv .bd>div{overflow:hidden}
+.sv .bd p{margin:0 0 28px;padding-left:min(48px,10vw);max-width:40rem;color:var(--soft)}
+.sv button[aria-expanded=true]+.bd{grid-template-rows:1fr}
+.sv .tint{position:absolute;inset:0 -20px;background:var(--t);opacity:0;border-radius:18px;z-index:-1;transition:opacity .5s}
+.sv button:hover .tint,.sv button[aria-expanded=true] .tint{opacity:.35}
+/* alur */
+.flow{background:var(--deep);color:var(--white)}
+.flow h2 em{color:var(--blush)}
+.fl{position:relative;margin-top:50px;display:grid;gap:50px;padding-left:44px}
+.fl::before{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:1px;background:rgba(251,253,253,.25)}
+.fl::after{content:"";position:absolute;left:11px;top:6px;width:1px;height:calc((100% - 12px)*var(--p,1));background:var(--blush)}
+.fl li{list-style:none;position:relative}
+.fl li::before{content:"";position:absolute;left:-39px;top:10px;width:11px;height:11px;border-radius:50%;background:var(--deep);border:1px solid var(--blush);transition:background .4s}
+.fl li.on::before{background:var(--blush)}
+.fl b{display:block;font-family:var(--d);font-weight:400;font-size:clamp(1.6rem,3.6vw,2.6rem);letter-spacing:-.03em}
+.fl span{color:rgba(251,253,253,.72)}
+/* faq */
+details{border-bottom:1px solid rgba(18,58,47,.3)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:24px 0;font-family:var(--d);font-size:clamp(1.3rem,2.6vw,2rem);letter-spacing:-.02em;min-height:44px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--f);font-weight:300;transition:transform .4s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0 0 24px;max-width:40rem;color:var(--soft);animation:fd .6s both}
+@keyframes fd{from{opacity:0;translate:0 -8px}}
+/* reservasi */
+.res{background:var(--white);display:grid;gap:40px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips label{position:relative}
+.chips input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.chips span{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:999px;border:1px solid var(--deep);transition:background .3s,color .3s}
+.chips input:checked+span{background:var(--deep);color:#fff}
+.chips input:focus-visible+span{outline:3px solid var(--blush);outline-offset:2px}
+form{display:grid;gap:26px;max-width:600px}
+select,input[type=text]{min-height:52px;border:0;border-bottom:1px solid var(--deep);background:transparent;padding:0 2px;font-size:1.05rem;width:100%}
+footer{padding:20px var(--pad) 28px;background:var(--ice);color:var(--soft);font-size:.85rem}
+.sig{font-family:var(--d);font-style:italic;font-size:clamp(5rem,26vw,24rem);letter-spacing:-.06em;line-height:.8;color:var(--deep);opacity:.9;margin:20px 0 -.1em;overflow:hidden;white-space:nowrap}
+@media(min-width:900px){.hero{grid-template-columns:1.25fr .75fr}.res{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.sv button{grid-template-columns:36px 1fr auto}.sv .du{display:none}}
+</style>
+</head>
+<body class="grain">
+<a class="skip" href="#layanan">Lewati ke layanan</a>
+<header><a class="brand" href="#" translate="no">Lumi</a><nav class="mono"><a href="#layanan">Layanan</a><a href="#alur">Alur</a><a href="#reservasi">Reservasi</a></nav></header>
+<main>
+<section class="hero" id="top">
+ <div class="orb o1" aria-hidden="true"></div><div class="orb o2" aria-hidden="true"></div><div class="orb o3" aria-hidden="true"></div>
+ <div>
+  <p class="mono rv" style="color:var(--soft)">Lumi Skin Studio</p>
+  <h1 aria-label="Kulit yang tenang, wajah yang segar."><span class="ln" aria-hidden="true"><span style="--i:0">Kulit yang <em>tenang,</em></span></span><span class="ln" aria-hidden="true"><span style="--i:1">wajah yang segar.</span></span></h1>
+  <p class="rv" style="--d:.7s">Studio perawatan wajah dengan konsultasi singkat sebelum mulai. Tidak ada paket yang dipaksakan. Kamu hanya mendapat yang kulitmu butuhkan.</p>
+  <div class="cta rv" style="--d:.85s"><a class="btn" href="#reservasi">Reservasi lewat WhatsApp</a><a class="btn o" href="#layanan">Lihat layanan</a></div>
+ </div>
+ <div class="arch rv" style="--d:.3s" role="img" aria-label="Ilustrasi tanaman di dalam lengkung jendela">
+  <svg viewBox="0 0 300 410" preserveAspectRatio="xMidYMid slice"><circle class="sun" cx="150" cy="150" r="70" fill="#E8A58C" opacity=".85"/><circle cx="150" cy="150" r="104" fill="none" stroke="#fff" stroke-width="1" opacity=".5"/><circle cx="150" cy="150" r="140" fill="none" stroke="#fff" stroke-width="1" opacity=".3"/>
+   <g class="lf"><path d="M150 410V220" stroke="#123A2F" stroke-width="5" stroke-linecap="round"/><path d="M150 330c-50-6-72-40-66-80 44 4 68 34 66 80z" fill="#1E5A46"/><path d="M150 290c46-10 64-44 56-82-42 8-62 38-56 82z" fill="#2B7A5E"/><path d="M150 360c40-4 62-30 60-64-38 2-58 28-60 64z" fill="#123A2F"/><path d="M150 250c-34-14-44-46-34-78 34 12 44 44 34 78z" fill="#2B7A5E"/></g></svg>
+ </div>
+</section>
+<div class="pro mono"><span>Konsultasi singkat di awal</span><span>Produk sesuai jenis kulit</span><span>Reservasi dengan jam jelas</span></div>
+
+<section class="p" id="layanan" aria-labelledby="lh">
+ <h2 id="lh" class="rv">Pilih satu perawatan, atau <em>tanya rekomendasi.</em></h2>
+ <p class="sub rv" style="--d:.1s">Harga dan durasi hanya contoh tampilan demo.</p>
+ <ul class="svc" id="svc"></ul>
+</section>
+
+<section class="p flow" id="alur" aria-labelledby="ah">
+ <h2 id="ah" class="rv">Dari reservasi sampai pulang, <em>semuanya sederhana.</em></h2>
+ <ol class="fl" id="fl">
+  <li><b>Reservasi</b><span>Pilih layanan dan jam lewat WhatsApp. Kami konfirmasi dalam beberapa menit.</span></li>
+  <li><b>Konsultasi singkat</b><span>Ngobrol dengan terapis tentang kondisi dan kebiasaan kulitmu, sekitar lima menit.</span></li>
+  <li><b>Perawatan</b><span>Satu langkah demi satu langkah, dengan produk yang cocok untuk jenis kulitmu.</span></li>
+  <li><b>Saran pulang</b><span>Rutinitas harian yang ringan dan jadwal kunjungan berikutnya, kalau perlu.</span></li>
+ </ol>
+</section>
+
+<section class="p" aria-labelledby="qh">
+ <h2 id="qh" class="rv">Pertanyaan <em>yang sering ada.</em></h2>
+ <div style="margin-top:40px;border-top:1px solid rgba(18,58,47,.3)">
+  <details><summary>Apakah perlu datang dengan wajah bersih?</summary><p>Tidak perlu. Terapis akan membersihkan wajahmu di awal sesi.</p></details>
+  <details><summary>Bagaimana kalau kulitku sedang berjerawat meradang?</summary><p>Sampaikan saat reservasi. Kami mulai dengan langkah yang paling ringan dan menyesuaikan di tempat.</p></details>
+  <details><summary>Bolehkah memindahkan jadwal?</summary><p>Boleh, kabari paling lambat tiga jam sebelum jam reservasi lewat WhatsApp.</p></details>
+  <details><summary>Apakah ada paket wajib?</summary><p>Tidak ada. Kamu hanya membayar perawatan yang kamu pilih.</p></details>
+ </div>
+</section>
+
+<section class="p res" id="reservasi" aria-labelledby="rh">
+ <div><h2 id="rh" class="rv">Siap <em>bertemu?</em></h2><p class="sub rv" style="--d:.1s">Pilih layanan dan jam yang kamu suka. Kami balas lewat WhatsApp untuk memastikan.</p></div>
+ <form id="f" class="rv" style="--d:.15s">
+  <label><span class="mono">Layanan</span><select id="s"></select></label>
+  <div><div class="mono" style="margin-bottom:10px">Hari</div><div class="chips" id="dy"></div></div>
+  <div><div class="mono" style="margin-bottom:10px">Jam</div><div class="chips" id="tm"></div></div>
+  <label><span class="mono">Nama</span><input type="text" id="n" autocomplete="name" placeholder="Nama kamu"></label>
+  <button class="btn" type="submit">Kirim lewat WhatsApp</button>
+ </form>
+</section>
+</main>
+<footer><div class="sig" aria-hidden="true">Lumi.</div>Contoh tampilan demo. Nama, layanan, harga, dan nomor WhatsApp adalah ilustrasi.</footer>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},V=V2;
+var S=[['Facial pembersihan','60 menit',250000,'Membersihkan pori, mengangkat sel kulit mati, ditutup masker yang menenangkan.','#E8B9A5'],['Facial hidrasi','75 menit',320000,'Untuk kulit kusam dan kering. Fokus pada kelembapan dan tekstur yang lebih halus.','#BFDDE0'],['Perawatan jerawat','75 menit',350000,'Dimulai dengan pengecekan kondisi kulit, lalu langkah yang paling ringan lebih dulu.','#CFE5CC'],['Konsultasi kulit','20 menit',75000,'Ngobrol dengan terapis, mendapat saran rutinitas harian tanpa harus melakukan perawatan.','#F2D7A8']];
+var h='',o='';S.forEach(function(x,i){h+='<li class="sv rv" style="--d:'+i*.08+'s"><button type="button" aria-expanded="false" aria-controls="b'+i+'"><span class="tint" style="--t:'+x[4]+'"></span><span class="n">0'+(i+1)+'</span><span class="nm">'+x[0]+'</span><span class="du">'+x[1]+'</span><span class="pr">'+V.rp(x[2])+'</span><span class="pl" aria-hidden="true">+</span></button><div class="bd" id="b'+i+'"><div><p>'+x[3]+' Durasi sekitar '+x[1]+'.</p></div></div></li>';o+='<option>'+x[0]+'</option>'});
+$('#svc').innerHTML=h;$('#s').innerHTML=o;
+$('#svc').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var ex=b.getAttribute('aria-expanded')==='true';[].forEach.call(document.querySelectorAll('.sv button'),function(x){x.setAttribute('aria-expanded','false')});b.setAttribute('aria-expanded',String(!ex))});
+var D=['Min','Sen','Sel','Rab','Kam','Jum','Sab'],dh='',dt=new Date();for(var i=1;i<=5;i++){var x=new Date(dt.getTime()+i*864e5);dh+='<label><input type="radio" name="d" value="'+D[x.getDay()]+' '+x.getDate()+'/'+(x.getMonth()+1)+'"'+(i===1?' checked':'')+'><span>'+D[x.getDay()]+' '+x.getDate()+'</span></label>'}$('#dy').innerHTML=dh;
+var th='';['10.00','11.30','13.00','14.30','16.00'].forEach(function(t,i){th+='<label><input type="radio" name="t" value="'+t+'"'+(i===2?' checked':'')+'><span>'+t+'</span></label>'});$('#tm').innerHTML=th;
+$('#f').addEventListener('submit',function(e){e.preventDefault();var g=function(n){return document.querySelector('input[name='+n+']:checked').value};V.wa(['Halo Lumi Skin Studio, saya mau reservasi:','Layanan: '+$('#s').value,'Hari: '+g('d'),'Jam: '+g('t'),'Nama: '+($('#n').value||'-')])});
+/* garis alur menggambar sendiri saat gulir */
+var fl=$('#fl'),li=[].slice.call(fl.children);
+function sc(){var r=fl.getBoundingClientRect(),p=Math.max(0,Math.min(1,(innerHeight*.7-r.top)/r.height));fl.style.setProperty('--p',p);li.forEach(function(l,i){l.classList.toggle('on',p>=i/(li.length-1)-.02)})}
+if(V.mo){addEventListener('scroll',function(){requestAnimationFrame(sc)},{passive:true});sc()}else{fl.style.setProperty('--p',1);li.forEach(function(l){l.classList.add('on')})}
+/* orb mengikuti kursor pelan */
+if(V.mo&&matchMedia('(hover:hover)').matches){var hs=$('.hero');hs.addEventListener('mousemove',function(e){var x=(e.clientX/innerWidth-.5),y=(e.clientY/innerHeight-.5);document.querySelectorAll('.orb').forEach(function(b,i){var k=(i+1)*40;b.style.setProperty('--mx',(x*k)+'px');b.style.setProperty('--my',(y*k)+'px')})})}
+V.rv();V.ok();
+})();
+</script>
+</body>
+</html>

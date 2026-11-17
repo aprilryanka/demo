@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Kira Aksara | Kreator konten, Bandung</title>
+<meta name="description" content="Demo tampilan website kreator: konten pilihan, bentuk kerja sama, dan tombol hubungi.">
+<meta name="theme-color" content="#F2F0EA">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_v2/base.css">
+<script src="../_v2/base.js"></script>
+<style>
+:root{--ink:#0B0B0B;--paper:#F2F0EA;--red:#FF3B1D;--lilac:#C9B8FF;--yel:#FFE14A;--acc:#FF3B1D;--pad:clamp(18px,4vw,56px);--d:"Anybody",Impact,sans-serif;--f:"Instrument Sans",system-ui,sans-serif;--grain:.1}
+body{background:var(--paper);color:var(--ink);font:400 1.0625rem/1.55 var(--f)}
+.mono{font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.72rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 30px;background:var(--ink);color:var(--paper);font-weight:600;text-decoration:none;border:2px solid var(--ink);cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.btn:hover{background:var(--red);border-color:var(--red);color:#fff;transform:skewX(-6deg)}
+.btn.o{background:transparent;color:var(--ink)}.btn.o:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+header{position:fixed;inset:0 0 auto 0;z-index:80;display:flex;justify-content:space-between;align-items:center;padding:6px var(--pad);background:var(--paper);border-bottom:2px solid var(--ink)}
+header a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.brand{font-family:var(--d);font-weight:900;font-stretch:125%;letter-spacing:-.02em}
+header nav{display:flex;gap:clamp(14px,3vw,30px)}
+.hero{min-height:100svh;padding:100px var(--pad) 28px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.nm{margin:0;font-family:var(--d);text-transform:uppercase;line-height:.78;letter-spacing:-.03em;font-size:clamp(4.4rem,21vw,23rem);font-variation-settings:"wdth" var(--w,100),"wght" var(--g,800);transition:font-variation-settings .25s ease-out}
+.nm span{display:block;white-space:nowrap}
+.nm .r{color:var(--red)}
+.hero-b{display:grid;gap:22px;align-items:end;margin-top:26px}
+.hero-b p{margin:0;max-width:30rem;font-size:1.15rem}
+.hero-b .cta{display:flex;gap:12px;flex-wrap:wrap}
+.tag{display:inline-block;background:var(--yel);padding:4px 12px;border:2px solid var(--ink);transform:rotate(-2deg);font-weight:700;margin-bottom:14px}
+.mq{background:var(--ink);color:var(--paper);padding:6px 0;transform:rotate(1.2deg);margin:0 -2vw;border-block:2px solid var(--ink);position:relative;z-index:3}
+.mq span{font-family:var(--d);font-weight:800;font-stretch:130%;text-transform:uppercase;font-size:clamp(1.4rem,3.4vw,2.6rem);padding:8px 0;white-space:nowrap}
+.mq span::after{content:"✱";color:var(--red);margin:0 .7em}
+section.p{padding:clamp(80px,12vw,160px) var(--pad)}
+h2{margin:0;font-family:var(--d);font-weight:900;font-stretch:120%;text-transform:uppercase;letter-spacing:-.03em;line-height:.85;font-size:clamp(2.8rem,9vw,8.4rem)}
+h2 em{font-style:normal;color:var(--red)}
+.sub{max-width:32rem;margin:18px 0 0}
+.gr{display:grid;gap:18px;margin-top:44px}
+.cd{position:relative;min-height:340px;border:2px solid var(--ink);padding:22px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;overflow:hidden;background:var(--bg);transform-style:preserve-3d;transition:transform .25s ease-out,box-shadow .25s;cursor:none}
+.cd:hover{box-shadow:10px 10px 0 var(--ink)}
+.cd .k{font-weight:700}
+.cd .nn{position:absolute;right:-10px;bottom:-34px;font-family:var(--d);font-weight:900;font-stretch:150%;font-size:clamp(9rem,22vw,15rem);line-height:1;opacity:.14;pointer-events:none}
+.cd h3{margin:0;font-family:var(--d);font-weight:800;font-stretch:110%;text-transform:uppercase;font-size:clamp(1.6rem,3.6vw,2.6rem);line-height:.95;letter-spacing:-.02em;max-width:14ch;position:relative}
+.cd p{margin:10px 0 0;position:relative;max-width:22rem}
+.play{width:62px;height:62px;border-radius:50%;background:var(--ink);display:grid;place-items:center;transition:background .2s,transform .3s}
+.play::after{content:"";border-left:18px solid var(--paper);border-block:11px solid transparent;margin-left:5px}
+.cd:hover .play{background:var(--red);transform:scale(1.15)}
+.cur{position:fixed;left:0;top:0;z-index:300;pointer-events:none;width:14px;height:14px;border-radius:50%;background:var(--red);mix-blend-mode:normal;translate:-50% -50%;transition:width .3s,height .3s,background .3s;display:grid;place-items:center;font-weight:700;font-size:.7rem;color:#fff;text-transform:uppercase;letter-spacing:.1em;opacity:0}
+.cur.on{opacity:1}.cur.big{width:92px;height:92px}
+/* kerja sama */
+.kj{background:var(--ink);color:var(--paper)}
+.kj h2 em{color:var(--lilac)}
+.fm{margin-top:44px;border-top:2px solid var(--paper)}
+.fm button{width:100%;display:grid;grid-template-columns:auto 1fr auto;gap:clamp(12px,3vw,40px);align-items:center;text-align:left;background:none;border:0;border-bottom:2px solid var(--paper);padding:clamp(20px,3vw,34px) 0;cursor:pointer;color:inherit}
+.fm .i{font-family:var(--d);font-weight:700;color:var(--lilac)}
+.fm .t{font-family:var(--d);font-weight:800;font-stretch:115%;text-transform:uppercase;letter-spacing:-.02em;font-size:clamp(1.6rem,5vw,4rem);line-height:1;transition:font-stretch .5s,letter-spacing .5s,color .3s;font-variation-settings:"wdth" 110}
+.fm button:hover .t,.fm button[aria-expanded=true] .t{color:var(--lilac);font-variation-settings:"wdth" 150}
+.fm .a{font-size:2rem;font-weight:300;transition:transform .4s}
+.fm button[aria-expanded=true] .a{transform:rotate(45deg)}
+.fm .bd{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s}
+.fm .bd>div{overflow:hidden}
+.fm .bd p{margin:0;padding:0 0 28px;max-width:38rem;font-size:1.15rem}
+.fm button[aria-expanded=true]+.bd{grid-template-rows:1fr}
+/* kontak */
+.ct{background:var(--red);color:#fff;text-align:left;overflow:hidden}
+.ct a.big{display:block;text-decoration:none;font-family:var(--d);font-weight:900;font-stretch:130%;text-transform:uppercase;letter-spacing:-.04em;line-height:.8;font-size:clamp(3.6rem,17vw,19rem);margin:34px 0;transition:letter-spacing .4s,color .3s,font-variation-settings .4s;font-variation-settings:"wdth" 100}
+.ct a.big:hover{color:var(--ink);font-variation-settings:"wdth" 150;letter-spacing:-.06em}
+footer{background:var(--ink);color:rgba(242,240,234,.7);padding:18px var(--pad);font-size:.85rem}
+@media(min-width:900px){.hero-b{grid-template-columns:1fr auto}.gr{grid-template-columns:repeat(6,1fr)}.cd:nth-child(1){grid-column:span 4}.cd:nth-child(2){grid-column:span 2}.cd:nth-child(3){grid-column:span 2}.cd:nth-child(4){grid-column:span 4}.cd:nth-child(5){grid-column:span 3}.cd:nth-child(6){grid-column:span 3}}
+@media(hover:none){.cd{cursor:auto}}
+</style>
+</head>
+<body class="grain">
+<a class="skip" href="#konten">Lewati ke konten</a>
+<header><a class="brand mono" href="#" translate="no" style="text-transform:none;font-size:1.1rem">Kira Aksara</a><nav class="mono"><a href="#konten">Konten</a><a href="#kerja">Kerja sama</a><a href="#hubungi">Hubungi</a></nav></header>
+<main>
+<section class="hero">
+ <h1 class="nm" id="nm" aria-label="Kira Aksara"><span aria-hidden="true">Kira</span><span class="r" aria-hidden="true">Aksara.</span></h1>
+ <div class="hero-b">
+  <div><span class="tag">Kreator konten, Bandung</span><p class="rv">Saya membuat video pendek tentang keseharian dan barang yang benar-benar dipakai. Jujur, ringan, dan enak ditonton sampai habis.</p></div>
+  <div class="cta rv" style="--d:.15s"><a class="btn" href="#hubungi">Ajak kerja sama</a><a class="btn o" href="#konten">Lihat konten</a></div>
+ </div>
+</section>
+<div class="mq" aria-hidden="true"><div class="mq-in" id="mq"></div></div>
+
+<section class="p" id="konten" aria-labelledby="kh">
+ <h2 id="kh" class="rv">Konten <em>pilihan.</em></h2>
+ <p class="sub rv" style="--d:.1s">Video pendek yang jelas di tiga detik pertama. Judul di halaman ini adalah contoh tampilan demo.</p>
+ <div class="gr" id="gr"></div>
+</section>
+
+<section class="p kj" id="kerja" aria-labelledby="jh">
+ <h2 id="jh" class="rv">Bentuk <em>kerja sama.</em></h2>
+ <p class="sub rv" style="--d:.1s">Alur jelas dari awal sampai tayang.</p>
+ <div class="fm" id="fm"></div>
+</section>
+
+<section class="p ct" id="hubungi" aria-labelledby="ch">
+ <h2 id="ch" class="rv" style="color:var(--ink)">Punya ide? <em style="color:#fff">Ceritakan.</em></h2>
+ <a class="big" id="wa" href="#" aria-label="Kirim pesan lewat WhatsApp">Kirim pesan →</a>
+</section>
+</main>
+<footer>Contoh tampilan demo. Nama, konten, dan nomor WhatsApp adalah ilustrasi.</footer>
+<div class="cur" id="cur" aria-hidden="true"></div>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},V=V2;
+/* huruf judul mengikuti kursor: lebar dan tebal berubah */
+var nm=$('#nm');
+if(V.mo&&matchMedia('(hover:hover)').matches){addEventListener('mousemove',function(e){nm.style.setProperty('--w',50+e.clientX/innerWidth*100);nm.style.setProperty('--g',100+e.clientY/innerHeight*800)})}
+else if(V.mo){var t0=0;(function a(t){nm.style.setProperty('--w',100+Math.sin(t/1400)*50);nm.style.setProperty('--g',500+Math.sin(t/1900)*380);requestAnimationFrame(a)})(0)}
+else{nm.style.setProperty('--w',100);nm.style.setProperty('--g',800)}
+V.mq($('#mq'),['Video pendek','Ulasan jujur','Cerita harian','Dipakai dulu, baru dibicarakan','Bandung']);
+var C=[['Seri unggulan','Seminggu hidup tanpa belanja impulsif','Catatan harian yang diedit jadi satu video utuh.','#FFE14A'],['Ulasan','Tas kerja yang awet','Uji pakai selama sebulan.','#C9B8FF'],['Tips','Rapikan meja dalam 10 menit','Langkah mudah, hasil terlihat.','#F2F0EA'],['Kolaborasi','Hari bersama brand lokal','Satu hari penuh di balik layar.','#FF3B1D'],['Cerita harian','Pagi yang tidak terburu-buru','Rutinitas kecil sebelum kerja.','#C9B8FF'],['Ulasan','Sepatu jalan kaki seharian','Dua minggu keliling kota.','#FFE14A']];
+var h='';C.forEach(function(c,i){h+='<a class="cd rv" href="#hubungi" data-cur="Tonton" style="--bg:'+c[3]+';--d:'+(i%3)*.08+'s"><span class="mono k">0'+(i+1)+' / '+c[0]+'</span><div><h3>'+c[1]+'</h3><p>'+c[2]+'</p></div><span class="play" aria-hidden="true"></span><span class="nn" aria-hidden="true">'+(i+1)+'</span></a>'});$('#gr').innerHTML=h;
+/* kartu miring mengikuti kursor */
+if(V.mo&&matchMedia('(hover:hover)').matches){[].forEach.call(document.querySelectorAll('.cd'),function(c){c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform='perspective(900px) rotateY('+x*8+'deg) rotateX('+(-y*8)+'deg) translateY(-4px)'});c.addEventListener('mouseleave',function(){c.style.transform=''})})}
+/* kursor khusus */
+var cu=$('#cur');
+if(matchMedia('(hover:hover)').matches){var X=0,Y=0,cx=0,cy=0;addEventListener('mousemove',function(e){X=e.clientX;Y=e.clientY;cu.classList.add('on')});(function a(){cx+=(X-cx)*.2;cy+=(Y-cy)*.2;cu.style.left=cx+'px';cu.style.top=cy+'px';requestAnimationFrame(a)})();
+ document.addEventListener('mouseover',function(e){var t=e.target.closest('[data-cur]');cu.classList.toggle('big',!!t);cu.textContent=t?t.dataset.cur:''});document.addEventListener('mouseleave',function(){cu.classList.remove('on')})}
+var F=[['Konten sponsor','Video yang menyatu dengan gaya saya, bukan iklan yang dipaksa. Brief dibahas dulu, naskah disetujui bersama, lalu tayang sesuai jadwal.'],['Ulasan produk','Produk dipakai dulu supaya pendapatnya bisa dipercaya. Kalau ada yang kurang, itu ikut dibicarakan dengan jujur.'],['Kehadiran di acara','Liputan singkat dan konten langsung dari lokasi, dari datang sampai pulang.']];
+var fh='';F.forEach(function(f,i){fh+='<div class="rv" style="--d:'+i*.08+'s"><button type="button" aria-expanded="false" aria-controls="f'+i+'"><span class="i mono">0'+(i+1)+'</span><span class="t">'+f[0]+'</span><span class="a" aria-hidden="true">+</span></button><div class="bd" id="f'+i+'"><div><p>'+f[1]+'</p></div></div></div>'});$('#fm').innerHTML=fh;
+$('#fm').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var ex=b.getAttribute('aria-expanded')==='true';[].forEach.call($('#fm').querySelectorAll('button'),function(x){x.setAttribute('aria-expanded','false')});b.setAttribute('aria-expanded',String(!ex))});
+$('#wa').addEventListener('click',function(e){e.preventDefault();V.wa(['Halo Kira, saya mau ajak kerja sama:','Brand/nama: ','Bentuk kerja sama: ','Rencana tayang: '])});
+V.rv();V.ok();
+})();
+</script>
+</body>
+</html>

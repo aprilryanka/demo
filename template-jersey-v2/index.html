@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Gawang Apparel | Jersey custom sublimasi</title>
+<meta name="description" content="Demo tampilan website jersey custom: rancang warna, corak, nama, dan nomor dengan pratinjau langsung, lalu kirim lewat WhatsApp.">
+<meta name="theme-color" content="#0E1A3A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_v2/base.css">
+<script src="../_v2/base.js"></script>
+<script src="../_v2/jersey.js"></script>
+<style>
+:root{--navy:#0E1A3A;--red:#FF3B30;--white:#F6F7FB;--lime:#D6FF3D;--acc:#FF3B30;--pad:clamp(18px,4vw,56px);--d:"Barlow Condensed",Impact,sans-serif;--f:"Barlow",system-ui,sans-serif;--grain:.08}
+body{background:var(--navy);color:var(--white);font:400 1.0625rem/1.55 var(--f)}
+.d{font-family:var(--d);font-weight:800;text-transform:uppercase;letter-spacing:-.01em}
+.mono{font-family:var(--d);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.85rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 30px;background:var(--red);color:#fff;font-family:var(--d);font-weight:800;font-size:1.2rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;clip-path:polygon(0 0,100% 0,100% 70%,92% 100%,0 100%);transition:background .2s,transform .2s}
+.btn:hover{background:var(--lime);color:var(--navy);transform:translateY(-3px)}
+.btn.o{background:transparent;color:var(--white);box-shadow:inset 0 0 0 2px var(--white);clip-path:none}.btn.o:hover{background:var(--white);color:var(--navy)}
+header{position:fixed;inset:0 0 auto 0;z-index:80;display:flex;justify-content:space-between;align-items:center;padding:6px var(--pad);background:rgba(14,26,58,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(246,247,251,.15)}
+header a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.brand{font-size:1.5rem}.brand i{color:var(--red);font-style:normal}
+header nav{display:flex;gap:clamp(14px,3vw,30px)}
+.pitch{position:absolute;inset:0;pointer-events:none;opacity:.18}
+.hero{position:relative;padding:120px var(--pad) 40px;overflow:hidden}
+.hero h1{margin:0;font-family:var(--d);font-weight:800;text-transform:uppercase;line-height:.84;letter-spacing:-.01em;font-size:clamp(3.6rem,13vw,13rem);position:relative}
+.hero h1 em{font-style:normal;color:var(--lime);display:block}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}.hero h1 .ln>span{display:block}
+.mo .hero h1 .ln>span{transform:translateY(105%) skewY(6deg);animation:up .9s cubic-bezier(.16,1,.3,1) forwards;animation-delay:calc(var(--i)*.12s + .1s)}
+@keyframes up{to{transform:none}}
+.hero p{max-width:32rem;margin:22px 0 28px;position:relative;font-size:1.15rem}
+.cta{display:flex;gap:14px;flex-wrap:wrap;position:relative}
+.fx{display:grid;gap:0;margin-top:44px;border-top:1px solid rgba(246,247,251,.25);position:relative}
+.fx div{padding:16px 0;border-bottom:1px solid rgba(246,247,251,.25)}
+.fx b{font-family:var(--d);font-size:1.8rem;color:var(--lime);display:block;line-height:1}
+/* konfigurator */
+.cfg{padding:clamp(60px,9vw,110px) var(--pad);background:var(--white);color:var(--navy);position:relative}
+.cfg h2,.pr h2{margin:0 0 30px;font-family:var(--d);font-weight:800;text-transform:uppercase;line-height:.88;font-size:clamp(2.8rem,8vw,7rem);letter-spacing:-.01em}
+.cfg h2 em,.pr h2 em{font-style:normal;color:var(--red)}
+.cg{display:grid;gap:30px}
+.st{background:var(--navy);position:relative;overflow:hidden;display:grid;place-items:center;min-height:440px;perspective:1100px;clip-path:polygon(0 0,100% 0,100% 94%,94% 100%,0 100%)}
+.st .big{position:absolute;font-family:var(--d);font-weight:800;font-size:clamp(14rem,40vw,30rem);line-height:.8;color:transparent;-webkit-text-stroke:2px rgba(246,247,251,.14);user-select:none}
+.jw{width:min(72%,380px);position:relative;transition:transform .8s cubic-bezier(.3,1.3,.5,1);transform-style:preserve-3d;filter:drop-shadow(0 30px 24px rgba(0,0,0,.45))}
+.jw.back{transform:rotateY(180deg)}
+.jw .fr,.jw .bk{backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.jw .bk{position:absolute;inset:0;transform:rotateY(180deg)}
+.jw svg{width:100%;display:block}
+.flip{position:absolute;right:14px;bottom:20px;z-index:2}
+.flip button{min-height:44px;padding:0 18px;background:var(--lime);color:var(--navy);border:0;font-family:var(--d);font-weight:800;text-transform:uppercase;letter-spacing:.08em;cursor:pointer;transition:transform .2s}
+.flip button:hover{transform:rotate(-3deg) scale(1.05)}
+.ct{display:grid;gap:22px;align-content:start}
+fieldset{border:0;padding:0;margin:0}legend{padding:0;margin-bottom:8px;color:var(--navy)}
+.sws{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.sws label{position:relative}.sws input[type=radio]{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.sws span.c{display:block;width:44px;height:44px;background:var(--c);border:2px solid var(--navy);transition:transform .15s}
+.sws label:hover span.c{transform:translateY(-3px)}
+.sws input:checked+span.c{box-shadow:0 0 0 3px var(--white),0 0 0 6px var(--navy)}
+.sws input:focus-visible+span.c{outline:3px solid var(--red);outline-offset:4px}
+.sws input[type=color]{width:44px;height:44px;padding:0;border:2px solid var(--navy);background:none;cursor:pointer}
+.pt{display:flex;gap:8px;flex-wrap:wrap}.pt label{position:relative}.pt input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.pt span{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border:2px solid var(--navy);font-family:var(--d);font-weight:700;font-size:1.1rem;text-transform:uppercase;letter-spacing:.06em;transition:background .2s,color .2s}
+.pt input:checked+span{background:var(--navy);color:var(--lime)}.pt input:focus-visible+span{outline:3px solid var(--red);outline-offset:2px}
+.tx{display:grid;grid-template-columns:2fr 1fr;gap:12px}
+.tx label{display:grid;gap:6px;color:var(--navy)}
+input[type=text],input[type=number]{min-height:52px;border:2px solid var(--navy);background:#fff;padding:0 14px;font-family:var(--d);font-weight:800;font-size:1.5rem;text-transform:uppercase;width:100%;color:var(--navy)}
+input[type=range]{width:100%;height:44px;accent-color:var(--red);cursor:pointer}
+.tot{display:flex;justify-content:space-between;align-items:end;gap:14px;border-top:3px solid var(--navy);padding-top:16px;color:var(--navy)}
+.tot b{font-family:var(--d);font-weight:800;font-size:clamp(2.4rem,6vw,3.6rem);line-height:.9;color:var(--red)}
+.tot small{display:block;color:#555;font-weight:500}
+/* harga */
+.pr{padding:clamp(60px,9vw,110px) var(--pad)}
+table{border-collapse:collapse;width:100%;max-width:700px;font-size:1.15rem}
+th,td{padding:18px 14px;text-align:left;border-bottom:1px solid rgba(246,247,251,.3)}
+th{font-family:var(--d);text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+td:last-child{font-family:var(--d);font-weight:800;font-size:1.6rem}
+tr.on td,tr.on th{background:var(--lime);color:var(--navy)}
+tbody tr{transition:background .3s}
+.sz{background:var(--red);color:#fff;padding:clamp(50px,8vw,90px) var(--pad);display:grid;gap:20px}
+.sz h2{margin:0;font-family:var(--d);font-weight:800;text-transform:uppercase;line-height:.88;font-size:clamp(2.6rem,7vw,6rem)}
+footer{padding:18px var(--pad);font-size:.85rem;color:rgba(246,247,251,.7)}
+@media(min-width:900px){.fx{grid-template-columns:repeat(4,1fr)}.fx div{border-bottom:0;border-left:1px solid rgba(246,247,251,.25);padding:16px 20px}.fx div:first-child{border-left:0;padding-left:0}.cg{grid-template-columns:1.05fr .95fr;align-items:start}.st{position:sticky;top:84px;min-height:620px}}
+</style>
+</head>
+<body class="grain">
+<a class="skip" href="#rancang">Lewati ke perancang</a>
+<header><a class="brand d" href="#" translate="no">Gawang<i>.</i></a><nav class="mono"><a href="#rancang">Rancang</a><a href="#harga">Harga</a><a href="#alur">Alur</a></nav></header>
+<main>
+<section class="hero">
+ <svg class="pitch" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#F6F7FB" stroke-width="3"><rect x="40" y="40" width="1120" height="520"/><path d="M600 40v520"/><circle cx="600" cy="300" r="90"/><rect x="40" y="170" width="150" height="260"/><rect x="1010" y="170" width="150" height="260"/></g></svg>
+ <p class="mono rv" style="color:var(--lime);position:relative">Jersey custom sublimasi</p>
+ <h1 aria-label="Jersey tim kamu, desain sendiri."><span class="ln" aria-hidden="true"><span style="--i:0">Jersey tim kamu,</span></span><span class="ln" aria-hidden="true"><span style="--i:1"><em>desain sendiri.</em></span></span></h1>
+ <p class="rv" style="--d:.5s">Atur warna, corak, nama, dan nomor langsung di halaman ini. Mockup resmi kami kirim sebelum produksi dimulai.</p>
+ <div class="cta rv" style="--d:.65s"><a class="btn" href="#rancang">Rancang jersey</a><a class="btn o" href="#harga">Lihat harga</a></div>
+ <div class="fx"><div class="rv"><b>Min. 10</b>jersey, satu desain untuk satu tim</div><div class="rv" style="--d:.08s"><b>10–14 hari</b>produksi, dihitung setelah mockup disetujui</div><div class="rv" style="--d:.16s"><b>Mockup gratis</b>revisi sampai kamu puas</div><div class="rv" style="--d:.24s"><b>Dry-fit</b>cetak penuh sublimasi</div></div>
+</section>
+
+<section class="cfg" id="rancang" aria-labelledby="rh">
+ <h2 id="rh" class="rv">Rancang <em>jerseymu.</em></h2>
+ <div class="cg">
+  <div class="st rv" aria-live="polite"><div class="big" id="bg" aria-hidden="true">10</div><div class="jw" id="jw"><div class="fr" id="fr"></div><div class="bk" id="bk"></div></div><div class="flip"><button id="fl" type="button" aria-pressed="false">Putar: depan / belakang</button></div></div>
+  <form class="ct rv" id="f" style="--d:.1s" onsubmit="return false">
+   <fieldset><legend class="mono">Warna utama</legend><div class="sws" id="m1"></div></fieldset>
+   <fieldset><legend class="mono">Warna aksen</legend><div class="sws" id="m2"></div></fieldset>
+   <fieldset><legend class="mono">Corak</legend><div class="pt" id="pt"></div></fieldset>
+   <div class="tx"><label><span class="mono">Nama di punggung</span><input type="text" id="nm" maxlength="12" value="Rafli"></label><label><span class="mono">Nomor</span><input type="number" id="no" min="0" max="99" value="10"></label></div>
+   <label><span class="mono">Jumlah jersey: <b id="qv">20</b></span><input type="range" id="q" min="10" max="150" step="1" value="20"></label>
+   <div class="tot"><div><span class="mono">Perkiraan total</span><b id="tot"></b><small id="per"></small></div><button class="btn" id="go" type="button">Kirim ke WhatsApp</button></div>
+  </form>
+ </div>
+</section>
+
+<section class="pr" id="harga" aria-labelledby="ph">
+ <h2 id="ph" class="rv">Makin banyak, <em>makin murah.</em></h2>
+ <table class="rv"><caption class="vh">Daftar harga per jersey</caption><thead><tr><th scope="col">Jumlah</th><th scope="col">Per jersey</th></tr></thead><tbody id="tb"></tbody></table>
+ <p style="margin-top:16px;max-width:36rem;color:rgba(246,247,251,.8)">Sudah termasuk bahan dry-fit, cetak penuh sublimasi, serta nama dan nomor. Harga hanya ilustrasi untuk contoh tampilan.</p>
+</section>
+
+<section class="sz" id="alur" aria-labelledby="ah"><h2 id="ah" class="rv">Dari rancangan ke lapangan</h2><div class="rv" style="max-width:40rem;font-size:1.15rem">1. Rancang dan kirim lewat WhatsApp. 2. Kami kirim mockup resmi. 3. Kirim daftar nama dan ukuran. 4. Produksi 10 sampai 14 hari, lalu dikirim.</div></section>
+</main>
+<footer>Contoh tampilan demo. Nama, harga, dan nomor WhatsApp adalah ilustrasi. Tidak ada data yang disimpan di situs.</footer>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},V=V2;
+var CL=['#FF3B30','#0E1A3A','#F6F7FB','#111111','#1E7A46','#F4C20D','#2A6BFF','#8A2BE2'],PT=[['polos','Polos'],['strip','Strip'],['pita','Pita'],['dua','Dua warna']],st={m:0,a:2,p:'strip',back:false};
+function sw(id,name,sel){var h='';CL.forEach(function(c,i){h+='<label><input type="radio" name="'+name+'" value="'+i+'"'+(i===sel?' checked':'')+'><span class="c" style="--c:'+c+'" role="img" aria-label="'+c+'"></span></label>'});h+='<label><input type="color" id="'+name+'c" aria-label="Warna sendiri" value="'+CL[sel]+'"></label>';$(id).innerHTML=h}
+sw('#m1','m',0);sw('#m2','a',2);
+var h='';PT.forEach(function(p){h+='<label><input type="radio" name="p" value="'+p[0]+'"'+(p[0]===st.p?' checked':'')+'><span>'+p[1]+'</span></label>'});$('#pt').innerHTML=h;
+var mc=CL[0],ac=CL[2];
+function paint(){var o={main:mc,accent:ac,pattern:st.p,name:$('#nm').value,num:$('#no').value};$('#fr').innerHTML=jerseySVG(o);o.back=true;$('#bk').innerHTML=jerseySVG(o);$('#bg').textContent=$('#no').value||'0'}
+var T=[[10,24,135000],[25,49,125000],[50,9999,115000]];
+function price(q){return T.filter(function(t){return q>=t[0]&&q<=t[1]})[0][2]}
+function calc(){var q=+$('#q').value,pr=price(q);$('#qv').textContent=q;$('#per').textContent=V.rp(pr)+' per jersey';$('#tot').textContent=V.rp(pr*q);[].forEach.call($('#tb').children,function(r,i){r.classList.toggle('on',q>=T[i][0]&&q<=T[i][1])});return pr*q}
+var tb='';T.forEach(function(t,i){tb+='<tr><th scope="row">'+(i<2?t[0]+' sampai '+t[1]+' jersey':t[0]+' jersey ke atas')+'</th><td>'+V.rp(t[2])+'</td></tr>'});$('#tb').innerHTML=tb;
+$('#f').addEventListener('input',function(e){var n=e.target.name||e.target.id;if(n==='m')mc=CL[+e.target.value];else if(n==='mc')mc=e.target.value;else if(n==='a')ac=CL[+e.target.value];else if(n==='ac')ac=e.target.value;else if(n==='p')st.p=e.target.value;if(e.target.id==='no'&&+e.target.value>99)e.target.value=99;paint();calc()});
+$('#fl').addEventListener('click',function(){st.back=!st.back;$('#jw').classList.toggle('back',st.back);this.setAttribute('aria-pressed',st.back)});
+$('#go').addEventListener('click',function(){var t=calc(),N=['polos','strip','pita','dua warna'];V.wa(['Halo Gawang Apparel, saya mau pesan jersey custom:','Warna utama: '+mc,'Warna aksen: '+ac,'Corak: '+st.p,'Contoh nama dan nomor: '+$('#nm').value+' / '+$('#no').value,'Jumlah: '+$('#q').value+' jersey','Perkiraan total: '+V.rp(t),'Daftar nama dan ukuran akan saya kirim setelah mockup.'])});
+paint();calc();V.rv();V.ok();
+})();
+</script>
+</body>
+</html>
