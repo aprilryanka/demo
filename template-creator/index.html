@@ -85,6 +85,17 @@ footer{padding:26px 0 40px;font-size:.875rem;color:var(--soft)}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.tile:hover{transform:none;box-shadow:none}}
 </style>
+<script>
+/* Motion aktif hanya jika JS jalan. Mati otomatis saat prefers-reduced-motion atau URL memakai ?static */
+(function(){var d=document.documentElement,M=window.MO={rv:'.what li,#konten h2,.tile,.note,.split > div,.split li,.hello .wrap > *',intro:'.hero .tag,.hero .lead,.hero .cta',hide:''};
+if(matchMedia('(prefers-reduced-motion: reduce)').matches||/[?&]static\b/.test(location.search))return;
+d.classList.add('mo');
+var s=document.createElement('style');
+s.textContent='.mo '+[M.rv,M.intro,M.hide].filter(Boolean).join(',').split(',').join(',.mo ')+'{opacity:0}.mo h1{visibility:hidden}.w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .06em .14em 0;margin:0 -.06em -.14em 0}';
+document.head.appendChild(s);
+function off(){if(!window.__mo)d.classList.remove('mo')}
+addEventListener('load',off);setTimeout(off,3500)})();
+</script>
 </head>
 <body>
 <a class="skip" href="#konten">Lewati ke konten</a>
@@ -129,5 +140,24 @@ footer{padding:26px 0 40px;font-size:.875rem;color:var(--soft)}
  </div></section>
 </main>
 <footer><div class="wrap">Contoh tampilan demo. Nama, kota, dan judul konten adalah ilustrasi.</div></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script>
+MO.extra=function(g,$){
+  g.to('.hero h1 span',{xPercent:5,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+};
+document.addEventListener('DOMContentLoaded',function(){
+var d=document.documentElement;if(!d.classList.contains('mo')||!window.gsap||!window.ScrollTrigger)return;
+var g=gsap,M=window.MO,$=function(s){return[].slice.call(document.querySelectorAll(s))};
+g.registerPlugin(ScrollTrigger);
+function split(el){var o=[];(function walk(n){[].slice.call(n.childNodes).forEach(function(c){if(c.nodeType===3){var f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(function(p){if(!p)return;if(/^\s+$/.test(p)){f.appendChild(document.createTextNode(' '));return}var a=document.createElement('span'),b=document.createElement('span');a.className='w';b.className='wi';b.textContent=p;a.appendChild(b);f.appendChild(a);o.push(b)});n.replaceChild(f,c)}else if(c.nodeType===1&&c.tagName!=='BR'){walk(c)}})})(el);return o}
+var h=document.querySelector('h1'),w=h?split(h):[];
+var tl=g.timeline({defaults:{ease:'power2.out'}});
+if(h){h.style.visibility='visible';tl.from(w,{yPercent:115,duration:.9,ease:'expo.out',stagger:.06},0)}
+tl.fromTo($(M.intro),{y:18,opacity:0},{y:0,opacity:1,duration:.7,stagger:.1,clearProps:'transform'},.25);
+ScrollTrigger.batch(M.rv,{start:'top 90%',once:true,onEnter:function(e){g.fromTo(e,{y:22,opacity:0},{y:0,opacity:1,duration:.6,stagger:.07,ease:'power2.out',overwrite:true,clearProps:'transform'})}});
+if(M.extra)M.extra(g,$);
+window.__mo=1});
+</script>
 </body>
 </html>
