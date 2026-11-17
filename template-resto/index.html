@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dapur Lawang | Rumah makan masakan rumahan</title>
+<meta name="description" content="Dapur Lawang, rumah makan masakan rumahan. Lihat menu, promo hari ini, dan pesan meja lewat WhatsApp.">
+<meta name="theme-color" content="#16231C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--night:#16231C;--night2:#1F3027;--cream:#F5ECDD;--paper:#FBF6EC;--ink:#1B1712;--soft:#5E564A;--chili:#C2371D;--chili-d:#9C2A14;--gold:#E2A72B;--line:#DDD0BA;--line-n:#33483C}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Figtree,system-ui,sans-serif;font-size:1.0625rem;line-height:1.6;color:var(--ink);background:var(--paper)}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:700;line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(2.5rem,7.4vw,4.75rem)}
+h2{font-size:clamp(1.9rem,4.4vw,3rem)}
+h3{font-size:1.2rem;font-weight:500}
+p{margin:0}
+a{color:inherit}
+img,svg{max-width:100%;display:block}
+.wrap{width:min(100% - 2.5rem,72rem);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:.5rem;background:var(--gold);color:var(--ink);padding:.75rem 1rem;z-index:20;font-weight:700}
+.skip:focus{left:.5rem}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:.75rem 1.4rem;font:inherit;font-weight:700;text-decoration:none;border:2px solid transparent;border-radius:4px;cursor:pointer;transition:background-color .15s,color .15s}
+.btn-main{background:var(--chili);color:#fff}
+.btn-main:hover{background:var(--chili-d)}
+.btn-line{border-color:currentColor;background:transparent;color:inherit}
+.btn-line:hover{background:var(--cream);color:var(--ink)}
+.tag{display:inline-block;font-size:.8125rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--chili)}
+.num{font-variant-numeric:tabular-nums}
+
+/* header */
+.top{background:var(--night);color:var(--cream);position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line-n)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:64px}
+.brand{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:1.35rem;text-decoration:none;display:inline-flex;align-items:center;gap:.28em;min-height:44px}
+.brand span{color:var(--gold)}
+.nav{display:none;gap:1.75rem}
+.nav a{text-decoration:none;font-weight:500;display:inline-flex;align-items:center;min-height:44px}
+.nav a:hover{color:var(--gold)}
+.top .btn{min-height:44px;padding:.5rem 1rem}
+@media(min-width:52rem){.nav{display:flex}}
+
+/* hero */
+.hero{background:var(--night);color:var(--cream);padding:clamp(2.5rem,7vw,5.5rem) 0 clamp(3rem,8vw,6rem);overflow:hidden}
+.hero .wrap{display:grid;gap:2.5rem;align-items:center}
+.hero .tag{color:var(--gold)}
+.hero h1{margin:.75rem 0 1.25rem}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--gold)}
+.hero p{max-width:34rem;color:#D8CFBF;font-size:1.125rem}
+.acts{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.plate{width:min(100%,26rem);margin-inline:auto}
+@media(min-width:56rem){.hero .wrap{grid-template-columns:1.15fr .85fr}.plate{margin-right:-1rem}}
+
+/* info */
+.info{background:var(--cream);border-bottom:1px solid var(--line)}
+.info dl{display:grid;margin:0}
+.info div{padding:1.4rem 0;border-top:1px solid var(--line)}
+.info div:first-child{border-top:0}
+.info dt{font-size:.8125rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+.info dd{margin:.25rem 0 0;font-weight:600;font-size:1.0625rem}
+.info small{display:block;font-weight:400;color:var(--soft);font-size:.9375rem}
+@media(min-width:48rem){.info dl{grid-template-columns:repeat(3,1fr)}.info div{border-top:0;border-left:1px solid var(--line);padding:1.75rem 1.5rem}.info div:first-child{border-left:0;padding-left:0}}
+
+.pad{padding:clamp(3.5rem,9vw,6.5rem) 0}
+.head{display:grid;gap:.75rem;margin-bottom:2.25rem;max-width:40rem}
+.head p{color:var(--soft)}
+
+/* promo */
+.promo{display:grid;gap:1rem}
+.promo article{display:grid;grid-template-columns:auto 1fr;gap:1.25rem;align-items:center;padding:1.5rem;border-radius:6px}
+.promo .a{background:var(--chili);color:#fff}
+.promo .b{background:var(--gold);color:var(--ink)}
+.promo .big{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:clamp(2.6rem,7vw,3.75rem);line-height:1}
+.promo h3{font-family:Figtree,sans-serif;font-weight:700;font-size:1.2rem}
+.promo p{font-size:.9688rem;opacity:.92}
+@media(min-width:48rem){.promo{grid-template-columns:1.3fr 1fr}}
+
+/* menu */
+.menu{background:var(--cream)}
+.tabs{display:flex;gap:.5rem;overflow-x:auto;padding-bottom:.5rem;margin-bottom:1.75rem;scrollbar-width:thin}
+.tabs button{flex:none;min-height:44px;padding:.5rem 1.15rem;font:inherit;font-weight:600;border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;cursor:pointer}
+.tabs button[aria-pressed=true]{background:var(--ink);color:var(--cream)}
+.list{list-style:none;margin:0;padding:0;display:grid;column-gap:3.5rem}
+.list li{display:grid;grid-template-columns:1fr auto;gap:.25rem 1rem;padding:1.1rem 0;border-bottom:1px dashed #C9B998}
+.list li[hidden]{display:none}
+.list h3{font-family:Figtree,sans-serif;font-weight:700;font-size:1.0938rem}
+.list p{grid-column:1;color:var(--soft);font-size:.9375rem}
+.list .price{font-weight:700;font-size:1.0938rem;white-space:nowrap}
+.list .hot{display:inline-block;margin-left:.4rem;padding:.05rem .45rem;font-size:.75rem;font-weight:700;background:var(--chili);color:#fff;border-radius:3px;vertical-align:2px}
+.note{margin-top:1.5rem;font-size:.9375rem;color:var(--soft)}
+@media(min-width:52rem){.list{grid-template-columns:1fr 1fr}}
+
+/* story */
+.story .wrap{display:grid;gap:2.5rem;align-items:center}
+.story p+p{margin-top:1rem}
+.story .txt p{color:var(--soft);max-width:36rem}
+.facts{list-style:none;margin:2rem 0 0;padding:0;display:grid;gap:.85rem}
+.facts li{display:flex;gap:.75rem;align-items:flex-start;font-weight:600}
+.facts svg{flex:none;margin-top:.2rem}
+@media(min-width:56rem){.story .wrap{grid-template-columns:.8fr 1.2fr}}
+
+/* booking */
+.book{background:var(--night);color:var(--cream)}
+.book .wrap{display:grid;gap:2.5rem}
+.book .head p{color:#D8CFBF}
+.book .tag{color:var(--gold)}
+form{display:grid;gap:1rem}
+.row{display:grid;gap:1rem}
+label{display:grid;gap:.4rem;font-weight:600;font-size:.9688rem}
+input,select,textarea{font:inherit;min-height:48px;padding:.65rem .85rem;border:1.5px solid var(--line-n);background:var(--night2);color:var(--cream);border-radius:4px;width:100%}
+textarea{min-height:6rem;resize:vertical}
+input::placeholder,textarea::placeholder{color:#93A397}
+.hint{font-size:.9063rem;color:#B9C4BB}
+@media(min-width:36rem){.row{grid-template-columns:1fr 1fr}}
+@media(min-width:56rem){.book .wrap{grid-template-columns:.85fr 1.15fr;align-items:start}}
+
+footer{background:var(--ink);color:#CFC6B6;padding:3rem 0 2rem;font-size:.9688rem}
+footer .wrap{display:grid;gap:2rem}
+footer h3{font-family:Figtree,sans-serif;font-weight:700;font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{display:flex;justify-content:space-between;gap:1rem;max-width:17rem;padding:.2rem 0}
+.demo{border-top:1px solid #3A342B;padding-top:1.25rem;font-size:.875rem;color:#A39A8A}
+@media(min-width:48rem){footer .wrap{grid-template-columns:1.3fr 1fr 1fr}.demo{grid-column:1/-1}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style>
+<script>
+/* Motion aktif hanya jika JS jalan. Mati otomatis saat prefers-reduced-motion atau URL memakai ?static */
+(function(){var d=document.documentElement,M=window.MO={rv:'.info div,.head,.promo article,.list li,.note,.story > svg,.story .txt,.book form',intro:'.hero .tag,.hero p,.acts',hide:'.plate'};
+if(matchMedia('(prefers-reduced-motion: reduce)').matches||/[?&]static\b/.test(location.search))return;
+d.classList.add('mo');
+var s=document.createElement('style');
+s.textContent='.mo '+[M.rv,M.intro,M.hide].filter(Boolean).join(',').split(',').join(',.mo ')+'{opacity:0}.mo h1{visibility:hidden}.w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .06em .14em 0;margin:0 -.06em -.14em 0}';
+document.head.appendChild(s);
+function off(){if(!window.__mo)d.classList.remove('mo')}
+addEventListener('load',off);setTimeout(off,3500)})();
+</script>
+</head>
+<body>
+<a class="skip" href="#isi">Langsung ke isi</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#" translate="no">Dapur <span>Lawang</span></a>
+    <nav class="nav" aria-label="Utama">
+      <a href="#promo">Promo</a>
+      <a href="#menu">Menu</a>
+      <a href="#cerita">Cerita</a>
+    </nav>
+    <a class="btn btn-main" href="#reservasi">Pesan meja</a>
+  </div>
+</header>
+
+<main id="isi">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="tag">Rumah makan masakan rumahan</span>
+      <h1>Masakan ibu, <em>tanpa harus</em> pulang kampung.</h1>
+      <p>Lauk dimasak tiap pagi, sambal diulek sendiri, nasi selalu hangat. Datang berdua atau rombongan, mejanya bisa dipesan dulu.</p>
+      <div class="acts">
+        <a class="btn btn-main" href="#reservasi">Pesan meja</a>
+        <a class="btn btn-line" href="#menu">Lihat menu</a>
+      </div>
+    </div>
+    <svg class="plate" viewBox="0 0 420 420" role="img" aria-label="Ilustrasi sepiring nasi dengan lauk dan sambal">
+      <circle cx="210" cy="210" r="200" fill="#1F3027"/>
+      <circle cx="210" cy="210" r="168" fill="#F5ECDD"/>
+      <circle cx="210" cy="210" r="132" fill="none" stroke="#DDD0BA" stroke-width="2"/>
+      <path d="M150 232c-6-52 30-88 66-84 38 4 62 44 50 86-8 28-104 30-116-2z" fill="#FFFDF8" stroke="#E6DAC4" stroke-width="2"/>
+      <path d="M118 190c14-34 52-44 70-26 16 16 2 50-28 60-26 8-50-10-42-34z" fill="#C2371D"/>
+      <path d="M134 186c10-12 26-16 36-10" fill="none" stroke="#E86A4D" stroke-width="5" stroke-linecap="round"/>
+      <path d="M252 262c26-10 56 2 60 24 4 20-22 34-48 28-24-6-34-42-12-52z" fill="#B9772B"/>
+      <path d="M262 276c12-6 28-4 36 6" fill="none" stroke="#E2A72B" stroke-width="5" stroke-linecap="round"/>
+      <g fill="#3F7A45"><ellipse cx="262" cy="158" rx="26" ry="9" transform="rotate(-28 262 158)"/><ellipse cx="290" cy="186" rx="24" ry="8" transform="rotate(18 290 186)"/><ellipse cx="238" cy="140" rx="20" ry="7" transform="rotate(-62 238 140)"/></g>
+      <circle cx="150" cy="282" r="30" fill="#16231C"/><circle cx="150" cy="282" r="22" fill="#9C2A14"/>
+      <g fill="#E2A72B"><circle cx="143" cy="277" r="2.5"/><circle cx="156" cy="286" r="2.5"/><circle cx="152" cy="274" r="2"/></g>
+    </svg>
+  </div>
+</section>
+
+<section class="info" aria-label="Info singkat">
+  <div class="wrap">
+    <dl>
+      <div><dt>Jam buka</dt><dd class="num">Setiap hari 10.00 sampai 21.00<small>Contoh jam, sesuaikan dengan usaha Anda</small></dd></div>
+      <div><dt>Lokasi</dt><dd>Kawasan pusat kota<small>Parkir mobil dan motor tersedia</small></dd></div>
+      <div><dt>Cara pesan</dt><dd>Makan di tempat, bungkus, atau antar<small>Pesan meja lewat WhatsApp</small></dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="pad" id="promo">
+  <div class="wrap">
+    <div class="head">
+      <span class="tag">Promo minggu ini</span>
+      <h2>Lebih hemat kalau datang ramai ramai.</h2>
+    </div>
+    <div class="promo">
+      <article class="a">
+        <span class="big num">4+1</span>
+        <div><h3>Paket keluarga</h3><p>Pesan empat porsi nasi lauk, porsi kelima kami yang traktir. Berlaku makan di tempat.</p></div>
+      </article>
+      <article class="b">
+        <span class="big num">15%</span>
+        <div><h3>Jam makan siang</h3><p>Senin sampai Jumat, pukul 11.00 sampai 14.00.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="pad menu" id="menu">
+  <div class="wrap">
+    <div class="head">
+      <span class="tag">Menu</span>
+      <h2>Pilih lauknya, nasinya kami tambah.</h2>
+      <p>Harga per porsi dan hanya ilustrasi untuk contoh tampilan.</p>
+    </div>
+    <div class="tabs" role="group" aria-label="Saring menu">
+      <button type="button" data-f="semua" aria-pressed="true">Semua</button>
+      <button type="button" data-f="lauk" aria-pressed="false">Lauk utama</button>
+      <button type="button" data-f="sayur" aria-pressed="false">Sayur dan sambal</button>
+      <button type="button" data-f="minum" aria-pressed="false">Minuman</button>
+    </div>
+    <ul class="list" id="daftar">
+      <li data-c="lauk"><h3>Ayam bakar madu <span class="hot">Favorit</span></h3><span class="price num">Rp 32.000</span><p>Paha ayam kampung, bumbu kecap madu, dibakar arang.</p></li>
+      <li data-c="lauk"><h3>Rendang sapi</h3><span class="price num">Rp 38.000</span><p>Dimasak pelan sampai bumbunya kering dan meresap.</p></li>
+      <li data-c="lauk"><h3>Ikan nila goreng</h3><span class="price num">Rp 34.000</span><p>Garing di luar, lembut di dalam, dengan sambal dabu.</p></li>
+      <li data-c="lauk"><h3>Empal gepuk</h3><span class="price num">Rp 36.000</span><p>Daging sapi manis gurih, ditabur bawang goreng.</p></li>
+      <li data-c="sayur"><h3>Sayur asem</h3><span class="price num">Rp 12.000</span><p>Kuah segar asam jawa, jagung manis, kacang panjang.</p></li>
+      <li data-c="sayur"><h3>Tumis kangkung</h3><span class="price num">Rp 14.000</span><p>Terasi bakar dan cabai rawit, dimasak api besar.</p></li>
+      <li data-c="sayur"><h3>Sambal terasi ulek <span class="hot">Pedas</span></h3><span class="price num">Rp 6.000</span><p>Diulek tiap pagi, level pedas bisa diminta.</p></li>
+      <li data-c="sayur"><h3>Lalapan lengkap</h3><span class="price num">Rp 8.000</span><p>Timun, kemangi, kol, dan terong bulat.</p></li>
+      <li data-c="minum"><h3>Es teh manis</h3><span class="price num">Rp 6.000</span><p>Teh tubruk, gula asli, es batu banyak.</p></li>
+      <li data-c="minum"><h3>Es jeruk peras</h3><span class="price num">Rp 12.000</span><p>Jeruk diperas saat dipesan.</p></li>
+      <li data-c="minum"><h3>Wedang jahe</h3><span class="price num">Rp 10.000</span><p>Jahe bakar dan gula aren, disajikan panas.</p></li>
+      <li data-c="minum"><h3>Es cendol</h3><span class="price num">Rp 14.000</span><p>Santan segar dan gula aren cair.</p></li>
+    </ul>
+    <p class="note">Nasi putih sudah termasuk untuk semua lauk utama.</p>
+  </div>
+</section>
+
+<section class="pad story" id="cerita">
+  <div class="wrap">
+    <svg viewBox="0 0 360 300" role="img" aria-label="Ilustrasi cobek dan ulekan dengan cabai">
+      <rect width="360" height="300" rx="8" fill="#F5ECDD"/>
+      <ellipse cx="180" cy="196" rx="124" ry="50" fill="#3A3F3B"/>
+      <ellipse cx="180" cy="182" rx="124" ry="46" fill="#565C57"/>
+      <ellipse cx="180" cy="182" rx="98" ry="33" fill="#9C2A14"/>
+      <g fill="#E2A72B"><circle cx="150" cy="178" r="3"/><circle cx="196" cy="190" r="3"/><circle cx="214" cy="174" r="2.5"/><circle cx="170" cy="192" r="2.5"/></g>
+      <path d="M214 170l52-96c6-11 28-2 24 12l-44 98c-8 14-38 2-32-14z" fill="#2B302C"/>
+      <path d="M66 86c22-10 62 4 78 30-26 6-62-4-78-30z" fill="#C2371D"/><path d="M66 86c-8-6-16-6-22 0" fill="none" stroke="#3F7A45" stroke-width="6" stroke-linecap="round"/>
+      <path d="M84 132c18-4 44 8 54 24-20 4-44-6-54-24z" fill="#3F7A45"/>
+    </svg>
+    <div class="txt">
+      <span class="tag">Cerita kami</span>
+      <h2 style="margin:.75rem 0 1.25rem">Resep keluarga, dimasak seperti di rumah.</h2>
+      <p>Bagian ini tempat cerita usaha Anda: siapa yang memasak, sejak kapan berjualan, dan apa yang membuat pelanggan kembali.</p>
+      <p>Cerita singkat seperti ini membuat orang yang belum pernah datang merasa sudah kenal.</p>
+      <ul class="facts">
+        <li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="#C2371D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Belanja bahan tiap pagi di pasar</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="#C2371D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Tanpa penyedap berlebihan</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="#C2371D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Ruang untuk rombongan dan arisan</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="pad book" id="reservasi">
+  <div class="wrap">
+    <div class="head">
+      <span class="tag">Pesan meja</span>
+      <h2>Isi sebentar, kami siapkan mejanya.</h2>
+      <p>Formulir ini membuka WhatsApp dengan pesan yang sudah terisi. Tidak ada data yang disimpan di situs.</p>
+    </div>
+    <form id="form">
+      <div class="row">
+        <label>Nama pemesan<input name="nama" autocomplete="name" required placeholder="Contoh: Ibu Rina"></label>
+        <label>Jumlah orang<select name="orang"><option>2 orang</option><option>3 sampai 4 orang</option><option>5 sampai 8 orang</option><option>Lebih dari 8 orang</option></select></label>
+      </div>
+      <div class="row">
+        <label>Tanggal<input type="date" name="tgl" required></label>
+        <label>Jam datang<input type="time" name="jam" value="19:00" required></label>
+      </div>
+      <label>Catatan<textarea name="catatan" placeholder="Misalnya: ulang tahun, butuh kursi anak"></textarea></label>
+      <button class="btn btn-main" type="submit">Kirim lewat WhatsApp</button>
+      <p class="hint">Kami balas untuk memastikan meja tersedia.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><a class="brand" href="#" translate="no" style="color:#F5ECDD">Dapur <span>Lawang</span></a><p style="max-width:22rem;margin-top:.5rem">Rumah makan masakan rumahan. Makan di tempat, bungkus, dan pesan antar.</p></div>
+    <div><h3>Jam buka</h3><ul class="num"><li><span>Senin sampai Jumat</span><span>10.00 sampai 21.00</span></li><li><span>Sabtu dan Minggu</span><span>09.00 sampai 22.00</span></li></ul></div>
+    <div><h3>Hubungi</h3><p>WhatsApp dan Instagram usaha Anda tampil di sini.</p></div>
+    <p class="demo">Contoh tampilan demo. Nama, harga, dan jam buka hanya ilustrasi.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var tabs=document.querySelectorAll('.tabs button'),items=document.querySelectorAll('#daftar li');
+  tabs.forEach(function(b){b.addEventListener('click',function(){
+    tabs.forEach(function(t){t.setAttribute('aria-pressed',t===b?'true':'false')});
+    items.forEach(function(li){li.hidden=b.dataset.f!=='semua'&&li.dataset.c!==b.dataset.f});
+    if(window.moList)moList(items);
+  })});
+  var WA='6280000000000'; /* ganti dengan nomor WhatsApp usaha */
+  document.getElementById('form').addEventListener('submit',function(e){
+    e.preventDefault();var f=e.target;
+    var t='Halo, saya mau pesan meja.\nNama: '+f.nama.value+'\nJumlah: '+f.orang.value+'\nTanggal: '+f.tgl.value+'\nJam: '+f.jam.value+(f.catatan.value?'\nCatatan: '+f.catatan.value:'');
+    window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank','noopener');
+  });
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script>
+MO.extra=function(g,$){
+  g.fromTo('.plate',{opacity:0,scale:.9},{opacity:1,scale:1,duration:1.1,ease:'power3.out',delay:.3});
+  g.to('.plate',{rotate:18,yPercent:3,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:.6}});
+  var n=document.querySelector('.promo .b .big');
+  if(n)ScrollTrigger.create({trigger:n,start:'top 92%',once:true,onEnter:function(){var o={v:0};g.to(o,{v:15,duration:1.2,ease:'power2.out',onUpdate:function(){n.textContent=Math.round(o.v)+'%'}})}});
+  window.moList=function(items){var v=[].slice.call(items).filter(function(li){return!li.hidden});g.fromTo(v,{y:14,opacity:0},{y:0,opacity:1,duration:.4,stagger:.035,ease:'power2.out',overwrite:true,clearProps:'transform'})};
+};
+document.addEventListener('DOMContentLoaded',function(){
+var d=document.documentElement;if(!d.classList.contains('mo')||!window.gsap||!window.ScrollTrigger)return;
+var g=gsap,M=window.MO,$=function(s){return[].slice.call(document.querySelectorAll(s))};
+g.registerPlugin(ScrollTrigger);
+function split(el){var o=[];(function walk(n){[].slice.call(n.childNodes).forEach(function(c){if(c.nodeType===3){var f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(function(p){if(!p)return;if(/^\s+$/.test(p)){f.appendChild(document.createTextNode(' '));return}var a=document.createElement('span'),b=document.createElement('span');a.className='w';b.className='wi';b.textContent=p;a.appendChild(b);f.appendChild(a);o.push(b)});n.replaceChild(f,c)}else if(c.nodeType===1&&c.tagName!=='BR'){walk(c)}})})(el);return o}
+var h=document.querySelector('h1'),w=h?split(h):[];
+var tl=g.timeline({defaults:{ease:'power2.out'}});
+if(h){h.style.visibility='visible';tl.from(w,{yPercent:115,duration:.9,ease:'expo.out',stagger:.06},0)}
+tl.fromTo($(M.intro),{y:18,opacity:0},{y:0,opacity:1,duration:.7,stagger:.1,clearProps:'transform'},.25);
+ScrollTrigger.batch(M.rv,{start:'top 90%',once:true,onEnter:function(e){g.fromTo(e,{y:22,opacity:0},{y:0,opacity:1,duration:.6,stagger:.07,ease:'power2.out',overwrite:true,clearProps:'transform'})}});
+if(M.extra)M.extra(g,$);
+window.__mo=1});
+</script>
+</body>
+</html>
