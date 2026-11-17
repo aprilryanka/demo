@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loyang Manis | Kue ulang tahun dan kue pesanan</title>
+<meta name="description" content="Loyang Manis, toko kue rumahan. Kue ulang tahun, kue pernikahan, dan kue pesanan khusus. Lihat harga dan pesan lewat WhatsApp.">
+<meta name="theme-color" content="#FBF1E3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,800&display=swap" rel="stylesheet">
+<style>
+:root{--butter:#FBF1E3;--milk:#FFFAF2;--cocoa:#33201A;--soft:#6B564C;--berry:#A62C4A;--berry-d:#84203A;--blush:#F3D3D0;--pist:#C9D3A6;--line:#E7D6BF}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Nunito Sans",system-ui,sans-serif;font-size:1.0625rem;line-height:1.6;color:var(--cocoa);background:var(--butter)}
+h1,h2,h3{font-family:Gloock,Georgia,serif;font-weight:400;line-height:1.1;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.6rem,7.6vw,4.9rem)}
+h2{font-size:clamp(1.9rem,4.6vw,3.1rem)}
+p{margin:0}
+a{color:inherit}
+svg{max-width:100%;display:block}
+.wrap{width:min(100% - 2.5rem,70rem);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:.5rem;background:var(--cocoa);color:#fff;padding:.75rem 1rem;z-index:20;font-weight:800}
+.skip:focus{left:.5rem}
+:focus-visible{outline:3px solid var(--berry);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.75rem 1.5rem;font:inherit;font-weight:800;text-decoration:none;border:2px solid var(--cocoa);border-radius:999px;cursor:pointer;transition:background-color .15s,color .15s,transform .15s}
+.btn-main{background:var(--berry);border-color:var(--berry);color:#fff}
+.btn-main:hover{background:var(--berry-d);border-color:var(--berry-d)}
+.btn-line{background:transparent;color:var(--cocoa)}
+.btn-line:hover{background:var(--cocoa);color:var(--butter)}
+.kick{font-size:.8125rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--berry)}
+.num{font-variant-numeric:tabular-nums}
+
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:72px}
+.brand{font-family:Gloock,Georgia,serif;font-size:1.5rem;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;min-height:44px}
+.nav{display:none;gap:1.75rem}
+.nav a{text-decoration:none;font-weight:600;display:inline-flex;align-items:center;min-height:44px;border-bottom:2px solid transparent}
+.nav a:hover{border-color:var(--berry)}
+header .btn{min-height:44px;padding:.5rem 1.1rem}
+@media(min-width:52rem){.nav{display:flex}}
+
+.hero{padding:clamp(1.5rem,5vw,3.5rem) 0 clamp(3rem,8vw,5.5rem)}
+.hero .wrap{display:grid;gap:2.5rem;align-items:center}
+.hero h1{margin:.75rem 0 1.25rem}
+.hero h1 i{color:var(--berry)}
+.hero p{max-width:33rem;color:var(--soft);font-size:1.125rem}
+.acts{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.cake{width:min(100%,25rem);margin-inline:auto}
+@media(min-width:56rem){.hero .wrap{grid-template-columns:1.1fr .9fr}}
+
+.info{background:var(--cocoa);color:var(--butter)}
+.info ul{list-style:none;margin:0;padding:0;display:grid}
+.info li{display:flex;gap:.9rem;align-items:flex-start;padding:1.25rem 0;border-top:1px solid #4E3930}
+.info li:first-child{border-top:0}
+.info svg{flex:none;margin-top:.15rem}
+.info b{display:block}
+.info span{color:#D9C8B8;font-size:.9375rem}
+@media(min-width:48rem){.info ul{grid-template-columns:repeat(3,1fr);gap:2rem}.info li{border-top:0;padding:1.75rem 0}}
+
+.pad{padding:clamp(3.5rem,9vw,6.5rem) 0}
+.head{max-width:38rem;margin-bottom:2.5rem}
+.head h2{margin:.6rem 0 .8rem}
+.head p{color:var(--soft)}
+
+/* kinds: zigzag rows instead of equal cards */
+.kinds{display:grid;gap:1.25rem}
+.kind{display:grid;gap:1.25rem;align-items:center;background:var(--milk);border:1px solid var(--line);border-radius:20px;padding:1.5rem}
+.kind .art{border-radius:14px;aspect-ratio:5/3;display:grid;place-items:center}
+.kind h3{font-size:1.6rem;margin-bottom:.5rem}
+.kind p{color:var(--soft)}
+.kind .from{display:inline-block;margin-top:1rem;font-weight:800}
+@media(min-width:48rem){.kind{grid-template-columns:16rem 1fr;padding:1.75rem;gap:2rem}.kind:nth-child(even){grid-template-columns:1fr 16rem}.kind:nth-child(even) .art{order:2}}
+
+/* price table */
+.price{background:var(--milk);border-block:1px solid var(--line)}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:30rem}
+caption{text-align:left;color:var(--soft);font-size:.9375rem;padding-bottom:.75rem}
+th,td{text-align:left;padding:1rem .75rem 1rem 0;border-bottom:1px solid var(--line)}
+thead th{font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);font-weight:800}
+tbody th{font-weight:800}
+td.num{font-weight:600;white-space:nowrap}
+tbody tr:hover{background:var(--butter)}
+
+/* steps */
+.steps{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;gap:0}
+.steps li{counter-increment:s;display:grid;grid-template-columns:3.5rem 1fr;gap:1rem;padding:1.5rem 0;border-top:1px solid var(--line)}
+.steps li::before{content:counter(s);font-family:Gloock,serif;font-size:2.5rem;line-height:1;color:var(--berry)}
+.steps h3{font-family:"Nunito Sans",sans-serif;font-weight:800;font-size:1.15rem;margin-bottom:.25rem}
+.steps p{color:var(--soft)}
+.two{display:grid;gap:2.5rem}
+@media(min-width:56rem){.two{grid-template-columns:.8fr 1.2fr;gap:4rem}.two .head{margin:0;position:sticky;top:2rem;align-self:start}}
+
+/* order */
+.order{background:var(--blush)}
+.order .wrap{display:grid;gap:2.5rem}
+form{display:grid;gap:1rem;background:var(--milk);padding:1.5rem;border-radius:20px;border:1px solid #E5BDB9}
+.row{display:grid;gap:1rem}
+label,legend{font-weight:800;font-size:.9688rem}
+label{display:grid;gap:.4rem}
+input,select,textarea{font:inherit;min-height:48px;padding:.65rem .85rem;border:1.5px solid #CDB9A2;background:#fff;color:var(--cocoa);border-radius:10px;width:100%}
+textarea{min-height:5.5rem;resize:vertical}
+fieldset{border:0;margin:0;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+.chips label{display:inline-flex;align-items:center;min-height:44px;padding:.4rem 1rem;border:1.5px solid var(--cocoa);border-radius:999px;font-weight:600;cursor:pointer}
+.chips input{position:absolute;opacity:0;width:1px;height:1px;min-height:0}
+.chips label:has(input:checked){background:var(--cocoa);color:var(--butter)}
+.chips label:has(input:focus-visible){outline:3px solid var(--berry);outline-offset:3px}
+.hint{font-size:.9063rem;color:var(--soft)}
+@media(min-width:36rem){.row{grid-template-columns:1fr 1fr}form{padding:2rem}}
+@media(min-width:56rem){.order .wrap{grid-template-columns:.8fr 1.2fr;align-items:start}}
+
+footer{padding:2.5rem 0;font-size:.9375rem;color:var(--soft)}
+footer .wrap{display:grid;gap:1rem;border-top:1px solid var(--line);padding-top:2rem}
+@media(min-width:48rem){footer .wrap{grid-template-columns:1fr auto;align-items:center}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style>
+<script>
+/* Motion aktif hanya jika JS jalan. Mati otomatis saat prefers-reduced-motion atau URL memakai ?static */
+(function(){var d=document.documentElement,M=window.MO={rv:'.head,.info li,tbody tr,.steps li,.order form',intro:'.hero .kick,.hero p,.acts',hide:'.cake,.kind'};
+if(matchMedia('(prefers-reduced-motion: reduce)').matches||/[?&]static\b/.test(location.search))return;
+d.classList.add('mo');
+var s=document.createElement('style');
+s.textContent='.mo '+[M.rv,M.intro,M.hide].filter(Boolean).join(',').split(',').join(',.mo ')+'{opacity:0}.mo h1{visibility:hidden}.w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .06em .14em 0;margin:0 -.06em -.14em 0}';
+document.head.appendChild(s);
+function off(){if(!window.__mo)d.classList.remove('mo')}
+addEventListener('load',off);setTimeout(off,3500)})();
+</script>
+</head>
+<body>
+<a class="skip" href="#isi">Langsung ke isi</a>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#" translate="no">
+      <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 18h22l-2 9H7z" fill="#A62C4A"/><path d="M5 18c0-7 5-12 11-12s11 5 11 12z" fill="#F3D3D0" stroke="#33201A" stroke-width="1.5"/><circle cx="16" cy="6" r="3" fill="#A62C4A"/></svg>
+      Loyang Manis
+    </a>
+    <nav class="nav" aria-label="Utama">
+      <a href="#jenis">Jenis kue</a>
+      <a href="#harga">Harga</a>
+      <a href="#cara">Cara pesan</a>
+    </nav>
+    <a class="btn btn-main" href="#pesan">Pesan kue</a>
+  </div>
+</header>
+
+<main id="isi">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kick">Toko kue rumahan</span>
+      <h1>Kue untuk hari yang <i>pantas</i> dirayakan.</h1>
+      <p>Dipanggang sesuai pesanan, bukan stok etalase. Pilih ukuran, rasa, dan tulisan di atasnya, sisanya kami yang kerjakan.</p>
+      <div class="acts">
+        <a class="btn btn-main" href="#pesan">Pesan kue</a>
+        <a class="btn btn-line" href="#harga">Lihat harga</a>
+      </div>
+    </div>
+    <svg class="cake" viewBox="0 0 400 400" role="img" aria-label="Ilustrasi kue ulang tahun tiga tingkat dengan lilin">
+      <ellipse cx="200" cy="352" rx="170" ry="22" fill="#E7D6BF"/>
+      <rect x="60" y="250" width="280" height="96" rx="14" fill="#A62C4A"/>
+      <path d="M60 268c24 22 46 22 70 0s46-22 70 0 46 22 70 0 46-22 70 0v-8c0-8-6-14-14-14H74c-8 0-14 6-14 14z" fill="#FFFAF2"/>
+      <rect x="100" y="170" width="200" height="86" rx="12" fill="#F3D3D0"/>
+      <path d="M100 186c17 16 33 16 50 0s33-16 50 0 33 16 50 0 33-16 50 0v-6c0-6-5-12-12-12H112c-7 0-12 6-12 12z" fill="#FFFAF2"/>
+      <rect x="140" y="104" width="120" height="72" rx="10" fill="#C9D3A6"/>
+      <path d="M140 118c10 10 20 10 30 0s20-10 30 0 20 10 30 0 20-10 30 0v-6c0-5-4-10-10-10H150c-6 0-10 5-10 10z" fill="#FFFAF2"/>
+      <g fill="#A62C4A"><circle cx="120" cy="226" r="7"/><circle cx="160" cy="226" r="7"/><circle cx="200" cy="226" r="7"/><circle cx="240" cy="226" r="7"/><circle cx="280" cy="226" r="7"/></g>
+      <g><rect x="176" y="62" width="8" height="42" rx="3" fill="#33201A"/><rect x="216" y="62" width="8" height="42" rx="3" fill="#33201A"/><path d="M180 34c8 10 8 18 0 24-8-6-8-14 0-24z" fill="#E9A23B"/><path d="M220 34c8 10 8 18 0 24-8-6-8-14 0-24z" fill="#E9A23B"/></g>
+      <g fill="#FFFAF2"><circle cx="96" cy="310" r="5"/><circle cx="150" cy="318" r="5"/><circle cx="204" cy="310" r="5"/><circle cx="258" cy="318" r="5"/><circle cx="310" cy="310" r="5"/></g>
+    </svg>
+  </div>
+</section>
+
+<section class="info" aria-label="Info singkat">
+  <div class="wrap">
+    <ul>
+      <li><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#F3D3D0" stroke-width="2"/><path d="M12 7v5l3.5 2" fill="none" stroke="#F3D3D0" stroke-width="2" stroke-linecap="round"/></svg><div><b>Pesan paling lambat H 3</b><span>Kue pesanan khusus butuh waktu</span></div></li>
+      <li><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.800 7 11 7 11z" fill="none" stroke="#F3D3D0" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="#F3D3D0"/></svg><div><b>Ambil sendiri atau diantar</b><span>Pengantaran dalam kota</span></div></li>
+      <li><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="#F3D3D0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Bahan halal tanpa pengawet</b><span>Tahan 3 hari di lemari es</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="pad" id="jenis">
+  <div class="wrap">
+    <div class="head">
+      <span class="kick">Jenis kue</span>
+      <h2>Tiga hal yang paling sering kami buat.</h2>
+    </div>
+    <div class="kinds">
+      <article class="kind">
+        <div class="art" style="background:var(--blush)"><svg width="150" height="90" viewBox="0 0 150 90" aria-hidden="true"><rect x="25" y="40" width="100" height="40" rx="8" fill="#A62C4A"/><path d="M25 52c10 10 15 10 25 0s15-10 25 0 15 10 25 0 15-10 25 0v-6c0-4-3-8-8-8H33c-5 0-8 4-8 8z" fill="#FFFAF2"/><rect x="72" y="16" width="6" height="24" rx="2" fill="#33201A"/><path d="M75 2c5 6 5 10 0 13-5-3-5-7 0-13z" fill="#E9A23B"/></svg></div>
+        <div><h3>Kue ulang tahun</h3><p>Sponge lembut berlapis krim, dengan tulisan nama dan angka. Tersedia dari ukuran untuk berdua sampai satu kelas.</p><span class="from num">Mulai Rp 180.000</span></div>
+      </article>
+      <article class="kind">
+        <div class="art" style="background:var(--pist)"><svg width="150" height="100" viewBox="0 0 150 100" aria-hidden="true"><rect x="20" y="62" width="110" height="30" rx="6" fill="#FFFAF2"/><rect x="38" y="36" width="74" height="28" rx="6" fill="#FFFAF2"/><rect x="54" y="14" width="42" height="24" rx="6" fill="#FFFAF2"/><g fill="#A62C4A"><circle cx="54" cy="36" r="5"/><circle cx="64" cy="30" r="4"/><circle cx="96" cy="62" r="5"/><circle cx="106" cy="56" r="4"/></g><g fill="#5F7A3A"><ellipse cx="46" cy="42" rx="7" ry="3" transform="rotate(-30 46 42)"/><ellipse cx="114" cy="66" rx="7" ry="3" transform="rotate(30 114 66)"/></g></svg></div>
+        <div><h3>Kue pernikahan</h3><p>Dua sampai empat tingkat dengan hiasan bunga gula. Kami datang ke lokasi untuk menata.</p><span class="from num">Mulai Rp 1.500.000</span></div>
+      </article>
+      <article class="kind">
+        <div class="art" style="background:#F2DDB4"><svg width="160" height="80" viewBox="0 0 160 80" aria-hidden="true"><g><path d="M18 46h34l-4 26H22z" fill="#A62C4A"/><circle cx="35" cy="36" r="17" fill="#FFFAF2"/><circle cx="35" cy="20" r="5" fill="#A62C4A"/></g><g><path d="M63 46h34l-4 26H67z" fill="#33201A"/><circle cx="80" cy="36" r="17" fill="#F3D3D0"/><circle cx="80" cy="20" r="5" fill="#5F7A3A"/></g><g><path d="M108 46h34l-4 26h-26z" fill="#A62C4A"/><circle cx="125" cy="36" r="17" fill="#FFFAF2"/><circle cx="125" cy="20" r="5" fill="#E9A23B"/></g></svg></div>
+        <div><h3>Kue pesanan khusus</h3><p>Cupcake untuk hampers, kue karakter, atau bentuk yang Anda gambar sendiri. Kirim referensinya, kami hitungkan.</p><span class="from num">Mulai Rp 12.000 per buah</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="pad price" id="harga">
+  <div class="wrap">
+    <div class="head">
+      <span class="kick">Daftar harga</span>
+      <h2>Harga jelas sebelum Anda bertanya.</h2>
+    </div>
+    <div class="scroll" tabindex="0" role="region" aria-label="Tabel harga kue">
+      <table>
+        <caption>Harga hanya ilustrasi untuk contoh tampilan.</caption>
+        <thead><tr><th scope="col">Ukuran</th><th scope="col">Untuk</th><th scope="col">Vanila atau cokelat</th><th scope="col">Red velvet atau keju</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Diameter 16 cm</th><td>6 sampai 8 orang</td><td class="num">Rp 180.000</td><td class="num">Rp 210.000</td></tr>
+          <tr><th scope="row">Diameter 20 cm</th><td>10 sampai 14 orang</td><td class="num">Rp 260.000</td><td class="num">Rp 300.000</td></tr>
+          <tr><th scope="row">Diameter 24 cm</th><td>16 sampai 22 orang</td><td class="num">Rp 360.000</td><td class="num">Rp 410.000</td></tr>
+          <tr><th scope="row">Persegi 30 cm</th><td>30 sampai 40 orang</td><td class="num">Rp 520.000</td><td class="num">Rp 590.000</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="cara">
+  <div class="wrap two">
+    <div class="head">
+      <span class="kick">Cara pesan</span>
+      <h2>Empat langkah, semuanya lewat chat.</h2>
+      <p>Tidak perlu datang ke toko untuk memesan.</p>
+    </div>
+    <ol class="steps">
+      <li><div><h3>Pilih jenis dan ukuran</h3><p>Sesuaikan dengan jumlah tamu. Bingung? Sebutkan saja jumlah orangnya.</p></div></li>
+      <li><div><h3>Kirim referensi desain</h3><p>Foto, gambar, atau cukup ceritakan temanya.</p></div></li>
+      <li><div><h3>Bayar uang muka</h3><p>Setengah harga untuk mengunci tanggal, sisanya saat kue diterima.</p></div></li>
+      <li><div><h3>Ambil atau terima di rumah</h3><p>Kami kabari saat kue selesai dan kirim fotonya dulu.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="pad order" id="pesan">
+  <div class="wrap">
+    <div class="head" style="margin:0">
+      <span class="kick">Pesan kue</span>
+      <h2>Ceritakan acaranya, kami buatkan kuenya.</h2>
+      <p>Formulir ini membuka WhatsApp dengan pesan yang sudah terisi. Tidak ada data yang disimpan di situs.</p>
+    </div>
+    <form id="form">
+      <fieldset>
+        <legend>Jenis kue</legend>
+        <div class="chips">
+          <label><input type="radio" name="jenis" value="Kue ulang tahun" checked>Ulang tahun</label>
+          <label><input type="radio" name="jenis" value="Kue pernikahan">Pernikahan</label>
+          <label><input type="radio" name="jenis" value="Kue pesanan khusus">Pesanan khusus</label>
+        </div>
+      </fieldset>
+      <div class="row">
+        <label>Nama pemesan<input name="nama" autocomplete="name" required placeholder="Contoh: Dinda"></label>
+        <label>Tanggal acara<input type="date" name="tgl" required></label>
+      </div>
+      <div class="row">
+        <label>Ukuran<select name="ukuran"><option>Diameter 16 cm</option><option>Diameter 20 cm</option><option>Diameter 24 cm</option><option>Persegi 30 cm</option><option>Belum tahu</option></select></label>
+        <label>Rasa<select name="rasa"><option>Vanila</option><option>Cokelat</option><option>Red velvet</option><option>Keju</option></select></label>
+      </div>
+      <label>Tulisan di atas kue dan catatan<textarea name="catatan" placeholder="Contoh: Selamat ulang tahun Ayah, tema biru"></textarea></label>
+      <button class="btn btn-main" type="submit">Kirim lewat WhatsApp</button>
+      <p class="hint">Kami balas dengan harga pasti dan ketersediaan tanggal.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b translate="no" style="color:var(--cocoa)">Loyang Manis</b> · Toko kue rumahan. Alamat, WhatsApp, dan Instagram usaha Anda tampil di sini.</p>
+    <p>Contoh tampilan demo. Nama dan harga hanya ilustrasi.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var WA='6280000000000'; /* ganti dengan nomor WhatsApp usaha */
+  document.getElementById('form').addEventListener('submit',function(e){
+    e.preventDefault();var f=e.target;
+    var t='Halo, saya mau pesan kue.\nJenis: '+f.jenis.value+'\nNama: '+f.nama.value+'\nTanggal acara: '+f.tgl.value+'\nUkuran: '+f.ukuran.value+'\nRasa: '+f.rasa.value+(f.catatan.value?'\nCatatan: '+f.catatan.value:'');
+    window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank','noopener');
+  });
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script>
+MO.extra=function(g,$){
+  g.fromTo('.cake',{opacity:0,y:36,scale:.94},{opacity:1,y:0,scale:1,duration:1.1,ease:'power3.out',delay:.25});
+  g.to('.cake path[fill="#E9A23B"]',{scaleY:1.2,scaleX:.88,transformOrigin:'50% 100%',duration:.4,ease:'sine.inOut',yoyo:true,repeat:-1,stagger:.13});
+  $('.kind').forEach(function(k,i){ScrollTrigger.create({trigger:k,start:'top 88%',once:true,onEnter:function(){g.fromTo(k,{x:i%2?36:-36,opacity:0},{x:0,opacity:1,duration:.7,ease:'power3.out',clearProps:'transform'})}})});
+};
+document.addEventListener('DOMContentLoaded',function(){
+var d=document.documentElement;if(!d.classList.contains('mo')||!window.gsap||!window.ScrollTrigger)return;
+var g=gsap,M=window.MO,$=function(s){return[].slice.call(document.querySelectorAll(s))};
+g.registerPlugin(ScrollTrigger);
+function split(el){var o=[];(function walk(n){[].slice.call(n.childNodes).forEach(function(c){if(c.nodeType===3){var f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(function(p){if(!p)return;if(/^\s+$/.test(p)){f.appendChild(document.createTextNode(' '));return}var a=document.createElement('span'),b=document.createElement('span');a.className='w';b.className='wi';b.textContent=p;a.appendChild(b);f.appendChild(a);o.push(b)});n.replaceChild(f,c)}else if(c.nodeType===1&&c.tagName!=='BR'){walk(c)}})})(el);return o}
+var h=document.querySelector('h1'),w=h?split(h):[];
+var tl=g.timeline({defaults:{ease:'power2.out'}});
+if(h){h.style.visibility='visible';tl.from(w,{yPercent:115,duration:.9,ease:'expo.out',stagger:.06},0)}
+tl.fromTo($(M.intro),{y:18,opacity:0},{y:0,opacity:1,duration:.7,stagger:.1,clearProps:'transform'},.25);
+ScrollTrigger.batch(M.rv,{start:'top 90%',once:true,onEnter:function(e){g.fromTo(e,{y:22,opacity:0},{y:0,opacity:1,duration:.6,stagger:.07,ease:'power2.out',overwrite:true,clearProps:'transform'})}});
+if(M.extra)M.extra(g,$);
+window.__mo=1});
+</script>
+</body>
+</html>
