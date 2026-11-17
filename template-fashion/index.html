@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Garis Merah Apparel | Jersey dan seragam custom</title>
+<meta name="description" content="Demo tampilan website untuk brand jersey dan apparel: koleksi, alur pesan custom, tabel ukuran, dan pemesanan lewat WhatsApp.">
+<meta name="theme-color" content="#FAFAF7">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAFAF7;--ink:#101010;--soft:#5C5C57;--sig:#C93500;--line:#101010;--grey:#E9E8E2}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 Archivo,system-ui,sans-serif}
+h1,h2,h3{font-weight:800;line-height:.95;letter-spacing:-.025em;margin:0;text-wrap:balance}
+a{color:inherit}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+:focus-visible{outline:3px solid var(--sig);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:12px 16px;z-index:10}
+.skip:focus{left:8px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.bar{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:12px;border-bottom:2px solid var(--line)}
+.brand{font-weight:800;font-size:1.15rem;text-decoration:none;letter-spacing:-.01em;text-transform:uppercase}
+nav{display:none;gap:26px}
+nav a{text-decoration:none;font-weight:500;min-height:44px;display:inline-flex;align-items:center}
+nav a:hover{color:var(--sig)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;background:var(--sig);color:#fff;font-weight:600;text-decoration:none;transition:background .15s}
+.btn:hover{background:var(--ink)}
+.btn.alt{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.btn.alt:hover{background:var(--ink);color:#fff}
+.hero{display:grid;gap:32px;padding-block:44px 56px}
+.eyebrow{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+h1{font-size:clamp(3rem,11.5vw,6.6rem);margin:16px 0 20px}
+h1 span{color:var(--sig)}
+.lead{font-size:1.125rem;max-width:30rem;margin:0 0 28px;color:var(--soft)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.show{display:flex;align-items:flex-end;justify-content:center;gap:0;background:var(--grey);padding:20px 12px 0;min-height:240px}
+.show svg{width:36%;max-width:260px;height:auto;margin:0 -3%}
+.show svg:nth-child(2){width:44%;max-width:320px;position:relative;z-index:1}
+.strip{background:var(--ink);color:var(--bg)}
+.strip ul{list-style:none;margin:0;padding:18px 0;display:flex;flex-wrap:wrap;gap:8px 32px;font-size:.9rem}
+.strip li::before{content:"/";color:var(--sig);margin-right:10px}
+section.pad{padding:64px 0}
+h2{font-size:clamp(2.2rem,6.4vw,4rem);margin-bottom:12px}
+.sub{color:var(--soft);max-width:34rem;margin:0 0 32px}
+.list{list-style:none;margin:0;padding:0;border-top:2px solid var(--line)}
+.list li{display:grid;grid-template-columns:96px 1fr;gap:16px 20px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}
+.list svg{width:96px;height:auto;background:var(--grey);padding:8px}
+.list h3{font-size:1.5rem}
+.list p{margin:6px 0 0;color:var(--soft);font-size:.95rem}
+.list .meta{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:.85rem}
+.list .meta b{font-weight:500;color:var(--ink)}
+.dots{display:inline-flex;gap:6px;vertical-align:middle}
+.dots i{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--ink)}
+.note{font-size:.85rem;color:var(--soft);margin-top:18px}
+.order{background:var(--grey)}
+.order ol{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;gap:0}
+.order li{counter-increment:s;padding:22px 0;border-top:2px solid var(--line);display:grid;grid-template-columns:56px 1fr;gap:8px}
+.order li::before{content:counter(s,decimal-leading-zero);font-family:"IBM Plex Mono",monospace;color:var(--sig);font-weight:500;font-size:1.1rem;padding-top:4px}
+.order strong{display:block;font-size:1.2rem;font-weight:800}
+.order p{margin:2px 0 0;color:var(--soft)}
+.size{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:380px;font-variant-numeric:tabular-nums}
+th,td{padding:14px 12px;text-align:left;border-bottom:1px solid var(--line);font-size:.95rem}
+th{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid var(--line)}
+td:first-child{font-weight:800}
+.go{background:var(--sig);color:#fff}
+.go h2{max-width:13ch;color:#fff}
+.go .btn{background:var(--ink)}
+.go .btn:hover{background:#fff;color:var(--ink)}
+footer{padding:26px 0 40px;font-size:.85rem;color:var(--soft)}
+@media(min-width:820px){
+ nav{display:flex}
+ .wrap{padding:0 40px}
+ .hero{grid-template-columns:1.1fr .9fr;align-items:end;gap:56px;padding-block:64px 72px}
+ .show{min-height:380px;padding-top:24px}
+ .list li{grid-template-columns:140px 1fr auto;padding:24px 0}
+ .list svg{width:140px}
+ .list .meta{grid-column:auto;flex-direction:column;text-align:right;gap:2px}
+ .order .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px}
+ .two{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+ <symbol id="jersey" viewBox="0 0 200 220">
+  <path style="fill:var(--a)" d="M70 20Q100 48 130 20L144 40V205H56V40Z"/>
+  <rect style="fill:var(--c)" x="56" y="104" width="88" height="16"/>
+  <path style="fill:var(--b)" d="M70 20L40 32L8 70L38 96L56 82V40Z"/>
+  <path style="fill:var(--b)" d="M130 20L160 32L192 70L162 96L144 82V40Z"/>
+  <path style="fill:none;stroke:var(--c);stroke-width:5" d="M70 20Q100 48 130 20"/>
+ </symbol>
+</svg>
+<a class="skip" href="#koleksi">Lewati ke koleksi</a>
+<header><div class="wrap bar">
+ <a class="brand" href="#" translate="no">Garis Merah</a>
+ <nav aria-label="Utama"><a href="#koleksi">Koleksi</a><a href="#custom">Pesan custom</a><a href="#ukuran">Ukuran</a></nav>
+ <a class="btn" href="#pesan">Pesan</a>
+</div></header>
+<main>
+ <div class="wrap hero">
+  <div>
+   <h1>Jersey dan seragam tim yang <span>pas</span> dari awal.</h1>
+   <p class="lead">Desain warna dan nomor punggung dibahas sejak awal, bahan dipilih sesuai olahraga, dan ukuran dicek sebelum produksi.</p>
+   <div class="cta"><a class="btn" href="#pesan">Pesan lewat WhatsApp</a><a class="btn alt" href="#koleksi">Lihat koleksi</a></div>
+  </div>
+  <div class="show" role="img" aria-label="Tiga jersey dengan kombinasi warna berbeda">
+   <svg viewBox="0 0 200 220" style="--a:#FAFAF7;--b:#101010;--c:#FF4F12"><use href="#jersey"/></svg>
+   <svg viewBox="0 0 200 220" style="--a:#FF4F12;--b:#101010;--c:#FAFAF7"><use href="#jersey"/></svg>
+   <svg viewBox="0 0 200 220" style="--a:#101010;--b:#FF4F12;--c:#FAFAF7"><use href="#jersey"/></svg>
+  </div>
+ </div>
+ <section class="strip" aria-label="Keunggulan"><div class="wrap"><ul class="mono"><li>Desain dibahas sebelum produksi</li><li>Nama dan nomor sesuai daftar tim</li><li>Tabel ukuran jelas</li></ul></div></section>
+ <section class="pad" id="koleksi"><div class="wrap">
+  <h2>Koleksi</h2>
+  <p class="sub">Tiga model dasar yang bisa disesuaikan dengan warna tim Anda.</p>
+  <ul class="list">
+   <li>
+    <svg viewBox="0 0 200 220" style="--a:#FF4F12;--b:#101010;--c:#FAFAF7" aria-hidden="true"><use href="#jersey"/></svg>
+    <div><h3>Jersey sepak bola</h3><p>Kerah bulat, bahan ringan dan cepat kering.</p></div>
+    <div class="meta mono"><b>Rp165.000</b><span>mulai dari, contoh</span></div>
+   </li>
+   <li>
+    <svg viewBox="0 0 200 220" style="--a:#101010;--b:#FAFAF7;--c:#FF4F12" aria-hidden="true"><use href="#jersey"/></svg>
+    <div><h3>Jersey futsal dan basket</h3><p>Potongan longgar yang nyaman untuk gerak cepat.</p></div>
+    <div class="meta mono"><b>Rp150.000</b><span>mulai dari, contoh</span></div>
+   </li>
+   <li>
+    <svg viewBox="0 0 200 220" style="--a:#FAFAF7;--b:#FF4F12;--c:#101010" aria-hidden="true"><use href="#jersey"/></svg>
+    <div><h3>Seragam komunitas</h3><p>Untuk lari, sepeda, dan kegiatan kantor. Logo dan slogan bebas.</p></div>
+    <div class="meta mono"><b>Rp135.000</b><span>mulai dari, contoh</span></div>
+   </li>
+  </ul>
+  <p class="note">Harga hanya contoh tampilan demo.</p>
+ </div></section>
+ <section class="pad order" id="custom"><div class="wrap">
+  <div><h2>Pesan custom</h2><p class="sub">Dari ide sampai jersey sampai ke tangan Anda.</p></div>
+  <ol>
+   <li><div><strong>Kirim ide</strong><p>Warna, logo, dan jumlah anggota tim.</p></div></li>
+   <li><div><strong>Terima desain</strong><p>Kami kirim gambar jersey untuk Anda periksa dan revisi.</p></div></li>
+   <li><div><strong>Kirim daftar nama dan ukuran</strong><p>Satu tabel, supaya tidak ada yang salah cetak.</p></div></li>
+   <li><div><strong>Produksi dan kirim</strong><p>Kami kabari progresnya sampai barang tiba.</p></div></li>
+  </ol>
+ </div></section>
+ <section class="pad" id="ukuran"><div class="wrap two">
+  <div><h2>Tabel ukuran</h2><p class="sub">Ukur lebar dada dan panjang badan, lalu cocokkan dengan tabel ini.</p></div>
+  <div class="size">
+   <table>
+    <thead><tr><th scope="col">Ukuran</th><th scope="col">Lebar dada</th><th scope="col">Panjang</th></tr></thead>
+    <tbody>
+     <tr><td>S</td><td>49 cm</td><td>68 cm</td></tr>
+     <tr><td>M</td><td>52 cm</td><td>70 cm</td></tr>
+     <tr><td>L</td><td>55 cm</td><td>72 cm</td></tr>
+     <tr><td>XL</td><td>58 cm</td><td>74 cm</td></tr>
+    </tbody>
+   </table>
+   <p class="note">Angka contoh tampilan demo, bisa disesuaikan dengan pola asli.</p>
+  </div>
+ </div></section>
+ <section class="pad go" id="pesan"><div class="wrap">
+  <h2>Siap bikin jersey tim?</h2>
+  <p class="sub" style="color:#fff">Kirim ide Anda, kami balas dengan gambar desain.</p>
+  <a class="btn" href="#pesan">Pesan lewat WhatsApp</a>
+ </div></section>
+</main>
+<footer><div class="wrap">Contoh tampilan demo. Nama brand, harga, dan ukuran adalah ilustrasi.</div></footer>
+</body>
+</html>

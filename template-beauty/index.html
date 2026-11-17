@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Lumi Skin Studio | Perawatan wajah dan kulit</title>
+<meta name="description" content="Demo tampilan website untuk salon, klinik kecantikan, atau studio perawatan: daftar layanan, alur kunjungan, dan reservasi lewat WhatsApp.">
+<meta name="theme-color" content="#EBF2F4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EBF2F4;--ink:#26332B;--soft:#4B5B4A;--green:#2F4034;--clay:#9C5039;--clay-d:#823E2A;--line:#CADBDF;--sand:#D8E7EA}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 Jost,system-ui,sans-serif}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.02;margin:0;text-wrap:balance}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--clay);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--green);color:#fff;padding:12px 16px;z-index:10}
+.skip:focus{left:8px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.bar{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:12px}
+.brand{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:1.5rem;text-decoration:none;letter-spacing:.02em}
+nav{display:none;gap:30px}
+nav a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center;font-weight:500}
+nav a:hover{color:var(--clay)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;background:var(--green);color:#fff;font-weight:500;text-decoration:none;border-radius:999px;transition:background .2s}
+.btn:hover{background:#1F2C23}
+.btn.alt{background:transparent;color:var(--green);box-shadow:inset 0 0 0 1.5px var(--green)}
+.btn.alt:hover{background:var(--green);color:#fff}
+.hero{display:grid;gap:36px;padding-block:36px 64px}
+.eyebrow{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--clay-d);font-weight:600}
+h1{font-size:clamp(3rem,9.5vw,5.4rem);margin:14px 0 20px;font-weight:500}
+h1 em{font-style:normal;color:var(--clay)}
+.lead{font-size:1.125rem;color:var(--soft);max-width:32rem;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.art{width:100%;max-width:420px;justify-self:center}
+.quiet{border-block:1px solid var(--line);padding:22px 0}
+.quiet ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px 36px;color:var(--soft)}
+.quiet li::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--clay);margin-right:10px;vertical-align:middle}
+section.pad{padding:68px 0}
+h2{font-size:clamp(2.2rem,6vw,3.6rem);margin-bottom:14px;font-weight:500}
+.sub{color:var(--soft);max-width:34rem;margin:0}
+.svc{display:grid;gap:28px}
+.rows{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--green)}
+.rows li{display:grid;grid-template-columns:1fr auto;gap:4px 18px;padding:20px 0;border-bottom:1px solid var(--line)}
+.rows h3{font-size:1.6rem;font-weight:600}
+.rows p{grid-column:1;margin:2px 0 0;color:var(--soft);max-width:30rem}
+.rows .p{grid-row:1;grid-column:2;text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+.rows .p small{display:block;color:var(--soft);font-weight:400;font-size:.85rem}
+.note{font-size:.875rem;color:var(--soft);margin-top:18px}
+.flow{background:var(--green);color:#EAF2F3}
+.flow h2{color:#fff}
+.flow .sub{color:#C9D1C3}
+.flow ol{list-style:none;margin:36px 0 0;padding:0;display:grid;gap:0;counter-reset:s}
+.flow li{counter-increment:s;padding:22px 0;border-top:1px solid #4A5D4F;display:grid;grid-template-columns:52px 1fr;gap:10px}
+.flow li::before{content:"0" counter(s);font-family:"Cormorant Garamond",serif;font-size:2rem;color:#E4A98F;line-height:1.1}
+.flow strong{display:block;font-size:1.1rem;font-weight:600}
+.faq{display:grid;gap:36px}
+details{border-top:1px solid var(--line)}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;min-height:56px;padding:12px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;font-weight:500;font-size:1.0625rem;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.6rem;color:var(--clay);line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{margin:0 0 20px;color:var(--soft);max-width:34rem}
+.book{background:var(--sand)}
+.book .wrap{display:grid;gap:22px}
+footer{padding:28px 0 40px;font-size:.875rem;color:var(--soft)}
+@media(min-width:820px){
+ nav{display:flex}
+ .wrap{padding:0 40px}
+ .hero{grid-template-columns:1.1fr .9fr;align-items:center;padding-block:56px 88px;gap:64px}
+ .svc{grid-template-columns:.8fr 1.2fr;gap:72px}
+ .svc>div:first-child{position:sticky;top:24px;align-self:start}
+ .flow ol{grid-template-columns:repeat(4,1fr);gap:28px}
+ .flow li{grid-template-columns:1fr;border-top:1px solid #4A5D4F}
+ .faq{grid-template-columns:.8fr 1.2fr;gap:72px}
+ .book .wrap{grid-template-columns:1.2fr auto;align-items:center;gap:48px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#layanan">Lewati ke layanan</a>
+<header><div class="wrap bar">
+ <a class="brand" href="#" translate="no">Lumi Skin Studio</a>
+ <nav aria-label="Utama"><a href="#layanan">Layanan</a><a href="#alur">Alur kunjungan</a><a href="#tanya">Pertanyaan</a></nav>
+ <a class="btn" href="#reservasi">Reservasi</a>
+</div></header>
+<main>
+ <div class="wrap hero">
+  <div>
+   <h1>Kulit yang <em>tenang</em>, wajah yang segar.</h1>
+   <p class="lead">Studio perawatan wajah dengan perawatan satu per satu, dengan konsultasi singkat sebelum mulai. Tidak ada paket yang dipaksakan. Anda hanya mendapat yang kulit Anda butuhkan.</p>
+   <div class="cta"><a class="btn" href="#reservasi">Reservasi lewat WhatsApp</a><a class="btn alt" href="#layanan">Lihat layanan</a></div>
+  </div>
+  <svg class="art" viewBox="0 0 420 520" role="img" aria-label="Ilustrasi bentuk lengkung dengan daun dan lingkaran lembut">
+   <path d="M30 520V200C30 90 110 20 210 20s180 70 180 180v320z" fill="#D8E7EA"/>
+   <path d="M70 520V210C70 120 130 62 210 62s140 58 140 148v310z" fill="#2F4034"/>
+   <circle cx="210" cy="190" r="62" fill="#C98B73"/>
+   <path d="M210 520c0-110-6-190-80-250 70 20 94 90 80 250z" fill="#4F6B58"/>
+   <path d="M210 520c0-120 10-200 86-262-76 24-100 94-86 262z" fill="#6B8A74"/>
+   <path d="M210 520c0-80-2-150 0-230" stroke="#EBF2F4" stroke-width="3" fill="none"/>
+   <circle cx="330" cy="120" r="14" fill="#EBF2F4" opacity=".9"/>
+   <circle cx="92" cy="330" r="8" fill="#C98B73"/>
+  </svg>
+ </div>
+ <section class="quiet" aria-label="Prinsip studio"><div class="wrap"><ul>
+  <li>Konsultasi singkat di awal</li><li>Produk dipilih sesuai jenis kulit</li><li>Reservasi dengan jam yang jelas</li>
+ </ul></div></section>
+ <section class="pad" id="layanan"><div class="wrap svc">
+  <div>
+   <h2>Layanan</h2>
+   <p class="sub">Pilih satu perawatan atau tanyakan rekomendasi setelah konsultasi.</p>
+   <p class="note">Harga dan durasi hanya contoh tampilan demo.</p>
+  </div>
+  <ul class="rows">
+   <li><h3>Facial pembersihan</h3><p>Membersihkan pori, mengangkat sel kulit mati, ditutup masker yang menenangkan.</p><div class="p">Rp250.000<small>60 menit</small></div></li>
+   <li><h3>Facial hidrasi</h3><p>Untuk kulit kusam dan kering. Fokus pada kelembapan dan tekstur yang lebih halus.</p><div class="p">Rp320.000<small>75 menit</small></div></li>
+   <li><h3>Perawatan jerawat</h3><p>Dimulai dengan pengecekan kondisi kulit, lalu langkah yang paling ringan lebih dulu.</p><div class="p">Rp350.000<small>75 menit</small></div></li>
+   <li><h3>Konsultasi kulit</h3><p>Ngobrol dengan terapis, mendapat saran rutinitas harian tanpa harus melakukan perawatan.</p><div class="p">Rp75.000<small>20 menit</small></div></li>
+  </ul>
+ </div></section>
+ <section class="pad flow" id="alur"><div class="wrap">
+  <h2>Alur kunjungan</h2>
+  <p class="sub">Dari reservasi sampai pulang, semuanya sederhana.</p>
+  <ol>
+   <li><div><strong>Reservasi</strong>Kirim hari dan jam pilihan lewat WhatsApp.</div></li>
+   <li><div><strong>Konsultasi</strong>Terapis menanyakan kondisi dan keluhan kulit.</div></li>
+   <li><div><strong>Perawatan</strong>Dikerjakan dengan tenang, tanpa terburu-buru.</div></li>
+   <li><div><strong>Saran pulang</strong>Anda membawa catatan rutinitas untuk di rumah.</div></li>
+  </ol>
+ </div></section>
+ <section class="pad" id="tanya"><div class="wrap faq">
+  <div><h2>Pertanyaan umum</h2></div>
+  <div>
+   <details><summary>Apakah perlu reservasi dulu?</summary><p>Ya, supaya terapis siap dan Anda tidak menunggu. Cukup kirim pesan lewat WhatsApp.</p></details>
+   <details><summary>Apakah cocok untuk kulit sensitif?</summary><p>Sampaikan saat konsultasi. Terapis akan memilih produk dan langkah yang lebih lembut.</p></details>
+   <details><summary>Boleh membatalkan atau mengganti jadwal?</summary><p>Boleh. Kabari kami lebih awal agar jam tersebut bisa dipakai pelanggan lain.</p></details>
+   <details><summary>Berapa lama hasilnya terlihat?</summary><p>Kulit biasanya terasa lebih bersih dan segar setelah kunjungan pertama. Perubahan yang lebih terlihat butuh perawatan rutin.</p></details>
+  </div>
+ </div></section>
+ <section class="pad book" id="reservasi"><div class="wrap">
+  <div><h2>Siap merawat kulit Anda?</h2><p class="sub">Kirim satu pesan WhatsApp berisi hari dan jam yang Anda inginkan.</p></div>
+  <a class="btn" href="#reservasi">Reservasi lewat WhatsApp</a>
+ </div></section>
+</main>
+<footer><div class="wrap">Contoh tampilan demo. Nama studio, layanan, harga, dan durasi adalah ilustrasi.</div></footer>
+</body>
+</html>

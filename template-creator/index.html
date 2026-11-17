@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Kira Aksara | Kreator konten dan kerja sama</title>
+<meta name="description" content="Demo tampilan website pribadi untuk kreator: profil, konten pilihan, format kerja sama, dan tombol hubungi dalam satu halaman.">
+<meta name="theme-color" content="#ECEEF3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ECEEF3;--ink:#121212;--soft:#51545C;--red:#C42D0E;--blue:#2742E8;--sun:#F2C230;--line:#121212}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 "Hanken Grotesk",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;line-height:.98;letter-spacing:-.02em;margin:0;text-wrap:balance}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:12px 16px;z-index:10}
+.skip:focus{left:8px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.bar{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:12px;border-bottom:2px solid var(--line)}
+.brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.2rem;text-decoration:none}
+nav{display:none;gap:26px}
+nav a{text-decoration:none;font-weight:600;min-height:44px;display:inline-flex;align-items:center}
+nav a:hover{text-decoration:underline;text-underline-offset:5px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;background:var(--ink);color:var(--bg);font-weight:600;text-decoration:none;border:2px solid var(--ink);transition:transform .15s,background .15s}
+.btn:hover{background:var(--red);border-color:var(--red);color:#fff}
+.btn.alt{background:transparent;color:var(--ink)}
+.btn.alt:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.hero{padding-block:44px 56px}
+.tag{display:inline-block;background:var(--sun);padding:6px 12px;font-weight:600;font-size:.875rem;border:2px solid var(--ink)}
+h1{font-size:clamp(3.4rem,17vw,10.5rem);margin:22px 0 20px}
+h1 span{color:var(--red)}
+.lead{font-size:1.2rem;max-width:34rem;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.what{border-block:2px solid var(--line)}
+.what ul{list-style:none;margin:0;padding:0;display:grid}
+.what li{padding:20px 0;border-top:2px solid var(--line);font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.6rem;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.what li:first-child{border-top:0}
+.what li span{font-family:"Hanken Grotesk",sans-serif;font-weight:400;font-size:.95rem;color:var(--soft);text-align:right;max-width:16rem}
+section.pad{padding:64px 0}
+h2{font-size:clamp(2.3rem,7vw,4.4rem);margin-bottom:28px}
+.grid{display:grid;gap:14px}
+.tile{padding:22px;border:2px solid var(--ink);min-height:200px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;transition:transform .15s}
+.tile:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--ink)}
+.tile h3{font-size:1.7rem}
+.tile p{margin:12px 0 0;font-size:.95rem}
+.tile .k{font-weight:600;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+.t1{background:var(--blue);color:#fff}
+.t2{background:var(--sun)}
+.t3{background:var(--red);color:#fff}
+.t4{background:#fff}
+.note{font-size:.875rem;color:var(--soft);margin-top:16px}
+.coop{background:var(--ink);color:var(--bg)}
+.coop h2{color:#fff}
+.coop ol{list-style:none;margin:0;padding:0;counter-reset:c}
+.coop li{counter-increment:c;display:grid;grid-template-columns:48px 1fr;gap:10px;padding:22px 0;border-top:2px solid #3a3a3a}
+.coop li:last-child{border-bottom:2px solid #3a3a3a}
+.coop li::before{content:counter(c,decimal-leading-zero);font-family:"Bricolage Grotesque",sans-serif;font-weight:800;color:var(--sun);font-size:1.3rem;font-variant-numeric:tabular-nums}
+.coop strong{display:block;font-size:1.2rem}
+.coop p{margin:2px 0 0;color:#CFD1D8;max-width:32rem}
+.coop .split{display:grid;gap:8px}
+.hello{background:var(--red);color:#fff}
+.hello h2{max-width:14ch;color:#fff}
+.hello .btn{background:#fff;color:var(--ink);border-color:#fff}
+.hello .btn:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+footer{padding:26px 0 40px;font-size:.875rem;color:var(--soft)}
+@media(min-width:820px){
+ nav{display:flex}
+ .wrap{padding:0 40px}
+ .hero{padding-block:72px 80px}
+ .what ul{grid-template-columns:repeat(3,1fr)}
+ .what li{display:block;border-top:0;border-left:2px solid var(--line);padding:28px 24px}
+ .what li:first-child{border-left:0;padding-left:0}
+ .what li span{display:block;text-align:left;margin-top:6px;max-width:none}
+ .grid{grid-template-columns:repeat(6,1fr)}
+ .t1{grid-column:span 4;grid-row:span 2;min-height:420px}
+ .t1 h3{font-size:3rem}
+ .t2,.t3{grid-column:span 2}
+ .t4{grid-column:span 6;min-height:150px}
+ .coop .split{grid-template-columns:.8fr 1.2fr;gap:72px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.tile:hover{transform:none;box-shadow:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#konten">Lewati ke konten</a>
+<header><div class="wrap bar">
+ <a class="brand" href="#" translate="no">Kira Aksara</a>
+ <nav aria-label="Utama"><a href="#konten">Konten</a><a href="#kerja-sama">Kerja sama</a></nav>
+ <a class="btn" href="#hubungi">Hubungi</a>
+</div></header>
+<main>
+ <div class="wrap hero">
+  <span class="tag">Kreator konten, Bandung</span>
+  <h1>Kira<br><span>Aksara.</span></h1>
+  <p class="lead">Saya membuat video pendek tentang keseharian dan barang yang benar-benar dipakai. Jujur, ringan, dan enak ditonton sampai habis.</p>
+  <div class="cta"><a class="btn" href="#hubungi">Ajak kerja sama</a><a class="btn alt" href="#konten">Lihat konten</a></div>
+ </div>
+ <section class="what" aria-label="Fokus konten"><div class="wrap"><ul>
+  <li>Video pendek<span>Cerita singkat yang jelas di tiga detik pertama.</span></li>
+  <li>Ulasan jujur<span>Dipakai dulu, baru dibicarakan.</span></li>
+  <li>Cerita harian<span>Hal kecil yang dekat dengan penonton.</span></li>
+ </ul></div></section>
+ <section class="pad" id="konten"><div class="wrap">
+  <h2>Konten pilihan</h2>
+  <div class="grid">
+   <a class="tile t1" href="#konten"><span class="k">Seri unggulan</span><div><h3>Seminggu hidup tanpa belanja impulsif</h3><p>Catatan harian yang diedit jadi satu video utuh.</p></div></a>
+   <a class="tile t2" href="#konten"><span class="k">Ulasan</span><div><h3>Tas kerja yang awet</h3><p>Uji pakai selama sebulan.</p></div></a>
+   <a class="tile t3" href="#konten"><span class="k">Tips</span><div><h3>Rapikan meja dalam 10 menit</h3><p>Langkah mudah, hasil terlihat.</p></div></a>
+   <a class="tile t4" href="#konten"><span class="k">Kolaborasi</span><div><h3>Hari bersama brand lokal</h3></div></a>
+  </div>
+  <p class="note">Judul konten pada halaman ini adalah contoh tampilan demo.</p>
+ </div></section>
+ <section class="pad coop" id="kerja-sama"><div class="wrap split">
+  <div><h2>Kerja sama</h2><p style="color:#CFD1D8;max-width:26rem;margin:0">Bentuk kolaborasi yang bisa dipilih, dengan alur yang jelas dari awal sampai tayang.</p></div>
+  <ol>
+   <li><div><strong>Konten sponsor</strong><p>Video yang menyatu dengan gaya saya, bukan iklan yang dipaksa.</p></div></li>
+   <li><div><strong>Ulasan produk</strong><p>Produk dipakai dulu supaya pendapatnya bisa dipercaya.</p></div></li>
+   <li><div><strong>Kehadiran di acara</strong><p>Liputan singkat dan konten langsung dari lokasi.</p></div></li>
+  </ol>
+ </div></section>
+ <section class="pad hello" id="hubungi"><div class="wrap">
+  <h2>Punya ide? Ceritakan.</h2>
+  <a class="btn" href="#hubungi">Kirim pesan</a>
+ </div></section>
+</main>
+<footer><div class="wrap">Contoh tampilan demo. Nama, kota, dan judul konten adalah ilustrasi.</div></footer>
+</body>
+</html>
