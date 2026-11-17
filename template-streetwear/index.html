@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jalan Belakang Supply | Streetwear lokal, drop terbatas</title>
+<meta name="description" content="Jalan Belakang Supply, streetwear lokal dengan drop terbatas. Lihat drop terbaru, hitung mundur rilis, dan pre-order lewat WhatsApp.">
+<meta name="theme-color" content="#0E0E0E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bone:#ECE9E1;--ink:#0E0E0E;--blue:#2A3BFF;--blue-d:#1B29D6;--mute:#55554F}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;font-family:Archivo,system-ui,sans-serif;font-size:1.0625rem;line-height:1.55;color:var(--ink);background:var(--bone)}
+h1,h2,h3{font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:.92;margin:0;text-wrap:balance;letter-spacing:.01em}
+h1{font-size:clamp(4rem,16.5vw,13rem)}
+h2{font-size:clamp(2.4rem,7vw,4.8rem)}
+h3{font-size:1.5rem}
+p{margin:0}
+a{color:inherit}
+svg{max-width:100%;display:block}
+button,select{font:inherit;color:inherit}
+.wrap{width:min(100% - 2.5rem,76rem);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:.5rem;background:var(--blue);color:#fff;padding:.75rem 1rem;z-index:30;font-weight:700}
+.skip:focus{left:.5rem}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.7rem 1.4rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.9375rem;border:2px solid var(--ink);background:var(--bone);color:var(--ink);cursor:pointer;text-decoration:none;box-shadow:4px 4px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn-main{background:var(--blue);color:#fff}
+.lab{display:inline-block;font-size:.8125rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:2px solid var(--ink);padding:.2rem .6rem}
+.num{font-variant-numeric:tabular-nums}
+.mut{color:var(--mute);font-size:.9375rem}
+.ol{stroke:rgba(14,14,14,.65);stroke-width:2.2;stroke-linejoin:round}
+.dt{fill:none;stroke:rgba(14,14,14,.4);stroke-width:2;stroke-linecap:round}
+
+.tick{background:var(--ink);color:var(--bone);overflow:hidden;white-space:nowrap;font-family:Anton,sans-serif;letter-spacing:.08em;font-size:1rem;padding:.5rem 0}
+.trk{display:flex;width:max-content}
+.trk span{padding-right:2.2rem}
+.trk i{font-style:normal;color:#7C88FF;padding:0 .9rem}
+
+.top{position:sticky;top:0;z-index:10;background:var(--bone);border-bottom:2px solid var(--ink)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:62px}
+.brand{font-family:Anton,sans-serif;font-size:1.5rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.nav{display:none;gap:1.75rem}
+.nav a{text-decoration:none;font-weight:600;text-transform:uppercase;font-size:.9375rem;letter-spacing:.06em;display:inline-flex;align-items:center;min-height:44px}
+.nav a:hover{color:var(--blue)}
+.top .btn{min-height:44px;padding:.4rem 1rem;box-shadow:3px 3px 0 var(--ink)}
+@media(min-width:52rem){.nav{display:flex}}
+
+.hero{position:relative;overflow:hidden;padding:clamp(1.5rem,4vw,3rem) 0 clamp(2.5rem,6vw,4.5rem);border-bottom:2px solid var(--ink)}
+.ghost{position:absolute;left:0;top:6%;font-family:Anton,sans-serif;font-size:clamp(9rem,36vw,28rem);line-height:.8;white-space:nowrap;color:transparent;-webkit-text-stroke:2px rgba(14,14,14,.13);pointer-events:none;user-select:none}
+.hero .wrap{position:relative}
+.hero h1{margin:1rem 0 0}
+.hero h1 .o{color:transparent;-webkit-text-stroke:2px var(--ink)}
+.hero-row{display:grid;gap:1.5rem;margin-top:1.75rem;align-items:end}
+.lead{max-width:30rem;font-size:1.125rem}
+.cd{display:flex;gap:.5rem}
+.cd .u{min-width:4.3rem;border:2px solid var(--ink);padding:.35rem .6rem;text-align:center;background:var(--bone)}
+.cd b{display:block;font-family:Anton,sans-serif;font-weight:400;font-size:2rem;line-height:1.1}
+.cd span{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--mute)}
+@media(min-width:56rem){.hero-row{grid-template-columns:1fr auto auto;gap:2rem}}
+
+.pad{padding:clamp(3rem,8vw,5.5rem) 0}
+.head{display:grid;gap:.9rem;margin-bottom:2rem;max-width:42rem}
+.head p{color:var(--mute)}
+
+.drop{display:grid;grid-template-columns:repeat(auto-fill,minmax(17.5rem,1fr));border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
+.item{border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:1.1rem;display:grid;gap:.7rem;align-content:start;background:var(--bone);transition:background-color .2s,color .2s}
+.item:hover{background:var(--ink);color:var(--bone)}
+.item:hover .mut{color:#B9B6AC}
+.item:hover .btn{box-shadow:4px 4px 0 var(--blue)}
+.item .idx{font-family:Anton,sans-serif;letter-spacing:.08em}
+.item .art{aspect-ratio:1;display:grid;place-items:center;background:#D9D5CA;transition:background-color .2s}
+.item:hover .art{background:#262626}
+.item .art svg{width:82%;height:auto}
+.item .line{display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
+.price{font-weight:700;font-size:1.125rem}
+.stk{display:grid;gap:.35rem}
+.stock{height:10px;border:2px solid currentColor;overflow:hidden}
+.stock span{display:block;height:100%;background:var(--blue);transform-origin:0 50%;transform:scaleX(var(--p))}
+.mo .stock span{transform:scaleX(0)}
+.item .row{display:grid;grid-template-columns:5rem 1fr;gap:.5rem}
+.item select{min-height:48px;padding:.3rem .5rem;border:2px solid var(--ink);background:var(--bone);color:var(--ink);width:100%}
+.item:hover select{border-color:var(--bone)}
+
+.sizes{border-block:2px solid var(--ink);background:#E2DFD6}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:26rem;background:var(--bone);border:2px solid var(--ink)}
+caption{text-align:left;color:var(--mute);font-size:.9375rem;padding-bottom:.75rem}
+th,td{text-align:left;padding:.9rem 1rem;border-bottom:2px solid var(--ink)}
+thead th{font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.06em;background:var(--ink);color:var(--bone)}
+tbody th{font-family:Anton,sans-serif;font-weight:400;font-size:1.2rem}
+
+.steps{list-style:none;margin:0;padding:0;display:grid;border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
+.stp{border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:1.3rem}
+.stp b{display:block;font-family:Anton,sans-serif;font-weight:400;font-size:3.4rem;line-height:1;color:var(--blue)}
+.stp h3{margin:.5rem 0 .35rem}
+.stp p{color:var(--mute)}
+@media(min-width:44rem){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:64rem){.steps{grid-template-columns:repeat(4,1fr)}}
+
+footer{background:var(--ink);color:#CFCBC0;padding:2.5rem 0 2rem;overflow:hidden}
+.bigtxt{font-family:Anton,sans-serif;text-transform:uppercase;line-height:.85;font-size:clamp(3.2rem,13.5vw,11rem);color:var(--bone);margin:0 0 1.5rem}
+footer .wrap > div{display:grid;gap:.5rem;font-size:.9375rem}
+@media(min-width:48rem){footer .wrap > div{grid-template-columns:1fr auto;align-items:center}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style>
+<script>
+/* Motion aktif hanya jika JS jalan. Mati otomatis saat prefers-reduced-motion atau URL memakai ?static */
+(function(){var d=document.documentElement,M=window.MO={rv:'.head,.item,.scroll,.stp,.bigtxt',intro:'.hero .lab,.lead,.cd,.hero .btn',hide:''};
+if(matchMedia('(prefers-reduced-motion: reduce)').matches||/[?&]static\b/.test(location.search))return;
+d.classList.add('mo');
+var s=document.createElement('style');
+s.textContent='.mo '+[M.rv,M.intro,M.hide].filter(Boolean).join(',').split(',').join(',.mo ')+'{opacity:0}.mo h1{visibility:hidden}.w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .06em .14em 0;margin:0 -.06em -.14em 0}';
+document.head.appendChild(s);
+function off(){if(!window.__mo)d.classList.remove('mo')}
+addEventListener('load',off);setTimeout(off,3500)})();
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="a-tee"><path class="ol" d="M52 22l28 10 28-10 38 26-16 26-14-8v66H44V66l-14 8L14 48z" fill="var(--c)"/><path class="dt" d="M52 22q28 22 56 0"/></g>
+    <g id="a-hood"><path class="ol" d="M54 26q26-20 52 0l36 24-14 28-14-8v68H46V70l-14 8L18 50z" fill="var(--c)"/><path class="dt" d="M54 26q26 34 52 0M72 46v18M88 46v18M58 108h44l6 20H52z"/></g>
+    <g id="a-cap"><path class="ol" d="M26 106c0-36 24-58 54-58s52 22 52 58z" fill="var(--c)"/><path class="ol" d="M104 104c26-4 40 2 48 16-22 8-44 6-48-6z" fill="var(--c2)"/><circle cx="80" cy="50" r="4" fill="var(--c2)"/><path class="dt" d="M80 50v56M52 66q-6 20-4 40M108 66q6 20 4 40"/></g>
+    <g id="a-tote"><path class="dt" style="stroke-width:6" d="M56 62c0-34 10-46 24-46s24 12 24 46"/><path class="ol" d="M32 60h96l8 92H24z" fill="var(--c)"/></g>
+    <g id="a-pants"><path class="ol" d="M44 20h72l8 126h-36L80 72l-12 74H36z" fill="var(--c)"/><path class="dt" d="M44 30h72M46 76h22v24H46zM92 76h22v24H92z"/></g>
+  </defs>
+</svg>
+<a class="skip" href="#isi">Langsung ke isi</a>
+
+<div class="tick" aria-hidden="true">
+  <div class="trk">
+    <span>DROP 03<i>/</i>PRE-ORDER DIBUKA<i>/</i>STOK TERBATAS<i>/</i>KIRIM SELURUH INDONESIA<i>/</i>DROP 03<i>/</i>PRE-ORDER DIBUKA<i>/</i>STOK TERBATAS<i>/</i>KIRIM SELURUH INDONESIA<i>/</i></span>
+    <span>DROP 03<i>/</i>PRE-ORDER DIBUKA<i>/</i>STOK TERBATAS<i>/</i>KIRIM SELURUH INDONESIA<i>/</i>DROP 03<i>/</i>PRE-ORDER DIBUKA<i>/</i>STOK TERBATAS<i>/</i>KIRIM SELURUH INDONESIA<i>/</i></span>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#" translate="no">Jalan Belakang</a>
+    <nav class="nav" aria-label="Utama">
+      <a href="#drop">Drop 03</a>
+      <a href="#ukuran">Ukuran</a>
+      <a href="#cara">Cara order</a>
+    </nav>
+    <a class="btn btn-main" href="#drop">Pre-order</a>
+  </div>
+</header>
+
+<main id="isi">
+<section class="hero">
+  <div class="ghost" aria-hidden="true">DROP 03 DROP 03</div>
+  <div class="wrap">
+    <span class="lab">Drop 03 / Musim hujan</span>
+    <h1>Jalan<br>Belakang<br><span class="o">Supply</span></h1>
+    <div class="hero-row">
+      <p class="lead">Kaos, hoodie, dan topi tebal buatan lokal. Sablon manual, produksi terbatas. Kalau habis ya habis.</p>
+      <div class="cd" role="timer" aria-label="Hitung mundur drop berikutnya">
+        <div class="u"><b class="num" data-u="d">00</b><span>hari</span></div>
+        <div class="u"><b class="num" data-u="h">00</b><span>jam</span></div>
+        <div class="u"><b class="num" data-u="m">00</b><span>menit</span></div>
+        <div class="u"><b class="num" data-u="s">00</b><span>detik</span></div>
+      </div>
+      <a class="btn btn-main" href="#drop">Lihat drop</a>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="drop">
+  <div class="wrap">
+    <div class="head">
+      <span class="lab">Drop 03</span>
+      <h2>Enam item. Stok dihitung manual.</h2>
+      <p>Pre-order dibuka sampai stok habis. Harga dan stok hanya ilustrasi untuk contoh tampilan.</p>
+    </div>
+    <div class="drop">
+      <article class="item" data-name="Kaos Gang Gelap">
+        <div class="line"><span class="idx">01</span><span class="mut">Cotton 24s</span></div>
+        <div class="art"><svg viewBox="0 0 160 160" role="img" aria-label="Ilustrasi kaos hitam dengan cetak lingkaran biru"><g style="--c:#0E0E0E"><use href="#a-tee"/></g><circle cx="80" cy="84" r="15" fill="#2A3BFF"/><circle cx="80" cy="84" r="7" fill="#ECE9E1"/></svg></div>
+        <h3>Kaos Gang Gelap</h3>
+        <div class="line"><span class="price num">Rp 169.000</span></div>
+        <div class="stk"><div class="stock"><span style="--p:.35"></span></div><span class="mut num">Sisa 14 dari 40</span></div>
+        <div class="row"><select aria-label="Ukuran Kaos Gang Gelap"><option>S</option><option selected>M</option><option>L</option><option>XL</option><option>XXL</option></select><button class="btn btn-main po" type="button">Pre-order</button></div>
+      </article>
+      <article class="item" data-name="Kaos Hujan Deras">
+        <div class="line"><span class="idx">02</span><span class="mut">Cotton 24s</span></div>
+        <div class="art"><svg viewBox="0 0 160 160" role="img" aria-label="Ilustrasi kaos putih tulang dengan cetak garis hujan biru"><g style="--c:#ECE9E1"><use href="#a-tee"/></g><path d="M62 70l-6 22M78 66l-6 26M94 70l-6 22M110 66l-6 26" stroke="#2A3BFF" stroke-width="5" stroke-linecap="round"/></svg></div>
+        <h3>Kaos Hujan Deras</h3>
+        <div class="line"><span class="price num">Rp 169.000</span></div>
+        <div class="stk"><div class="stock"><span style="--p:.72"></span></div><span class="mut num">Sisa 36 dari 50</span></div>
+        <div class="row"><select aria-label="Ukuran Kaos Hujan Deras"><option>S</option><option selected>M</option><option>L</option><option>XL</option><option>XXL</option></select><button class="btn btn-main po" type="button">Pre-order</button></div>
+      </article>
+      <article class="item" data-name="Hoodie Tebal 380 GSM">
+        <div class="line"><span class="idx">03</span><span class="mut">Fleece 380 GSM</span></div>
+        <div class="art"><svg viewBox="0 0 160 160" role="img" aria-label="Ilustrasi hoodie biru"><g style="--c:#2A3BFF"><use href="#a-hood"/></g></svg></div>
+        <h3>Hoodie Tebal</h3>
+        <div class="line"><span class="price num">Rp 389.000</span></div>
+        <div class="stk"><div class="stock"><span style="--p:.2"></span></div><span class="mut num">Sisa 6 dari 30</span></div>
+        <div class="row"><select aria-label="Ukuran Hoodie Tebal"><option>S</option><option selected>M</option><option>L</option><option>XL</option><option>XXL</option></select><button class="btn btn-main po" type="button">Pre-order</button></div>
+      </article>
+      <article class="item" data-name="Topi Gorong">
+        <div class="line"><span class="idx">04</span><span class="mut">Twill, strap besi</span></div>
+        <div class="art"><svg viewBox="0 0 160 160" role="img" aria-label="Ilustrasi topi hitam dengan visor biru"><g style="--c:#0E0E0E;--c2:#2A3BFF"><use href="#a-cap"/></g></svg></div>
+        <h3>Topi Gorong</h3>
+        <div class="line"><span class="price num">Rp 119.000</span></div>
+        <div class="stk"><div class="stock"><span style="--p:.55"></span></div><span class="mut num">Sisa 22 dari 40</span></div>
+        <div class="row"><select aria-label="Ukuran Topi Gorong"><option>All size</option></select><button class="btn btn-main po" type="button">Pre-order</button></div>
+      </article>
+      <article class="item" data-name="Tote Kanvas Jalan">
+        <div class="line"><span class="idx">05</span><span class="mut">Kanvas 12 oz</span></div>
+        <div class="art"><svg viewBox="0 0 160 160" role="img" aria-label="Ilustrasi tote bag putih tulang dengan blok biru"><g style="--c:#F6F3EC"><use href="#a-tote"/></g><rect x="52" y="92" width="56" height="30" fill="#2A3BFF"/></svg></div>
+        <h3>Tote Kanvas Jalan</h3>
+        <div class="line"><span class="price num">Rp 99.000</span></div>
+        <div class="stk"><div class="stock"><span style="--p:.9"></span></div><span class="mut num">Sisa 54 dari 60</span></div>
+        <div class="row"><select aria-label="Ukuran Tote Kanvas Jalan"><option>All size</option></select><button class="btn btn-main po" type="button">Pre-order</button></div>
+      </article>
+      <article class="item" data-name="Celana Kargo Lorong">
+        <div class="line"><span class="idx">06</span><span class="mut">Ripstop</span></div>
+        <div class="art"><svg viewBox="0 0 160 160" role="img" aria-label="Ilustrasi celana kargo olive"><g style="--c:#6B6A52"><use href="#a-pants"/></g></svg></div>
+        <h3>Celana Kargo Lorong</h3>
+        <div class="line"><span class="price num">Rp 329.000</span></div>
+        <div class="stk"><div class="stock"><span style="--p:.15"></span></div><span class="mut num">Sisa 5 dari 30</span></div>
+        <div class="row"><select aria-label="Ukuran Celana Kargo Lorong"><option>28</option><option>30</option><option selected>32</option><option>34</option><option>36</option></select><button class="btn btn-main po" type="button">Pre-order</button></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="pad sizes" id="ukuran">
+  <div class="wrap">
+    <div class="head">
+      <span class="lab">Ukuran</span>
+      <h2>Boxy fit. Naik satu ukuran kalau mau lebih longgar.</h2>
+    </div>
+    <div class="scroll" tabindex="0" role="region" aria-label="Tabel ukuran kaos">
+      <table>
+        <caption>Ukuran kaos dalam sentimeter dan hanya contoh tampilan.</caption>
+        <thead><tr><th scope="col">Ukuran</th><th scope="col">Lebar dada</th><th scope="col">Panjang</th><th scope="col">Lebar bahu</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">S</th><td class="num">52</td><td class="num">68</td><td class="num">46</td></tr>
+          <tr><th scope="row">M</th><td class="num">54</td><td class="num">70</td><td class="num">48</td></tr>
+          <tr><th scope="row">L</th><td class="num">56</td><td class="num">72</td><td class="num">50</td></tr>
+          <tr><th scope="row">XL</th><td class="num">58</td><td class="num">74</td><td class="num">52</td></tr>
+          <tr><th scope="row">XXL</th><td class="num">60</td><td class="num">76</td><td class="num">54</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="cara">
+  <div class="wrap">
+    <div class="head">
+      <span class="lab">Cara order</span>
+      <h2>Empat langkah, tanpa ribet.</h2>
+    </div>
+    <ol class="steps">
+      <li class="stp"><b>01</b><h3>Pilih item</h3><p>Tentukan ukuran lalu tekan Pre-order.</p></li>
+      <li class="stp"><b>02</b><h3>Chat admin</h3><p>WhatsApp terbuka dengan pesan yang sudah terisi.</p></li>
+      <li class="stp"><b>03</b><h3>Bayar penuh</h3><p>Transfer atau QRIS untuk mengunci stok.</p></li>
+      <li class="stp"><b>04</b><h3>Tunggu kiriman</h3><p>Produksi dan pengiriman setelah pre-order ditutup.</p></li>
+    </ol>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="bigtxt" translate="no">Jalan Belakang</p>
+    <div><span>Streetwear lokal. Alamat, WhatsApp, dan Instagram usaha Anda tampil di sini.</span><span>Contoh tampilan demo. Nama, harga, dan stok hanya ilustrasi.</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var WA='6280000000000'; /* ganti dengan nomor WhatsApp usaha */
+  function q(k){return document.querySelector('[data-u='+k+']')}
+  var u={d:q('d'),h:q('h'),m:q('m'),s:q('s')};
+  function next(){var n=new Date(),t=new Date(n.getFullYear(),n.getMonth(),n.getDate(),19,0,0);t.setDate(t.getDate()+((5-n.getDay()+7)%7));if(t<=n)t.setDate(t.getDate()+7);return t}
+  var T=next();
+  function pad(n){return String(n).padStart(2,'0')}
+  function tick(){var ms=T-new Date();if(ms<=0){T=next();ms=T-new Date()}var s=Math.floor(ms/1000);u.d.textContent=pad(Math.floor(s/86400));u.h.textContent=pad(Math.floor(s%86400/3600));u.m.textContent=pad(Math.floor(s%3600/60));u.s.textContent=pad(s%60)}
+  tick();setInterval(tick,1000);
+  [].slice.call(document.querySelectorAll('.po')).forEach(function(b){b.addEventListener('click',function(){
+    var c=b.closest('.item');
+    var msg='Halo, saya mau pre-order '+c.dataset.name+' ukuran '+c.querySelector('select').value+'.';
+    window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank','noopener');
+  })});
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script>
+MO.extra=function(g,$){
+  g.to('.trk',{xPercent:-50,duration:26,ease:'none',repeat:-1});
+  g.to('.ghost',{xPercent:-12,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  $('.stock span').forEach(function(s){var p=parseFloat(s.style.getPropertyValue('--p'))||.5;ScrollTrigger.create({trigger:s,start:'top 94%',once:true,onEnter:function(){g.fromTo(s,{scaleX:0},{scaleX:p,duration:1.1,ease:'power3.out'})}})});
+};
+document.addEventListener('DOMContentLoaded',function(){
+var d=document.documentElement;if(!d.classList.contains('mo')||!window.gsap||!window.ScrollTrigger)return;
+var g=gsap,M=window.MO,$=function(s){return[].slice.call(document.querySelectorAll(s))};
+g.registerPlugin(ScrollTrigger);
+function split(el){var o=[];(function walk(n){[].slice.call(n.childNodes).forEach(function(c){if(c.nodeType===3){var f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(function(p){if(!p)return;if(/^\s+$/.test(p)){f.appendChild(document.createTextNode(' '));return}var a=document.createElement('span'),b=document.createElement('span');a.className='w';b.className='wi';b.textContent=p;a.appendChild(b);f.appendChild(a);o.push(b)});n.replaceChild(f,c)}else if(c.nodeType===1&&c.tagName!=='BR'){walk(c)}})})(el);return o}
+var h=document.querySelector('h1'),w=h?split(h):[];
+var tl=g.timeline({defaults:{ease:'power2.out'}});
+if(h){h.style.visibility='visible';tl.from(w,{yPercent:115,duration:.9,ease:'expo.out',stagger:.06},0)}
+tl.fromTo($(M.intro),{y:18,opacity:0},{y:0,opacity:1,duration:.7,stagger:.1,clearProps:'transform'},.25);
+ScrollTrigger.batch(M.rv,{start:'top 90%',once:true,onEnter:function(e){g.fromTo(e,{y:22,opacity:0},{y:0,opacity:1,duration:.6,stagger:.07,ease:'power2.out',overwrite:true,clearProps:'transform'})}});
+if(M.extra)M.extra(g,$);
+window.__mo=1});
+</script>
+</body>
+</html>
