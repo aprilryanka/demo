@@ -29,7 +29,7 @@ header nav{display:flex;gap:clamp(16px,3vw,36px)}
 .o2{width:40vw;height:40vw;background:#BFDDE0;right:-6vw;bottom:-8vw;animation:dr 22s ease-in-out -6s infinite reverse}
 .o3{width:28vw;height:28vw;background:#CFE5CC;left:36vw;top:30vh;animation:dr 26s ease-in-out -12s infinite}
 @keyframes dr{50%{transform:translate(6vw,4vw) scale(1.12)}}
-.hero>*{position:relative}
+.hero>*:not(.orb){position:relative}
 .hero h1{margin:0;font-family:var(--d);font-weight:400;font-variation-settings:"opsz" 96;letter-spacing:-.045em;line-height:.95;font-size:clamp(3.2rem,8.6vw,8.4rem)}
 .hero h1 em{font-weight:400;color:var(--deep)}
 .hero h1 .ln{display:block;overflow:hidden;padding-bottom:.12em}.hero h1 .ln>span{display:block}
